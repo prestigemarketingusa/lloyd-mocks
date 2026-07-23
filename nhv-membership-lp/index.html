@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Hope Vitality — Membership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1d3b30; --green2:#27503f; --gold:#c9a24b; --gold-soft:#e5d4a1;
+    --cream:#faf7f0; --ink:#20261f; --muted:#6b7566; --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.15}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green2) 100%);color:var(--cream);text-align:center;padding:78px 24px 92px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% -10%,rgba(201,162,75,.22),transparent 60%)}
+  .eyebrow{position:relative;letter-spacing:.32em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--gold-soft);margin-bottom:20px}
+  .hero h1{position:relative;font-size:clamp(34px,5.4vw,58px);max-width:760px;margin:0 auto;font-weight:700}
+  .hero p{position:relative;max-width:600px;margin:20px auto 0;font-size:18px;font-weight:300;color:rgba(250,247,240,.9)}
+  .hero .rule{position:relative;width:64px;height:2px;background:var(--gold);margin:26px auto 0}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:-52px;position:relative;z-index:3}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--white);border-radius:16px;padding:38px 34px;box-shadow:0 20px 50px rgba(29,59,48,.14);border-top:4px solid var(--gold);display:flex;flex-direction:column}
+  .card.featured{border-top-color:var(--green);box-shadow:0 26px 60px rgba(29,59,48,.22)}
+  .tag{align-self:flex-start;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold);border:1px solid var(--gold-soft);border-radius:100px;padding:5px 12px;margin-bottom:18px}
+  .card.featured .tag{color:var(--green);border-color:var(--green)}
+  .card h2{font-size:30px}
+  .price{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--green);margin:6px 0 2px}
+  .price span{font-size:17px;font-family:'Inter';font-weight:400;color:var(--muted)}
+  .value{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.02em;margin-bottom:16px}
+  .desc{color:var(--muted);font-size:15.5px;margin-bottom:20px}
+  .benefits{list-style:none;margin:0 0 26px}
+  .benefits li{position:relative;padding-left:28px;margin-bottom:12px;font-size:15px}
+  .benefits li:before{content:"✓";position:absolute;left:0;top:0;color:var(--gold);font-weight:700}
+  .btn{margin-top:auto;display:block;text-align:center;background:var(--green);color:var(--cream);text-decoration:none;padding:16px;border-radius:10px;font-weight:600;font-size:16px;letter-spacing:.02em;transition:.2s}
+  .btn:hover{background:var(--gold);color:var(--green)}
+  .card.featured .btn{background:var(--gold);color:var(--green)}
+  .card.featured .btn:hover{background:var(--green);color:var(--cream)}
+
+  /* CLOSE */
+  .close{text-align:center;padding:72px 24px 40px}
+  .close h3{font-size:clamp(26px,3.6vw,36px);max-width:620px;margin:0 auto 26px;color:var(--green)}
+  .close .btn{display:inline-block;padding:16px 42px;margin-top:0}
+  .trust{margin-top:34px;color:var(--muted);font-size:13px;letter-spacing:.04em}
+  footer{text-align:center;padding:28px;color:var(--muted);font-size:12px;background:var(--white);border-top:1px solid #ece7db}
+  .note{background:#fff8e6;border:1px dashed var(--gold);color:#8a6d1f;font-size:12.5px;text-align:center;padding:10px;letter-spacing:.03em}
+</style>
+</head>
+<body>
+  <div class="note">PREVIEW MOCK · New Hope Vitality Membership LP · link.new-hope-vitality.com/great_deal_membership</div>
+
+  <section class="hero">
+    <div class="eyebrow">New Hope Vitality · Membership</div>
+    <h1>Feel Your Best, Every Month — For Less Than You'd Expect</h1>
+    <p>Two New Hope Vitality memberships. Real savings. Real benefits. Join in under 2 minutes.</p>
+    <div class="rule"></div>
+  </section>
+
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <span class="tag">VIP Wellness</span>
+        <h2>VIP Wellness Membership</h2>
+        <div class="price">$165<span>/mo</span></div>
+        <p class="desc">Your monthly reset — hydration + micro-nutrient IM injections at a significant member-only reduction, plus exclusive perks and priority booking.</p>
+        <ul class="benefits">
+          <li>Signature hydration &amp; micronutrient IMs — member pricing</li>
+          <li>Members-only savings on add-on services</li>
+          <li>Priority scheduling &amp; concierge support</li>
+        </ul>
+        <a class="btn" href="#core">Join VIP Wellness — $165/mo →</a>
+      </div>
+
+      <div class="card featured">
+        <span class="tag">Most Requested</span>
+        <h2>NAD+ Concierge Membership</h2>
+        <div class="price">$375<span>/mo</span></div>
+        <div class="value">A $500+ value every month</div>
+        <p class="desc">Our most-requested membership. Premium NAD+ Concierge care valued at over $500 each month — yours for $375.</p>
+        <ul class="benefits">
+          <li>Monthly NAD+ Concierge benefit — a $500+ value</li>
+          <li>All VIP Wellness perks included</li>
+          <li>White-glove, priority-first experience</li>
+        </ul>
+        <a class="btn" href="#nad">Join NAD+ Concierge — $375/mo →</a>
+      </div>
+    </div>
+
+    <section class="close">
+      <h3>Two ways to invest in your vitality — pick the one that fits, and start feeling the difference this month.</h3>
+      <a class="btn" href="#core">Become a Member Today →</a>
+      <div class="trust">New Hope Vitality · Costa Mesa &amp; Brea · Secure checkout</div>
+    </section>
+  </div>
+
+  <footer>New Hope Vitality — Membership · Preview for approval · © 2026</footer>
+</body>
+</html>
