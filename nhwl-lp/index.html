@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Hope Weight Loss — Concierge Medical Weight Loss</title>
+<!-- Meta Pixel 1196959505208615 (NHWL) — goes in <head> on the live GHL page; Lead event fires on form submit -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#1a7a8c;--cyan:#2fb7ce;--ink:#102228;--slate:#2c4148;--muted:#56717a;--mist:#eaf4f6;--off:#f7fafb;--white:#fff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--off);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.13}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .bar{background:var(--ink);color:var(--white);text-align:center;font-size:13.5px;padding:9px 16px;letter-spacing:.01em}
+  .bar b{color:var(--cyan)}
+
+  .hero{background:linear-gradient(155deg,var(--teal) 0%,#12606f 100%);color:var(--white);text-align:center;padding:70px 24px 92px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% -20%,rgba(47,183,206,.35),transparent 62%)}
+  .eyebrow{position:relative;letter-spacing:.3em;text-transform:uppercase;font-size:12px;font-weight:600;color:#bfeaf2;margin-bottom:18px}
+  .hero h1{position:relative;font-size:clamp(36px,5.6vw,62px);max-width:820px;margin:0 auto;font-weight:700}
+  .hero h1 em{font-style:normal;color:#d7f3f9}
+  .hero p{position:relative;max-width:620px;margin:20px auto 30px;font-size:18px;font-weight:300;color:rgba(255,255,255,.92)}
+  .cta{display:inline-block;background:var(--cyan);color:var(--ink);text-decoration:none;padding:16px 40px;border-radius:10px;font-weight:600;font-size:16px;letter-spacing:.02em;transition:.2s;border:none;cursor:pointer}
+  .cta:hover{background:var(--white)}
+  .cta.ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5);margin-left:10px}
+  .cta.ghost:hover{background:rgba(255,255,255,.12)}
+
+  .kicker{letter-spacing:.26em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--teal);text-align:center}
+  .sec-h{font-size:clamp(28px,4vw,42px);color:var(--ink);text-align:center;margin:8px 0 8px}
+  .lead{text-align:center;color:var(--muted);max-width:640px;margin:0 auto}
+
+  /* DIFFERENTIATORS */
+  .diff{margin-top:-56px;position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.diff{grid-template-columns:1fr}}
+  .dcard{background:var(--white);border-radius:16px;padding:30px 28px;box-shadow:0 18px 44px rgba(16,34,40,.10);border-top:3px solid var(--cyan)}
+  .dcard .ic{width:44px;height:44px;border-radius:11px;background:var(--mist);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+  .dcard h3{font-size:23px;color:var(--ink);margin-bottom:6px}
+  .dcard p{color:var(--muted);font-size:15px}
+  .dcard.hero-diff{border-top-color:var(--teal);background:linear-gradient(180deg,#fff,var(--mist))}
+
+  /* PROGRAM */
+  .program{margin-top:64px;background:var(--white);border-radius:18px;padding:46px 42px;box-shadow:0 12px 32px rgba(16,34,40,.07)}
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;margin-top:24px}
+  @media(max-width:640px){.pgrid{grid-template-columns:1fr}}
+  .pgrid div{position:relative;padding-left:30px;font-size:15.5px;font-weight:500}
+  .pgrid div:before{content:"✓";position:absolute;left:0;top:1px;color:var(--teal);font-weight:700}
+  .pgrid small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+  .price{margin-top:28px;text-align:center;background:linear-gradient(120deg,var(--teal),#12606f);color:var(--white);border-radius:14px;padding:26px}
+  .price .big{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:700}
+  .price .big span{font-size:18px;font-family:'Inter';font-weight:400;opacity:.9}
+  .price p{color:#d7f3f9;font-size:14px;margin-top:4px}
+
+  /* FORM */
+  .optin{margin-top:64px;background:var(--ink);border-radius:18px;padding:50px 40px;color:var(--white);text-align:center}
+  .optin h2{color:var(--white);font-size:clamp(27px,3.8vw,36px)}
+  .optin p{color:rgba(255,255,255,.82);max-width:540px;margin:10px auto 26px}
+  form{max-width:520px;margin:0 auto;display:grid;gap:12px}
+  form input,form select{width:100%;padding:15px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:var(--white);font-size:15px;font-family:'Inter'}
+  form input::placeholder{color:rgba(255,255,255,.6)}
+  form select option{color:var(--ink)}
+  form .cta{background:var(--cyan);color:var(--ink);margin-top:4px}
+  .fine{font-size:12px;color:rgba(255,255,255,.55);margin-top:12px}
+
+  .close{text-align:center;padding:66px 24px 44px}
+  .close h2{font-size:clamp(27px,3.8vw,38px);max-width:660px;margin:0 auto 22px;color:var(--ink)}
+  .close h2 em{font-style:normal;color:var(--teal)}
+  .trust{margin-top:28px;color:var(--muted);font-size:13px}
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;background:var(--white);border-top:1px solid #dbe7ea}
+  .note{background:#e9f7fa;border:1px dashed var(--cyan);color:#0f5866;font-size:12.5px;text-align:center;padding:10px}
+</style>
+</head>
+<body>
+  <div class="note">PREVIEW MOCK · New Hope Weight Loss — Concierge LP · NHWL pixel 1196959505208615 · confirm pricing before launch</div>
+  <div class="bar">☀️ <b>Summer Reset:</b> new patients start at <b>$149/mo</b> with code <b>NEWME</b> + a free giveaway</div>
+
+  <section class="hero">
+    <div class="eyebrow">New Hope Weight Loss · Costa Mesa</div>
+    <h1>It's Not Your Willpower.<br><em>It's Your Biology.</em></h1>
+    <p>Concierge medical weight loss where a <strong>real doctor speaks with every single patient</strong> — and your GLP-1 plan is built around <em>you</em>, not a template.</p>
+    <a class="cta" href="#start">Take the 2-Minute Quiz →</a>
+    <a class="cta ghost" href="#start">Start Today</a>
+  </section>
+
+  <div class="wrap">
+    <!-- DIFFERENTIATORS -->
+    <div class="diff">
+      <div class="dcard hero-diff">
+        <div class="ic">🩺</div>
+        <h3>A Real Doctor — Every Time</h3>
+        <p>Not a questionnaire, not a chatbot. Every patient speaks with a licensed physician who owns your plan and your results. This is the difference.</p>
+      </div>
+      <div class="dcard">
+        <div class="ic">✨</div>
+        <h3>Concierge-Class Care</h3>
+        <p>White-glove, responsive, personal. You're a patient we know by name — with a team that answers when you need us.</p>
+      </div>
+      <div class="dcard">
+        <div class="ic">🧬</div>
+        <h3>GLP-1, Personalized</h3>
+        <p>Semaglutide &amp; tirzepatide dosed and adjusted for your biology — titrated by your doctor, not one-size-fits-all.</p>
+      </div>
+      <div class="dcard">
+        <div class="ic">🤝</div>
+        <h3>Human Support That Lasts</h3>
+        <p>Nutrition, injections, check-ins, and maintenance — real people beside you well past the first pound lost.</p>
+      </div>
+    </div>
+
+    <!-- PROGRAM -->
+    <section class="program">
+      <div class="kicker">What's Included</div>
+      <h2 class="sec-h">Your Complete Weight-Loss Program</h2>
+      <p class="lead">Physician-led, end to end — everything you need to lose the weight and keep it off.</p>
+      <div class="pgrid">
+        <div>Physician Medical Evaluation<small>A doctor reviews your health &amp; goals — every patient</small></div>
+        <div>GLP-1 Programs (Semaglutide / Tirzepatide)<small>Prescribed &amp; titrated to you</small></div>
+        <div>Nutrition Planning<small>Simple, sustainable, built for real life</small></div>
+        <div>B12 &amp; Lipotropic Injections<small>Energy &amp; metabolic support</small></div>
+        <div>Ongoing Support &amp; Check-Ins<small>We adjust as you progress</small></div>
+        <div>Maintenance Programs<small>Keep the results for good</small></div>
+      </div>
+      <div class="price">
+        <div class="big">$166<span>/mo</span></div>
+        <p>Doctor-led GLP-1 medical weight loss · Cherry financing available · Costa Mesa</p>
+      </div>
+    </section>
+
+    <!-- OPT-IN -->
+    <section class="optin" id="start">
+      <h2>Start With a Free 2-Minute Assessment</h2>
+      <p>Tell us your goal and we'll have a real doctor's team reach out with your personalized next step — no pressure, no obligation.</p>
+      <form onsubmit="return false;">
+        <input type="text" placeholder="First &amp; Last Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Mobile Number" required>
+        <select required>
+          <option value="">How much would you like to lose?</option>
+          <option>10–25 lbs</option>
+          <option>25–50 lbs</option>
+          <option>50–100 lbs</option>
+          <option>100+ lbs</option>
+          <option>Maintaining / not sure yet</option>
+        </select>
+        <button class="cta" type="submit">Get My Personalized Plan →</button>
+      </form>
+      <div class="fine">By submitting you agree to be contacted by New Hope Weight Loss. Msg &amp; data rates may apply. Reply STOP to opt out.</div>
+    </section>
+
+    <section class="close">
+      <h2>Real weight loss. Real doctors. <em>Real care.</em></h2>
+      <a class="cta" href="#start" style="display:inline-block">Take the First Step →</a>
+      <div class="trust">New Hope Weight Loss · Costa Mesa, CA · (657) 837-3342 · EN / ES</div>
+    </section>
+  </div>
+  <footer>New Hope Weight Loss — Concierge Medical Weight Loss · Preview for approval · © 2026</footer>
+</body>
+</html>
