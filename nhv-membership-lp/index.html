@@ -4,7 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New Hope Vitality — Membership & Wellness Therapies</title>
-<!-- Meta Pixel 3921443058067816 goes in <head> on the live GHL page; Lead event fires on form submit -->
+<!-- Meta Pixel (NHV) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','3921443058067816');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3921443058067816&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -141,23 +152,19 @@
     <section class="optin" id="learn">
       <h2>Not Sure Where to Start?</h2>
       <p>Tell us what you're curious about and our team will reach out with a personalized recommendation — no pressure.</p>
-      <form onsubmit="return false;">
-        <input type="text" placeholder="First &amp; Last Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Mobile Number" required>
-        <select required>
-          <option value="">Which therapy interests you?</option>
-          <option>Membership (VIP or NAD+ Concierge)</option>
-          <option>Hydration &amp; Micronutrient IV</option>
-          <option>NAD+ Therapy</option>
-          <option>Stem Cells / Exosomes / Peptides</option>
-          <option>IRIS-XP Thermographic Scan</option>
-          <option>Red Light Therapy</option>
-          <option>Medical Weight Loss</option>
-          <option>Not sure — help me choose</option>
-        </select>
-        <button class="btn" type="submit">Send Me Info →</button>
-      </form>
+      <!-- Real GHL (NHV) lead-capture form — submissions become tagged NHV leads -->
+      <iframe src="https://api.leadconnectorhq.com/widget/form/7Oo7GnMF8TVIY4zj2jvf"
+        id="nhv-lead-form" title="New Hope Vitality — Get Started" scrolling="no"
+        style="width:100%;max-width:520px;min-height:540px;border:none;border-radius:12px;margin:0 auto;display:block;background:rgba(255,255,255,.05)"></iframe>
+      <script>
+        // Fire Meta Pixel Lead event when the embedded GHL form is submitted
+        window.addEventListener('message', function(e){
+          try{
+            var d = (typeof e.data==='string') ? e.data : JSON.stringify(e.data||'');
+            if(/form.?submit|submitted|lead/i.test(d) && window.fbq){ fbq('track','Lead'); }
+          }catch(_){}
+        });
+      </script>
       <div class="fine">By submitting you agree to be contacted by New Hope Vitality. Msg &amp; data rates may apply. Reply STOP to opt out.</div>
     </section>
 
