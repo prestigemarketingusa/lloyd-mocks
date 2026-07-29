@@ -1,0 +1,78 @@
+<style>
+ :root{--green:#1d3b30;--green2:#27503f;--gold:#c9a24b;--gold-soft:#e5d4a1;--cream:#faf7f0;--ink:#20261f;--muted:#6b7566;--white:#fff}
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+ h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:700;line-height:1.14}
+ .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+ .hero{background:linear-gradient(160deg,var(--green),var(--green2));color:var(--cream);text-align:center;padding:60px 22px 84px;position:relative;overflow:hidden}
+ .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% -10%,rgba(201,162,75,.22),transparent 60%)}
+ .eyebrow{position:relative;letter-spacing:.28em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--gold-soft);margin-bottom:16px}
+ .hero h1{position:relative;font-size:clamp(30px,5vw,50px);max-width:780px;margin:0 auto}
+ .hero p{position:relative;max-width:600px;margin:16px auto 0;font-size:18px;font-weight:300;color:rgba(250,247,240,.92)}
+ .btn{display:inline-block;background:var(--gold);color:var(--green);text-decoration:none;padding:15px 34px;border-radius:10px;font-weight:600;font-size:16px;margin-top:24px;transition:.2s}
+ .btn:hover{background:var(--cream)}
+ .sec{padding:54px 0 8px}.center{text-align:center}
+ .kicker{letter-spacing:.24em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--gold);text-align:center}
+ h2.t{font-size:clamp(26px,4vw,38px);color:var(--green);text-align:center;margin:8px 0 10px}
+ .lead{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 8px;font-size:17px}
+ .offer{background:var(--white);border-radius:18px;padding:38px 32px;margin-top:22px;box-shadow:0 16px 40px rgba(29,59,48,.1);text-align:center}
+ .price{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:var(--green)}
+ .price span{font-size:17px;font-family:'Inter';color:var(--muted);font-weight:400}
+ .strike{color:var(--muted);text-decoration:line-through;font-size:16px}
+ .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:22px;text-align:left}
+ @media(max-width:640px){.tgrid{grid-template-columns:1fr}}
+ .tgrid div{position:relative;padding-left:28px;font-size:15.5px;font-weight:500}
+ .tgrid div:before{content:"◆";position:absolute;left:0;color:var(--gold);font-size:12px;top:4px}
+ .tgrid small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+ .allograft{margin-top:26px;background:linear-gradient(120deg,var(--green),var(--green2));color:var(--cream);border-radius:14px;padding:22px 26px;text-align:center;font-size:16px}
+ .allograft b{color:var(--gold-soft)}
+ .optin{margin-top:50px;background:var(--green);border-radius:18px;padding:42px 32px;color:var(--cream);text-align:center}
+ .optin h2{color:var(--cream);font-size:clamp(24px,3.6vw,32px)}
+ .optin p{color:rgba(250,247,240,.85);max-width:520px;margin:10px auto 22px}
+ iframe#lead{width:100%;max-width:520px;min-height:560px;border:none;border-radius:12px;margin:0 auto;display:block;background:rgba(255,255,255,.05)}
+ .fine{font-size:12px;color:rgba(250,247,240,.6);margin-top:12px}
+ .close{text-align:center;padding:54px 22px 34px}.close h2{color:var(--green);max-width:640px;margin:0 auto 18px}
+ footer{text-align:center;padding:26px;color:var(--muted);font-size:12px;background:var(--white);border-top:1px solid #ece7db}
+</style>
+<section class="hero">
+   <div class="eyebrow">New Hope Vitality · Costa Mesa · Harbor & the 405</div>
+   <h1>75% of us are dehydrated & undernourished — every single day.</h1>
+   <p>Doctor-led IV hydration, micro-nutrient therapy & regenerative cellular wellness in a beautiful Orange County clinic. Feel like yourself again.</p>
+   <a class="btn" href="#start">Book your first IV — just $69 →</a>
+ </section>
+ <div class="wrap">
+   <section class="sec center">
+     <div class="kicker">Summer promotion · New patients</div>
+     <div class="offer">
+       <div class="price">$69<span> · your first micro-nutrient IV drip</span></div>
+       <div class="strike">Regular value up to $210</div>
+       <p class="lead" style="margin-top:12px">Book by <b>August 9th</b> to claim it — new patients, doctor-approved.</p>
+       <a class="btn" href="#start" style="margin-top:8px">Claim my $69 IV →</a>
+     </div>
+     <h2 class="t" style="margin-top:44px">What we offer at New Hope Vitality</h2>
+     <p class="lead">One beautiful clinic for the way you want to feel — energized, restored, and well.</p>
+     <div class="tgrid">
+       <div>Hydration & Micro-Nutrient IV Therapy<small>Rehydrate, replenish, recharge</small></div>
+       <div>NAD+ Therapy<small>Cellular energy & vitality</small></div>
+       <div>Regenerative Cellular Therapy<small>Allografts · exosomes · peptides</small></div>
+       <div>Medical Weight Loss<small>Physician-guided programs</small></div>
+       <div>IRIS-XP Thermographic Imaging<small>Whole-body wellness insight</small></div>
+       <div>VIP & Concierge Memberships<small>Best value for regulars</small></div>
+     </div>
+     <div class="allograft">🔬 <b>Ask us why we don't call them "stem cells" — we call them allografts.</b> Honest, doctor-led, and worth understanding. That difference is why patients trust New Hope.</div>
+   </section>
+   <section class="optin" id="start">
+     <h2>Start here — claim your $69 IV</h2>
+     <p>Tell us how to reach you and our team sends your booking link + confirms your summer offer. No pressure, no cost to inquire.</p>
+     <iframe id="lead" src="https://api.leadconnectorhq.com/widget/form/7Oo7GnMF8TVIY4zj2jvf" title="New Hope Vitality — Start" scrolling="no"></iframe>
+     <script>window.addEventListener('message',function(e){try{var d=(typeof e.data==='string')?e.data:JSON.stringify(e.data||'');if(/form.?submit|submitted|lead/i.test(d)&&window.fbq){fbq('track','Lead');}}catch(_){}});</script>
+     <div class="fine">By submitting you agree New Hope may contact you by call, text & email. Msg & data rates may apply. Reply STOP to opt out.</div>
+     <div class="fine" style="margin-top:8px">📞 Prefer to book now? Call or text <b>(949) 773-2774</b> · or <a href="https://newhopevitality.com/booking/" style="color:var(--gold-soft)">book online here</a></div>
+   </section>
+   <section class="close">
+     <h2 class="serif" style="font-size:clamp(24px,3.4vw,34px)">Fill your summer with energy. Your first IV is $69 — book by August 9th.</h2>
+     <a class="btn" href="#start">Claim my $69 IV →</a>
+     <p style="color:var(--muted);font-size:13px;margin-top:16px">New Hope Vitality · 1503 South Coast Dr, Costa Mesa, CA · Harbor & the 405</p>
+   </section>
+ </div>
+ <footer>New Hope Vitality · Costa Mesa, CA · (949) 773-2774 · newhopevitality.com · © 2026</footer>
