@@ -41,7 +41,10 @@ src="https://www.facebook.com/tr?id=1196959505208615&ev=PageView&noscript=1"/></
   .formcard{background:var(--white);border-radius:18px;padding:26px 22px 18px;box-shadow:0 20px 50px rgba(0,0,0,.22)}
   .formcard h2{color:var(--green);font-size:26px;text-align:center}
   .formcard .fp{color:var(--muted);font-size:14.5px;text-align:center;margin:8px auto 14px;max-width:380px}
-  iframe#lead{width:100%;min-height:600px;border:none;border-radius:12px;display:block;background:#fff}
+  /* GHL's form_embed.js posts the real height back and resizes this iframe.
+     min-height is only the pre-resize floor -- keep it tall enough that the
+     submit button is never clipped if the script is slow or blocked. */
+  iframe#lead{width:100%;min-height:1150px;border:none;border-radius:12px;display:block;background:#fff}
   .fine{font-size:11.5px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.5}
 
   .sec{padding:56px 0 8px}.center{text-align:center}
@@ -102,7 +105,14 @@ src="https://www.facebook.com/tr?id=1196959505208615&ev=PageView&noscript=1"/></
       <div class="formcard" id="start">
         <h2>Start here</h2>
         <p class="fp">Tell us where to reach you and a care specialist will follow up shortly. Takes about a minute — no obligation.</p>
-        <iframe id="lead" src="https://api.leadconnectorhq.com/widget/form/2jcUrWcZZo146m3Ppt9s" title="New Hope Weight Loss — Start here" scrolling="no"></iframe>
+        <iframe id="lead"
+                src="https://api.leadconnectorhq.com/widget/form/2jcUrWcZZo146m3Ppt9s"
+                title="New Hope Weight Loss — Start here"
+                data-layout="{'id':'INLINE'}"
+                data-form-id="2jcUrWcZZo146m3Ppt9s"
+                data-height="auto"
+                scrolling="no"></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
         <script>
           window.addEventListener('message',function(e){try{var d=(typeof e.data==='string')?e.data:JSON.stringify(e.data||'');if(/form.?submit|submitted|lead/i.test(d)&&window.fbq){fbq('track','Lead');}}catch(_){}});
         </script>
