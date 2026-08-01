@@ -113,12 +113,7 @@ src="https://www.facebook.com/tr?id=3921443058067816&ev=PageView&noscript=1"/></
         style="width:100%;max-width:520px;min-height:540px;border:none;border-radius:12px;margin:0 auto;display:block;background:rgba(255,255,255,.05)"></iframe>
       <script>
         // Fire Meta Pixel Lead event when the embedded GHL form is submitted
-        window.addEventListener('message', function(e){
-          try{
-            var d = (typeof e.data==='string') ? e.data : JSON.stringify(e.data||'');
-            if(/form.?submit|submitted|lead/i.test(d) && window.fbq){ fbq('track','Lead'); }
-          }catch(_){}
-        });
+        window.addEventListener('message',function(e){try{if(window.__nhLeadFired)return;var d=(typeof e.data==='string')?e.data:JSON.stringify(e.data||'');if(/form.?submit(ted)?/i.test(d)&&!/set.?height|resize|scroll|loaded|ready/i.test(d)&&window.fbq){window.__nhLeadFired=1;fbq('track','Lead');}}catch(_){}});
       </script>
       <div class="fine">By submitting you agree to be contacted by New Hope Vitality. Msg &amp; data rates may apply. Reply STOP to opt out.</div>
     </section>

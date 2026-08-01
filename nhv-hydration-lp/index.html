@@ -86,7 +86,7 @@ fbq('init','3921443058067816');fbq('track','PageView');
      <h2>Start here — claim your $69 IV</h2>
      <p>Tell us how to reach you and our team sends your booking link + confirms your summer offer. No pressure, no cost to inquire.</p>
      <iframe id="lead" src="https://api.leadconnectorhq.com/widget/form/lZHaIyktINQh0unqwdoE" title="New Hope Vitality — Start" scrolling="no"></iframe>
-     <script>window.addEventListener('message',function(e){try{var d=(typeof e.data==='string')?e.data:JSON.stringify(e.data||'');if(/form.?submit|submitted|lead/i.test(d)&&window.fbq){fbq('track','Lead');}}catch(_){}});</script>
+     <script>window.addEventListener('message',function(e){try{if(window.__nhLeadFired)return;var d=(typeof e.data==='string')?e.data:JSON.stringify(e.data||'');if(/form.?submit(ted)?/i.test(d)&&!/set.?height|resize|scroll|loaded|ready/i.test(d)&&window.fbq){window.__nhLeadFired=1;fbq('track','Lead');}}catch(_){}});</script>
      <div class="fine">By submitting you agree New Hope may contact you by call, text & email. Msg & data rates may apply. Reply STOP to opt out.</div>
      <div class="fine" style="margin-top:8px">📞 Prefer to book now? Call or text <b>(949) 773-2774</b> · or <a href="https://newhopevitality.com/booking/" style="color:var(--gold-soft)">book online here</a></div>
    </section>
