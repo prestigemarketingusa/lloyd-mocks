@@ -63,17 +63,17 @@
 
       <!-- STEP 3 -->
       <section id="step3" class="hide">
-        <div class="stephead">Step 3: Your Information</div>
+        <div class="stephead">Step 3: Your Contact Information</div>
         <div class="row"><div class="field"><label>First Name *</label><input name="firstName" required></div>
         <div class="field"><label>Last Name *</label><input name="lastName" required></div></div>
-        <div class="field"><label>Phone *</label><input name="phone" type="tel" required></div>
-        <div class="field"><label>Email *</label><input name="email" type="email" required></div>
-        <div class="field"><label>Sex assigned at birth *</label><select name="sex" required><option value="">Select…</option><option>Female</option><option>Male</option></select></div>
-        <div class="field"><label>Date of birth *</label><input name="dob" type="date" required></div>
-        <div class="row"><div class="field"><label>Height (feet) *</label><input name="heightFt" type="number" min="3" max="7" required></div>
-        <div class="field"><label>Height (inches) *</label><input name="heightIn" type="number" min="0" max="11" required></div></div>
-        <div class="row"><div class="field"><label>Current weight (lbs) *</label><input name="currentWeight" type="number" required></div>
-        <div class="field"><label>Target weight (lbs) *</label><input name="targetWeight" type="number" required></div></div>
+        <div class="field"><label>Date of Birth *</label><input name="dob" type="date" required></div>
+        <div class="field"><label>Email *</label><input name="email" type="email" placeholder="your@email.com" required></div>
+        <div class="field"><label>Phone *</label><input name="phone" type="tel" placeholder="(555) 123-4567" required></div>
+        <div class="stephead" style="font-size:15px;margin-top:16px">Shipping / Mailing Address</div>
+        <div class="field"><label>Street Address *</label><input name="street" placeholder="123 Main St, Apt 4B" required></div>
+        <div class="row"><div class="field"><label>City *</label><input name="city" placeholder="Los Angeles" required></div>
+        <div class="field"><label>State *</label><select name="state" required><option value="">State…</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></div>
+        <div class="field"><label>ZIP *</label><input name="zip" placeholder="90210" inputmode="numeric" required></div></div>
         <label class="consent"><input type="checkbox" id="consent" required>
           <span>By submitting, you agree — for appointment and marketing purposes — to artificial &amp; personal voice calls, SMS, and/or emails, and that your contact information is true, valid, and current. Msg/data rates may apply; reply STOP to opt out.</span></label>
         <div class="err" id="e3">Please complete all required fields and the consent box.</div>
@@ -161,7 +161,7 @@ document.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>show(b.dataset
 
 document.getElementById("submitBtn").onclick=async ()=>{
   const f=document.getElementById("intake");
-  const req=["firstName","lastName","phone","email","sex","dob","heightFt","heightIn","currentWeight","targetWeight"];
+  const req=["firstName","lastName","dob","email","phone","street","city","state","zip"];
   const missing=req.some(n=>!f[n].value) || !document.getElementById("consent").checked;
   if(missing){document.getElementById("e3").style.display="block";return;}
   document.getElementById("e3").style.display="none";
@@ -169,9 +169,8 @@ document.getElementById("submitBtn").onclick=async ()=>{
   const payload={
     firstName:f.firstName.value.trim(), lastName:f.lastName.value.trim(),
     phone:f.phone.value.trim(), email:f.email.value.trim(),
-    sex:f.sex.value, dob:f.dob.value,
-    heightFt:f.heightFt.value, heightIn:f.heightIn.value,
-    currentWeight:f.currentWeight.value, targetWeight:f.targetWeight.value,
+    dob:f.dob.value, street:f.street.value.trim(), city:f.city.value.trim(),
+    state:f.state.value, zip:f.zip.value.trim(),
     contraindications:checked("contra"), healthHistory:checked("health"),
     consent:true, tags:["a2p","PMUSA","intake"], source:"medical_intake_pmusa"
   };
