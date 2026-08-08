@@ -177,7 +177,7 @@ document.getElementById("contraNext").onclick=()=>{
   const sel=checked("contra");
   if(!sel.length){document.getElementById("e2").style.display="block";return;}
   document.getElementById("e2").style.display="none";
-  if(sel.some(v=>v!==NONE)){show("bounce");return;}  // disqualified -> bounce, no payment
+  if(sel.some(v=>v!==NONE)){post({...contactPayload(),stage:"disqualified"});show("bounce");return;}  // disqualified -> tag + bounce, no payment
   show("step3");
 };
 document.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>show(b.dataset.back==="2"?"step2":"step1"));
