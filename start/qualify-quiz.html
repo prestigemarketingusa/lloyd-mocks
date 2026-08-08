@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See If You Qualify, New Hope Weight Loss | Free 2-Minute Quiz</title>
+    <meta name="description" content="Take our free 2-minute qualification quiz to see if you're a candidate for our physician-supervised GLP-1 weight loss program. No commitment required.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚕️</text></svg>">
+
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:          #F8FAF7;
+            --bg-card:     #FFFFFF;
+            --bg-subtle:   #F0F4EE;
+            --text:        #1A1F16;
+            --text-sub:    #3D4A38;
+            --text-muted:  #5A6B54;
+            --accent:      #857026;
+            --accent-rgb: 133,112,38;
+            --accent-h:    #75611F;
+            --accent-lt:   rgba(var(--accent-rgb),0.08);
+            --accent-lt2:  rgba(var(--accent-rgb),0.15);
+            --border:      rgba(var(--accent-rgb),0.12);
+            --border-med:  rgba(var(--accent-rgb),0.22);
+            --success:     #10B981;
+            --radius:      12px;
+            --radius-lg:   20px;
+            --font-serif:  'Cormorant Garamond', Georgia, serif;
+            --font-body:   'DM Sans', -apple-system, sans-serif;
+            --font-mono:   'JetBrains Mono', monospace;
+            --shadow:      0 4px 24px rgba(0,0,0,0.06);
+            --shadow-md:   0 8px 40px rgba(0,0,0,0.10);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── HEADER ── */
+        .qhdr {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 0.9rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+        .qhdr-logo {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .qhdr-logo span { color: var(--accent); }
+        .qhdr-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .qhdr-hipaa {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .qhdr-hipaa svg { width: 13px; height: 13px; stroke: var(--success); fill: none; }
+        .qhdr-phone {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .qhdr-phone:hover { color: var(--accent-h); }
+
+        /* ── LAYOUT ── */
+        .qwrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 5rem;
+        }
+
+        /* ── HERO TEXT ── */
+        .qhero {
+            text-align: center;
+            margin-bottom: 2.25rem;
+        }
+        .qhero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-lt2);
+            color: var(--accent-h);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 99px;
+            margin-bottom: 1rem;
+        }
+        .qhero-badge .dot {
+            width: 7px; height: 7px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .qhero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+        }
+        .qhero-title em { font-style: italic; color: var(--accent); }
+        .qhero-sub {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            max-width: 460px;
+            margin: 0 auto;
+            line-height: 1.65;
+        }
+
+        /* ── PROGRESS ── */
+        .qprogress-wrap { margin-bottom: 2rem; }
+        .qprogress-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+        .qprogress-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .qprogress-count {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+        .qprogress-bar { display: flex; gap: 5px; }
+        .qprogress-seg {
+            flex: 1; height: 4px; border-radius: 2px;
+            background: var(--border);
+            transition: background 0.4s ease;
+        }
+        .qprogress-seg.active { background: var(--accent); }
+        .qprogress-seg.done   { background: var(--accent); opacity: 0.45; }
+
+        /* ── CARD ── */
+        .qcard {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem 2rem;
+            box-shadow: var(--shadow);
+        }
+        @media (max-width: 480px) { .qcard { padding: 1.5rem 1.25rem; } }
+
+        /* ── STEP ── */
+        .qstep { display: none; }
+        .qstep.active {
+            display: block;
+            animation: stepIn 0.32s ease both;
+        }
+        @keyframes stepIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .qstep-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+        .qstep-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0.35rem;
+        }
+        .qstep-sub {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.55;
+        }
+
+        /* ── OPTIONS ── */
+        .qoptions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            margin-bottom: 1.75rem;
+        }
+        .qopt {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.875rem 1.1rem;
+            background: var(--bg-subtle);
+            border: 2px solid transparent;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.18s ease;
+            user-select: none;
+        }
+        .qopt:hover { border-color: var(--border-med); background: var(--accent-lt); }
+        .qopt.selected { border-color: var(--accent); background: var(--accent-lt2); }
+        .qopt-radio {
+            width: 20px; height: 20px;
+            border: 2px solid var(--border-med);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.18s ease;
+        }
+        .qopt.selected .qopt-radio { border-color: var(--accent); background: var(--accent); }
+        .qopt.selected .qopt-radio::after {
+            content: '';
+            width: 8px; height: 8px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .qopt-body { flex: 1; }
+        .qopt-title { font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.35; }
+        .qopt-desc  { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+        /* ── INPUTS ── */
+        .qfields { margin-bottom: 1.5rem; }
+        .qrow2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        @media (max-width: 480px) { .qrow2 { grid-template-columns: 1fr; } }
+
+        .qfield { margin-bottom: 0.85rem; }
+        .qfield:last-child { margin-bottom: 0; }
+        .qfield label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-sub);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+        .qfield label .req { color: #dc2626; }
+        .qfield input, .qfield select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-subtle);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text);
+            transition: border-color 0.2s;
+            appearance: none;
+        }
+        .qfield input::placeholder { color: var(--text-muted); }
+        .qfield input:focus, .qfield select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(var(--accent-rgb),0.12);
+        }
+        .qfield input.err { border-color: #dc2626; background: rgba(220,38,38,0.04); }
+
+        .weight-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        @media (max-width: 420px) { .weight-pair { grid-template-columns: 1fr; } }
+
+        .height-wrap { display: flex; gap: 0.5rem; align-items: center; }
+        .height-wrap input { flex: 1; }
+        .height-sep { font-size: 0.85rem; color: var(--text-muted); flex-shrink: 0; }
+        .height-readout { text-align:center; font-size:1.2rem; font-weight:700; color:var(--accent,#1A7A8C); margin:0.15rem 0 0.45rem; letter-spacing:.2px; }
+        .height-slider { width:100%; margin:0.35rem 0 0.7rem; }
+        .height-field .height-wrap { max-width:280px; margin:0 auto; justify-content:center; }
+        .height-field .height-wrap input { max-width:84px; text-align:center; }
+
+
+        .bmi-hint {
+            display: none;
+            margin-top: 0.75rem;
+            padding: 0.6rem 0.9rem;
+            background: var(--accent-lt2);
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .bmi-hint.show { display: block; }
+        .bmi-hint.warn { background: rgba(234,179,8,0.12); color: #92400e; }
+
+        /* ── NAV BUTTONS ── */
+        .qnav { display: flex; gap: 0.75rem; }
+        .qbtn {
+            flex: 1;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .qbtn-primary { background: var(--accent); color: #fff; }
+        .qbtn-primary:hover:not(:disabled) {
+            background: var(--accent-h);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(var(--accent-rgb),0.25);
+        }
+        .qbtn-primary:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+        .qbtn-back {
+            background: var(--bg-subtle);
+            color: var(--text-sub);
+            border: 1px solid var(--border);
+            flex: 0 0 auto;
+            padding-left: 1.1rem;
+            padding-right: 1.1rem;
+        }
+        .qbtn-back:hover { background: var(--bg); color: var(--text); }
+
+        .qfine {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 0.9rem;
+            line-height: 1.6;
+        }
+        .qfine a { color: var(--accent); text-decoration: none; }
+        .qfine a:hover { text-decoration: underline; }
+
+        /* ── SUCCESS ── */
+        .qsuccess { text-align: center; padding: 1rem 0 0.5rem; }
+        .qsuccess-icon {
+            width: 72px; height: 72px;
+            background: linear-gradient(135deg, var(--accent), #B89A3E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 8px 28px rgba(var(--accent-rgb),0.3);
+        }
+        .qsuccess-icon svg { width: 34px; height: 34px; stroke: #fff; fill: none; stroke-width: 2.5; }
+        .qsuccess h2 {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .qsuccess h2 em { color: var(--accent); font-style: italic; }
+        .qsuccess-sub {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            line-height: 1.65;
+            max-width: 420px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* ── REDIRECT COUNTDOWN ── */
+        .redirect-bar-wrap {
+            max-width: 340px;
+            margin: 0 auto 1.25rem;
+        }
+        .redirect-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .redirect-bar-bg {
+            height: 5px;
+            background: var(--border);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        .redirect-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 99px;
+            width: 100%;
+            transform-origin: left;
+            transition: none;
+        }
+        .redirect-bar-fill.animating {
+            transition: transform 3s linear;
+            transform: scaleX(0);
+        }
+
+        .qsuccess-manual {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+        }
+        .qsuccess-manual a { color: var(--accent); font-weight: 600; text-decoration: none; }
+        .qsuccess-manual a:hover { text-decoration: underline; }
+
+        /* trust row */
+        .qtrust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .qtrust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .qtrust-item svg { width: 14px; height: 14px; stroke: var(--success); fill: none; }
+
+        /* ── STATS ── */
+        .qstats {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+        .qstat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            text-align: center;
+        }
+        .qstat-num {
+            font-family: var(--font-mono);
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        .qstat-lbl { font-size: 0.7rem; color: var(--text-muted); line-height: 1.3; }
+
+        /* ── ERROR ── */
+        .qerror {
+            display: none;
+            background: rgba(220,38,38,0.06);
+            border: 1px solid rgba(220,38,38,0.2);
+            border-radius: 8px;
+            padding: 0.65rem 0.9rem;
+            font-size: 0.82rem;
+            color: #dc2626;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .qerror.show { display: block; animation: stepIn 0.25s ease; }
+
+        /* ── FOOTER ── */
+        .qfoot {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        .qfoot a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 540px) {
+            .qwrap { padding: 1.5rem 1rem 4rem; }
+            .qhero-title { font-size: 1.7rem; }
+            .qstats { grid-template-columns: 1fr 1fr; }
+            .qstats .qstat:last-child { grid-column: 1 / -1; }
+        }
+    
+/* nhwl-form-polish: mobile no-zoom, reduced-motion, select-confirm (added 2026-05-30) */
+@media (max-width: 600px) { input, select, textarea { font-size: 16px !important; } }
+@keyframes nhwlOptPop { 0%{transform:scale(1)} 45%{transform:scale(0.985)} 100%{transform:scale(1)} }
+.qopt.selected { animation: nhwlOptPop 0.24s ease; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+    /* qopt-a11y-focus: visible keyboard focus on options (added 2026-05-30) */
+.qopt:focus-visible, .qopt:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    /* nhwl-inline-valid: real-time valid-field affirmation */
+input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:15px;padding-right:2.4rem !important;}
+    </style>
+    <style>.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent-primary,#1A7A8C);color:#fff;padding:10px 18px;font-weight:600;font-family:var(--font-body,system-ui,sans-serif);font-size:14px;text-decoration:none;border-radius:0 0 6px 0;z-index:99999;}.skip-link:focus{left:0;top:0;outline:2px solid #fff;outline-offset:2px;}</style>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})});}</script>
+    <link rel="alternate" type="application/rss+xml" title="New Hope Weight Loss, Blog & Resources" href="/blog/feed.xml" />
+<meta property="og:title" content="See If You Qualify, New Hope Weight Loss | Free 2-Minute Quiz">
+<meta property="og:description" content="Take our free 2-minute qualification quiz to see if you're a candidate for our physician-supervised GLP-1 weight loss program. No commitment required.">
+<meta property="og:url" content="https://newhopeweightloss.com/qualify-quiz.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://newhopeweightloss.com/assets/img/editorial/brand-social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="New Hope Weight Loss and Wellness, physician-led metabolic care">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newhopeweightloss.com/assets/img/editorial/brand-social-card.jpg">
+<meta name="twitter:title" content="See If You Qualify, New Hope Weight Loss | Free 2-Minute Quiz">
+<meta name="twitter:description" content="Take our free 2-minute qualification quiz to see if you&#x27;re a candidate for our physician-supervised GLP-1 weight loss program. No commitment required.">
+<link rel="canonical" href="https://newhopeweightloss.com/qualify-quiz.html">
+    <link rel="alternate" hreflang="en-US" href="https://newhopeweightloss.net/qualify-quiz.html" />
+    <link rel="alternate" hreflang="en" href="https://newhopeweightloss.com/qualify-quiz.html" />
+    <link rel="alternate" hreflang="es-US" href="https://nuevafiguraahora.com/qualify-quiz.html" />
+    <link rel="alternate" hreflang="es" href="https://nuevafiguraahora.com/qualify-quiz.html" />
+    <link rel="alternate" hreflang="x-default" href="https://newhopeweightloss.net/qualify-quiz.html" />
+<style id="nhwl-funnel-ux-155">
+/* Reorder entry: real button-sized tap target instead of bare inline text */
+.header-reorder{display:inline-flex;align-items:center;min-height:44px;padding:0.35rem 0.8rem;
+ border:1px solid var(--accent);border-radius:9px;}
+.header-reorder:hover{background:rgba(127,127,127,0.08);}
+/* Step transitions land the question cleanly below the sticky header */
+.qcard{scroll-margin-top:76px;}
+.step{scroll-margin-top:16px;}
+/* Narrow screens: drop the decorative HIPAA chip so Reorder + phone never collide */
+@media (max-width:560px){
+ .qhdr-hipaa{display:none;}
+ .qhdr-right{gap:0.6rem;}
+ .intake-header .badge{display:none;}
+ .intake-header{justify-content:space-between;}
+}
+</style>
+<meta name="twitter:image:alt" content="New Hope Weight Loss and Wellness, physician-led metabolic care">
+    <link rel="stylesheet" href="/assets/nhwl-local-fonts.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="qhdr">
+    <a href="/" class="qhdr-logo">NEW HOPE <span>WEIGHT LOSS</span></a>
+    <div class="qhdr-right">
+        
+        <div class="qhdr-hipaa">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            HIPAA Secure
+        </div>
+        
+    </div>
+</header>
+
+<main data-persist="quiz" id="main-content">
+<div class="qwrap">
+
+    
+
+    <!-- HERO -->
+    <div class="qhero" id="heroSection">
+        <div class="qhero-badge">
+            <span class="dot"></span>
+            Free · No Commitment · 2 Minutes
+        </div>
+        <h1 class="qhero-title">
+            See If You Qualify for<br>
+            <em>Physician-Supervised</em> Weight Loss
+        </h1>
+        <p class="qhero-sub">Answer 5 quick questions to find out if our GLP-1 program is right for you. No obligation, no pressure.</p>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="qprogress-wrap" id="progressWrap">
+        <div class="qprogress-meta">
+            <span class="qprogress-label">Your Progress</span>
+            <span class="qprogress-count" id="progressCount">Step 1 of 5</span>
+        </div>
+        <div class="qprogress-bar" id="progressBar">
+            <div class="qprogress-seg active" data-seg="1"></div>
+            <div class="qprogress-seg" data-seg="2"></div>
+            <div class="qprogress-seg" data-seg="3"></div>
+            <div class="qprogress-seg" data-seg="4"></div>
+            <div class="qprogress-seg" data-seg="5"></div>
+        </div>
+    </div>
+
+    <!-- QUIZ CARD -->
+    <div class="qcard">
+        <noscript><div class="qerror" style="display:block" role="alert">This quiz needs JavaScript to run. Please call us at  or use <a href="/medical-intake">the medical intake form</a> to get started.</div></noscript>
+        <div class="qerror" id="qerror" role="alert" aria-live="assertive"></div>
+
+        <!-- ── STEP 1 ── -->
+        <div class="qstep active" id="s1">
+            <p class="qstep-label">Step 1, Your Goal</p>
+            <h2 class="qstep-title">What's your primary weight loss goal?</h2>
+            <p class="qstep-sub">Select the option that best describes what you're hoping to achieve.</p>
+            <div class="qoptions">
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="lose-weight" onclick="selectOpt(this,1)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Lose weight and keep it off</div>
+                        <div class="qopt-desc">Achieve a healthy, sustainable weight long-term</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="stop-cravings" onclick="selectOpt(this,1)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Stop constant food cravings & noise</div>
+                        <div class="qopt-desc">Quiet the mental chatter about food that never stops</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="improve-health" onclick="selectOpt(this,1)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Improve my metabolic health</div>
+                        <div class="qopt-desc">Address blood sugar, blood pressure, or diabetes</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="all-above" onclick="selectOpt(this,1)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">All of the above</div>
+                        <div class="qopt-desc">I want the complete transformation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="qnav">
+                <button class="qbtn qbtn-primary" id="btn1" onclick="goTo(2)" disabled>Continue →</button>
+            </div>
+        </div>
+
+        <!-- ── STEP 2 ── -->
+        <div class="qstep" id="s2">
+            <p class="qstep-label">Step 2, Food Noise</p>
+            <h2 class="qstep-title">How often do thoughts about food interrupt your day?</h2>
+            <p class="qstep-sub">Constant food thoughts are a biological signal, not a willpower problem.</p>
+            <div class="qoptions">
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="constantly" onclick="selectOpt(this,2)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Constantly, it never stops</div>
+                        <div class="qopt-desc">Thinking about food even right after eating</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="often" onclick="selectOpt(this,2)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Often, several times per hour</div>
+                        <div class="qopt-desc">Hard to focus because food is on my mind</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="sometimes" onclick="selectOpt(this,2)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Sometimes, mainly around mealtimes</div>
+                        <div class="qopt-desc">Normal hunger signals, but cravings are an issue</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="rarely" onclick="selectOpt(this,2)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Rarely, only when I'm actually hungry</div>
+                        <div class="qopt-desc">My appetite feels reasonably controlled</div>
+                    </div>
+                </div>
+            </div>
+            <div class="qnav">
+                <button class="qbtn qbtn-back" onclick="goTo(1)">← Back</button>
+                <button class="qbtn qbtn-primary" id="btn2" onclick="goTo(3)" disabled>Continue →</button>
+            </div>
+        </div>
+
+        <!-- ── STEP 3 ── -->
+        <div class="qstep" id="s3">
+            <p class="qstep-label">Step 3, Treatment History</p>
+            <h2 class="qstep-title">Have you tried GLP-1 medications before?</h2>
+            <p class="qstep-sub">This helps our physician team personalize your starting protocol.</p>
+            <div class="qoptions">
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="no-new" onclick="selectOpt(this,3)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">No, this would be my first time</div>
+                        <div class="qopt-desc">I haven't used semaglutide or tirzepatide before</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="yes-good" onclick="selectOpt(this,3)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Yes, and I had good results</div>
+                        <div class="qopt-desc">I've used them before and want to continue</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="yes-side-effects" onclick="selectOpt(this,3)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Yes, but I had side effects</div>
+                        <div class="qopt-desc">Nausea or other issues made it difficult</div>
+                    </div>
+                </div>
+                <div class="qopt" role="button" tabindex="0" aria-pressed="false" data-val="yes-cost" onclick="selectOpt(this,3)">
+                    <div class="qopt-radio"></div>
+                    <div class="qopt-body">
+                        <div class="qopt-title">Yes, but I couldn't afford to continue</div>
+                        <div class="qopt-desc">Looking for a more affordable option</div>
+                    </div>
+                </div>
+            </div>
+            <div class="qnav">
+                <button class="qbtn qbtn-back" onclick="goTo(2)">← Back</button>
+                <button class="qbtn qbtn-primary" id="btn3" onclick="goTo(4)" disabled>Continue →</button>
+            </div>
+        </div>
+
+        <!-- ── STEP 4 ── -->
+        <div class="qstep" id="s4">
+            <p class="qstep-label">Step 4, Your Numbers</p>
+            <h2 class="qstep-title">Tell us a bit about your current weight</h2>
+            <p class="qstep-sub">Used only to check general program eligibility, this is not a medical assessment.</p>
+            <div class="qfields">
+                <div class="weight-pair">
+                    <div class="qfield">
+                        <label for="curWeight">Current Weight (lbs) <span class="req">*</span></label>
+                        <input type="number" data-slider data-label="Current weight in pounds" id="curWeight" placeholder="e.g. 215" min="100" max="600" oninput="onWeightChange()" required aria-required="true">
+                    </div>
+                    <div class="qfield">
+                        <label for="goalWeight">Goal Weight (lbs) <span class="req">*</span></label>
+                        <input type="number" data-slider data-label="Goal weight in pounds" id="goalWeight" placeholder="e.g. 165" min="80" max="500" oninput="onWeightChange()" required aria-required="true">
+                    </div>
+                </div>
+                <div class="qfield height-field" style="margin-top:0.85rem;">
+                    <label for="hSlider">Height <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+                    <div class="height-readout"><span id="hReadout">5 ft 6 in</span></div>
+                    <input type="range" id="hSlider" class="height-slider" min="54" max="84" step="1" value="66" oninput="onHeightSlider()" aria-label="Height, slide to set feet and inches" style="--pct:40%;">
+                    <div class="height-wrap">
+                        <input type="number" id="hFt" min="4" max="7" inputmode="numeric" oninput="onHeightBox()" aria-label="Height in feet">
+                        <span class="height-sep">ft</span>
+                        <input type="number" id="hIn" min="0" max="11" inputmode="numeric" oninput="onHeightBox()" aria-label="Height inches">
+                        <span class="height-sep">in</span>
+                    </div>
+                </div>
+                <div class="bmi-hint" id="bmiHint"></div>
+            </div>
+            <div class="qnav">
+                <button class="qbtn qbtn-back" onclick="goTo(3)">← Back</button>
+                <button class="qbtn qbtn-primary" id="btn4" onclick="goTo(5)" disabled>Continue →</button>
+            </div>
+        </div>
+
+        <!-- ── STEP 5 ── -->
+        <div class="qstep" id="s5">
+            <p class="qstep-label">Step 5, Almost Done</p>
+            <h2 class="qstep-title">Last step: how can our team reach you?</h2>
+            <p class="qstep-sub">We will confirm your next steps by email or text. A clinician determines eligibility only after reviewing your complete medical history.</p>
+            <div class="qfields">
+                <div class="qrow2">
+                    <div class="qfield">
+                        <label for="qFname">First Name <span class="req">*</span></label>
+                        <input type="text" id="qFname" autocomplete="given-name" placeholder="First name" oninput="clearErr(this)" required aria-required="true">
+                    </div>
+                    <div class="qfield">
+                        <label for="qLname">Last Name <span class="req">*</span></label>
+                        <input type="text" id="qLname" autocomplete="family-name" placeholder="Last name" oninput="clearErr(this)" required aria-required="true">
+                    </div>
+                </div>
+                <div class="qfield">
+                    <label for="qEmail">Email <span class="req">*</span></label>
+                    <input type="email" id="qEmail" autocomplete="email" placeholder="your@email.com" oninput="clearErr(this)" required aria-required="true">
+                </div>
+                <div class="qfield">
+                    <label for="qPhone">Phone <span class="req">*</span></label>
+                    <input type="tel" id="qPhone" autocomplete="tel" placeholder="(555) 123-4567" oninput="fmtPhone(this); clearErr(this)" required aria-required="true">
+                </div>
+            </div>
+            <div class="qnav">
+                <button class="qbtn qbtn-back" onclick="goTo(4)">← Back</button>
+                <button class="qbtn qbtn-primary" id="btn5" onclick="submitQuiz()">See If I Qualify →</button>
+            </div>
+            <p class="qfine">
+                By submitting you agree to our <a href="https://newhopeweightloss.com/privacy-policy">Privacy Policy</a> and consent to be contacted. Your information is HIPAA-protected and never sold.
+            </p>
+        </div>
+
+        <!-- ── SUCCESS ── -->
+        <div class="qstep" id="sSuccess">
+            <div class="qsuccess">
+                <div class="qsuccess-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h2>Your response was <em>received</em></h2>
+                <p class="qsuccess-sub" id="successMsg">
+                    Your quiz was submitted. We are taking you to the medical questionnaire. A clinician will determine eligibility after reviewing your complete history.
+                </p>
+
+                <p class="qsuccess-perday" style="margin:.4rem 0 0;font-weight:700;color:var(--accent,#857026);">Programs start at about $5.50 a day, less than a daily latte.</p>
+                <p class="qsuccess-manual">Next: a 3-minute medical questionnaire, then your one-time $119 physician review.</p><!-- Countdown bar -->
+                <div class="redirect-bar-wrap">
+                    <div class="redirect-label" id="redirectLabel">Redirecting to medical questionnaire in 3 seconds...</div>
+                    <div class="redirect-bar-bg">
+                        <div class="redirect-bar-fill" id="redirectBarFill"></div>
+                    </div>
+                </div>
+
+                <p class="qsuccess-manual">
+                    Not redirecting? <a href="/medical-intake" id="manualLink">Click here to continue →</a>
+                </p>
+
+                <div class="qtrust">
+                    <div class="qtrust-item">
+                        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        HIPAA Protected
+                    </div>
+                    <div class="qtrust-item">
+                        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Physician Supervised
+                    </div>
+                    <div class="qtrust-item">
+                        <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        Secure Follow-up
+                    </div>
+                    <div class="qtrust-item">
+                        <svg viewBox="0 0 24 24" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        HSA / FSA Accepted
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /qcard -->
+
+    <!-- STATS -->
+    <div class="qstats" id="statsStrip">
+        <div class="qstat">
+            <div class="qstat-num">1:1</div>
+            <div class="qstat-lbl">Physician Review</div>
+        </div>
+        <div class="qstat">
+            <div class="qstat-num">Varies</div>
+            <div class="qstat-lbl">Individual Results</div>
+        </div>
+        <div class="qstat">
+            <div class="qstat-num">2</div>
+            <div class="qstat-lbl">Languages Supported</div>
+        </div>
+    </div>
+
+</div><!-- /qwrap -->
+</main>
+
+<!-- nhwl-compliance-block --><div style="max-width:980px;margin:1.5rem auto 0;padding:0 1.25rem;"><p style="font-size:0.72rem;line-height:1.5;color:var(--text-muted,#6b7280);margin:0;text-align:center;">Wegovy® and Ozempic® are registered trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® are registered trademarks of Eli Lilly and Company. New Hope Weight Loss is not affiliated with or endorsed by these companies. Compounded semaglutide and tirzepatide are not FDA-approved or brand-identical and have not undergone FDA premarket review for safety, effectiveness, or quality. Results vary. Any prescription depends on individualized medical review and lawful pharmacy fulfillment for the patient's location.</p></div>
+    <footer class="qfoot">
+    © 2026 New Hope Wellness Advisors, LLC &nbsp;·&nbsp;
+    <a href="https://newhopeweightloss.com/privacy-policy">Privacy</a> &nbsp;·&nbsp;
+    <a href="https://newhopeweightloss.com/hipaa-notice">HIPAA</a> &nbsp;·&nbsp;
+    <a href="https://newhopeweightloss.com/terms-of-service">Terms</a> &nbsp;·&nbsp;
+    
+    <br><br>
+    <em style="font-size:0.68rem;">Results may vary. Eligibility determined during medical consultation. Compounded medications are subject to patient-specific and location-specific dispensing-pharmacy verification and are not FDA-approved.</em>
+</footer>
+
+<script>
+const SITE_TAGS = ['NHWL-COM'];
+const data = {};
+let currentStep = 1;
+let quizStartTracked = false;
+
+function trackQuizStart() {
+    if (quizStartTracked) return;
+    try { if (sessionStorage.getItem('nhwl_quiz_start_v1')) { quizStartTracked = true; return; } } catch (e) {}
+    quizStartTracked = true;
+    try { sessionStorage.setItem('nhwl_quiz_start_v1', '1'); } catch (e) {}
+    if (typeof fbq !== 'undefined') { fbq('trackCustom', 'QuizStart', { content_name: 'Qualify Quiz' }); }
+    if (typeof gtag !== 'undefined') { gtag('event', 'quiz_start', { event_category: 'engagement' }); }
+}
+const TOTAL_STEPS = 5;
+
+/* pass198-form-reliability */
+function nhwlPushFormOutcome(formName, outcome, status) {
+    try {
+        var eventName = outcome === 'success' ? 'nhwl_form_submit_success' : 'nhwl_form_submit_failure';
+        var payload = { event: eventName, nhwl_form: formName, nhwl_outcome: outcome, nhwl_http_status: status || 0 };
+        window.NHWLLocalAnalytics = window.NHWLLocalAnalytics || [];
+        window.NHWLLocalAnalytics.push(payload);
+        if (window.NHWLAnalyticsConsent && window.NHWLAnalyticsConsent.get() === 'accepted') {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(payload);
+        }
+    } catch (error) { console.error('Local outcome logging failed:', error.message); }
+}
+/* pass198-bounded-fetch */
+function nhwlFetchWithTimeout(requestFactory) {
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = null;
+    var timeout = new Promise(function(resolve, reject) {
+        timer = window.setTimeout(function() {
+            if (controller) controller.abort();
+            var error = new Error('Request timed out');
+            error.name = 'TimeoutError';
+            reject(error);
+        }, 20000);
+    });
+    var request;
+    try { request = Promise.resolve(requestFactory(controller ? controller.signal : undefined)); }
+    catch (error) { request = Promise.reject(error); }
+    return Promise.race([request, timeout]).then(
+        function(response) { if (timer) window.clearTimeout(timer); return response; },
+        function(error) { if (timer) window.clearTimeout(timer); throw error; }
+    );
+}
+function nhwlRunAnalytics(callback) {
+    if (!window.NHWLAnalyticsConsent || window.NHWLAnalyticsConsent.get() !== 'accepted') return;
+    try { callback(); } catch (error) { console.error('Optional analytics failed:', error.message); }
+}
+
+/* pass198-quiz-session-start */
+const QUIZ_SESSION_KEY = 'nhwl.qualify-quiz.answers.v1.' + ((document.documentElement.lang || 'en').slice(0, 2));
+const QUIZ_SESSION_FIELDS = ['step1', 'step2', 'step3', 'currentWeight', 'goalWeight', 'heightFeet', 'heightInches', 'bmi'];
+let restoringQuizSession = false;
+
+function saveQuizSession(step) {
+    if (restoringQuizSession) return;
+    const answers = {};
+    QUIZ_SESSION_FIELDS.forEach(function(key) {
+        const value = data[key];
+        if (typeof value === 'string' || typeof value === 'number') answers[key] = value;
+    });
+    const numericStep = typeof step === 'number' ? step : currentStep;
+    const safeStep = Number.isInteger(numericStep) && numericStep >= 1 && numericStep <= TOTAL_STEPS ? numericStep : 1;
+    try {
+        // This strict whitelist stores quiz choices and measurements only for this tab.
+        // It never stores names, email, phone, notes, or medical free text.
+        sessionStorage.setItem(QUIZ_SESSION_KEY, JSON.stringify({ step: safeStep, answers: answers }));
+    } catch (error) {
+        // Storage can be unavailable in private browsing. The quiz still works.
+    }
+}
+
+function clearQuizSession() {
+    try { sessionStorage.removeItem(QUIZ_SESSION_KEY); } catch (error) {}
+    if (window.NHWLFormPersist && typeof window.NHWLFormPersist.clear === 'function') {
+        window.NHWLFormPersist.clear('quiz');
+    }
+}
+
+function restoreQuizSession() {
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem(QUIZ_SESSION_KEY) || 'null'); } catch (error) { saved = null; }
+    if (!saved || !saved.answers || typeof saved.answers !== 'object') return;
+    restoringQuizSession = true;
+    try {
+        QUIZ_SESSION_FIELDS.forEach(function(key) {
+            const value = saved.answers[key];
+            if (typeof value === 'string' || typeof value === 'number') data[key] = value;
+        });
+    [1, 2, 3].forEach(function(step) {
+        const selected = data['step' + step];
+        document.querySelectorAll('#s' + step + ' .qopt').forEach(function(option) {
+            const active = selected !== undefined && option.dataset.val === String(selected);
+            option.classList.toggle('selected', active);
+            option.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        const button = document.getElementById('btn' + step);
+        if (button) button.disabled = !selected;
+    });
+    const fieldMap = {
+        currentWeight: 'curWeight', goalWeight: 'goalWeight',
+        heightFeet: 'hFt', heightInches: 'hIn'
+    };
+    Object.keys(fieldMap).forEach(function(key) {
+        const field = document.getElementById(fieldMap[key]);
+        if (field && data[key] !== undefined) field.value = data[key];
+    });
+        if (data.heightFeet !== undefined || data.heightInches !== undefined) onHeightBox();
+        else onWeightChange();
+    } finally {
+        restoringQuizSession = false;
+    }
+    const step = Number(saved.step);
+    if (Number.isInteger(step) && step >= 1 && step <= TOTAL_STEPS && step !== 1) goTo(step);
+    else { updateProgress(1); saveQuizSession(1); }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', restoreQuizSession, { once: true });
+} else {
+    restoreQuizSession();
+}
+/* pass198-quiz-session-end */
+
+
+// Redirect destination, update if your medical intake path differs
+const MEDICAL_INTAKE_URL = 'https://my.newhopeweightloss.com/medical-intake-form';
+
+function goTo(step) {
+    document.getElementById(currentStep === 'success' ? 'sSuccess' : 's' + currentStep).classList.remove('active');
+    const target = step === 'success' ? document.getElementById('sSuccess') : document.getElementById('s' + step);
+    target.classList.add('active');
+
+    // a11y: move focus to the new step heading so screen-reader/keyboard users land here
+    if (target) {
+        const heading = target.querySelector('.qstep-title') || target.querySelector('h1, h2, h3');
+        if (heading) {
+            heading.setAttribute('tabindex', '-1');
+            try { heading.focus({ preventScroll: true }); } catch (e) { heading.focus(); }
+        }
+    }
+
+    // Keep the question in view: after each answer the new step rendered below the fold
+    // (hero + header sit above the card), forcing a manual scroll on every single step.
+    const qc = document.querySelector('.qcard');
+    if (qc) { try { qc.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { qc.scrollIntoView(); } }
+
+    if (step === 'success') {
+        currentStep = 'success';
+        document.getElementById('progressWrap').style.display  = 'none';
+        document.getElementById('heroSection').style.display   = 'none';
+        document.getElementById('statsStrip').style.display    = 'none';
+        startRedirect();
+    } else {
+        if (step === 2) trackQuizStart();
+        currentStep = step;
+        updateProgress(step);
+        saveQuizSession(step);
+    }
+
+    clearError();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(step) {
+    document.getElementById('progressCount').textContent = `Step ${step} of ${TOTAL_STEPS}`;
+    document.querySelectorAll('.qprogress-seg').forEach((seg, i) => {
+        seg.classList.remove('active', 'done');
+        if (i < step - 1) seg.classList.add('done');
+        if (i === step - 1) seg.classList.add('active');
+    });
+}
+
+// ── 3-SECOND REDIRECT WITH ANIMATED BAR ──
+function startRedirect() {
+    const bar     = document.getElementById('redirectBarFill');
+    const label   = document.getElementById('redirectLabel');
+    const manual  = document.getElementById('manualLink');
+    const delay   = 3000; // ms
+    let remaining = Math.ceil(delay / 1000);
+
+    // Update manual link href
+    manual.href = MEDICAL_INTAKE_URL;
+
+    // Countdown label
+    const ticker = setInterval(() => {
+        remaining -= 1;
+        if (remaining > 0) {
+            label.textContent = `Redirecting to medical questionnaire in ${remaining} second${remaining !== 1 ? 's' : ''}...`;
+        } else {
+            label.textContent = 'Taking you there now...';
+            clearInterval(ticker);
+        }
+    }, 1000);
+
+    // Animate bar shrinking to 0 over 3s
+    requestAnimationFrame(() => {
+        bar.classList.add('animating');
+    });
+
+    // Redirect
+    setTimeout(() => {
+        try { window.top.location.href = MEDICAL_INTAKE_URL; } catch(e) { window.location.href = MEDICAL_INTAKE_URL; }
+    }, delay);
+}
+
+function selectOpt(el, step) {
+    el.closest('.qoptions').querySelectorAll('.qopt').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-pressed', 'false'); });
+    el.classList.add('selected');
+    el.setAttribute('aria-pressed', 'true');
+    data['step' + step] = el.dataset.val;
+    saveQuizSession(step);
+    const btn = document.getElementById('btn' + step);
+    if (btn) btn.disabled = false;
+    clearError();
+    // auto-advance single-select steps for a smoother, faster flow
+    if (step >= 1 && step <= 3) { setTimeout(function(){ if (currentStep === step) goTo(step + 1); }, 350); }
+}
+
+function hPct(){var s=document.getElementById('hSlider');if(!s)return;s.style.setProperty('--pct',((+s.value-54)/30*100)+'%');}
+function hReadout(ft,inch){var r=document.getElementById('hReadout');if(r)r.textContent=ft+' ft '+inch+' in';}
+function onHeightSlider(){var s=document.getElementById('hSlider');var v=+s.value;var ft=Math.floor(v/12),inch=v%12;document.getElementById('hFt').value=ft;document.getElementById('hIn').value=inch;hReadout(ft,inch);hPct();onWeightChange();}
+function onHeightBox(){var ft=parseInt(document.getElementById('hFt').value,10);var inch=parseInt(document.getElementById('hIn').value,10);if(isNaN(ft))ft=0;if(isNaN(inch))inch=0;inch=Math.max(0,Math.min(11,inch));var tot=ft*12+inch;var s=document.getElementById('hSlider');if(tot>=54&&tot<=84){s.value=tot;}var sv=+s.value;hReadout(Math.floor(sv/12),sv%12);hPct();onWeightChange();}
+document.addEventListener('DOMContentLoaded',function(){var ft=document.getElementById('hFt');if(!ft)return;if(ft.value||document.getElementById('hIn').value){onHeightBox();}else{hPct();}});
+function onWeightChange() {
+    const cw  = parseFloat(document.getElementById('curWeight').value);
+    const gw  = parseFloat(document.getElementById('goalWeight').value);
+    const ft  = parseFloat(document.getElementById('hFt').value);
+    const ins = parseFloat(document.getElementById('hIn').value);
+
+    document.getElementById('btn4').disabled = !(cw >= 100 && gw >= 80);
+
+    const hint = document.getElementById('bmiHint');
+    if (ft && ins >= 0 && cw) {
+        const totalIn = ft * 12 + (ins || 0);
+        const bmi = (703 * cw) / (totalIn * totalIn);
+        data.bmi = bmi.toFixed(1);
+        if (bmi >= 27) {
+            hint.textContent = `Estimated BMI: ${bmi.toFixed(1)}, You may meet a common screening threshold. Eligibility is determined during medical consultation. ✓`;
+            hint.className = 'bmi-hint show';
+        } else {
+            hint.textContent = `Estimated BMI: ${bmi.toFixed(1)}, BMI below 27. Our physician will determine eligibility during consultation.`;
+            hint.className = 'bmi-hint warn show';
+        }
+    } else {
+        hint.className = 'bmi-hint';
+    }
+    if (cw) data.currentWeight = cw; else delete data.currentWeight;
+    if (gw) data.goalWeight = gw; else delete data.goalWeight;
+    if (ft) data.heightFeet = ft; else delete data.heightFeet;
+    if (Number.isFinite(ins) && ins >= 0) data.heightInches = ins; else delete data.heightInches;
+    if (!(ft && Number.isFinite(ins) && ins >= 0 && cw)) delete data.bmi;
+    saveQuizSession(currentStep);
+}
+
+function fmtPhone(el) {
+    let v = el.value.replace(/\D/g, '');
+    if (v.length <= 3) v = v.length > 0 ? '(' + v : '';
+    else if (v.length <= 6) v = '(' + v.slice(0,3) + ') ' + v.slice(3);
+    else v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6,10);
+    el.value = v;
+}
+
+function clearErr(el) { el.classList.remove('err'); el.removeAttribute('aria-invalid'); clearError(); }
+function clearError() {
+    const e = document.getElementById('qerror');
+    e.textContent = ''; e.classList.remove('show');
+}
+function showError(msg) {
+    const e = document.getElementById('qerror');
+    e.textContent = msg; e.classList.add('show');
+    e.setAttribute('tabindex', '-1'); e.focus();
+    e.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+async function submitQuiz() {
+    const fn = document.getElementById('qFname').value.trim();
+    const ln = document.getElementById('qLname').value.trim();
+    const em = document.getElementById('qEmail').value.trim();
+    const ph = document.getElementById('qPhone').value.trim();
+
+    let hasErr = false;
+    [['qFname',fn],['qLname',ln],['qEmail',em],['qPhone',ph]].forEach(([id,val]) => {
+        const el = document.getElementById(id);
+        if (!val) { el.classList.add('err'); el.setAttribute('aria-invalid', 'true'); hasErr = true; }
+        else { el.classList.remove('err'); el.removeAttribute('aria-invalid'); }
+    });
+    if (hasErr) { showError('Please fill in all required fields.'); return; }
+    if (!em.includes('@')) {
+        document.getElementById('qEmail').classList.add('err');
+        document.getElementById('qEmail').setAttribute('aria-invalid', 'true');
+        showError('Please enter a valid email address.'); return;
+    }
+
+    const btn = document.getElementById('btn5');
+    const originalText = btn.textContent;
+    btn.textContent = 'Submitting...'; btn.disabled = true; btn.style.opacity = '0.6';
+
+    data.firstName = fn; data.lastName = ln; data.email = em; data.phone = ph;
+    document.getElementById('successMsg').textContent = 'Your quiz was submitted. We are taking you to the medical questionnaire. A clinician will determine eligibility after reviewing your complete history.';
+
+    // Build payload matching existing GHL webhook format exactly
+    const params = new URLSearchParams(window.location.search);
+    const payload = { website: (document.querySelector('input[name="website"]')||{}).value || '', 
+        firstName:   fn,
+        lastName:    ln,
+        email:       em,
+        phone:       ph,
+        source:      'Website Quiz',
+        landingPage: window.location.href,
+        language:    'en',
+        tags:        ['website-quiz', 'qualified-lead', 'ORG', ...SITE_TAGS],
+        customField: {
+            quiz_goal:         data.step1 || '',
+            quiz_food_noise:   data.step2 || '',
+            quiz_glp1_history: data.step3 || '',
+            currentWeight:     data.currentWeight || '',
+            goalWeight:        data.goalWeight || '',
+            heightFeet:        data.heightFeet || '',
+            heightInches:      data.heightInches || '',
+            estimatedBmi:      data.bmi || '',
+            quizCompleted:     true,
+            quizDate:          new Date().toISOString(),
+        },
+        utm: {
+            source:   params.get('utm_source')   || '',
+            medium:   params.get('utm_medium')   || '',
+            campaign: params.get('utm_campaign') || '',
+            content:  params.get('utm_content')  || '',
+        }
+    };
+
+    payload.stage = 'quiz';
+    payload.answers = ['goal='+(data.step1||''), 'foodNoise='+(data.step2||''), 'glp1='+(data.step3||''), 'height='+(data.heightFeet||'')+'ft'+(data.heightInches||'')+'in', 'weight='+(data.currentWeight||''), 'goalWeight='+(data.goalWeight||''), 'bmi='+(data.bmi||'')].join('; ');
+    let responseStatus = 0;
+    try {
+        const response = await nhwlFetchWithTimeout(function(signal) {
+            return fetch('https://nhwl-start-relay.flat-sunset-9104.workers.dev/', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify(payload),
+                signal:  signal
+            });
+        });
+        responseStatus = response.status;
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        nhwlPushFormOutcome('qualify_quiz', 'success', responseStatus);
+
+        nhwlRunAnalytics(function() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'SubmitApplication', { content_name: 'Qualify Quiz' });
+            }
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', { event_category: 'conversion' });
+                gtag('event', 'sign_up', { method: 'qualify-quiz' });
+            }
+        });
+
+        clearQuizSession();
+        goTo('success');
+    } catch (error) {
+        console.error('Quiz webhook error:', error.message);
+        nhwlPushFormOutcome('qualify_quiz', 'failure', responseStatus);
+        btn.textContent = originalText || 'See If I Qualify ->';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        showError('We could not submit your quiz just now. Your answers are still here. Please try again.');
+        const errorBox = document.getElementById('qerror');
+        errorBox.setAttribute('tabindex', '-1');
+        errorBox.focus();
+    }
+}
+
+// Enter key advances
+document.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const active = document.querySelector('.qstep.active');
+    if (!active) return;
+    const btn = active.querySelector('.qbtn-primary:not([disabled])');
+    if (btn) btn.click();
+});
+
+// Keyboard: Enter or Space selects a focused option (a11y, WCAG 2.1.1)
+document.addEventListener('keydown', function(e) {
+    var t = e.target;
+    if ((e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') && t && t.classList && t.classList.contains('qopt')) {
+        e.preventDefault();
+        var stepEl = t.closest('.qstep');
+        var n = stepEl ? parseInt(stepEl.id.replace('s', ''), 10) : currentStep;
+        selectOpt(t, n);
+    }
+});
+</script>
+
+
+    
+    
+    <!-- GA4 -->
+    
+    
+    <script>
+/* nhwl-inline-valid: green check when email/phone is valid (blur), additive only */
+(function(){
+  function check(el){
+    if(!el || el.tagName !== 'INPUT') return;
+    var id = el.id || '', v = (el.value || '').trim(), ok = false;
+    if(/email/i.test(id)) ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+    else if(/phone/i.test(id)) ok = v.replace(/\D/g,'').length >= 10;
+    else return;
+    el.classList.toggle('nhwl-valid', ok);
+  }
+  document.addEventListener('blur', function(e){ check(e.target); }, true);
+})();
+</script>
+<div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" value=""></label></div>
+<!-- pass198-claim-integrity -->
+
+<script>
+(function(){
+  try {
+    var q = new URLSearchParams(window.location.search);
+    var map = {fn: 'qFname', ln: 'qLname', em: 'qEmail', ph: 'qPhone'};
+    Object.keys(map).forEach(function(k){
+      var v = q.get(k); var el = document.getElementById(map[k]);
+      if (v && el) { el.value = v; }
+    });
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

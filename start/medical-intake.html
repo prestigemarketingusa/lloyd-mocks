@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Started — New Hope Weight Loss</title>
+<style>
+  :root{--green:#1d3b30;--accent:#2f8f6b;--bg:#f5f7f6;--line:#e3e8e5;--err:#b3261e;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#20261f;line-height:1.45}
+  .wrap{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  h1{font-size:20px;margin:0 0 4px} .sub{color:#5c6b62;font-size:14px;margin:0 0 16px}
+  .brand{font-weight:700;color:var(--green);letter-spacing:.5px;font-size:13px;text-transform:uppercase}
+  .prog{display:flex;gap:6px;margin:14px 0 20px}
+  .prog span{flex:1;height:6px;border-radius:4px;background:var(--line)}
+  .prog span.on{background:var(--accent)}
+  .stephead{font-size:16px;font-weight:700;margin:0 0 4px}
+  .stepnote{font-size:13px;color:#5c6b62;margin:0 0 14px}
+  label.chk{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;cursor:pointer;font-size:14px}
+  label.chk:hover{border-color:var(--accent)}
+  label.chk input{margin-top:2px;width:18px;height:18px;flex:0 0 auto}
+  .field{margin:12px 0} .field label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
+  .field input,.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font-size:15px}
+  .row{display:flex;gap:10px}.row .field{flex:1}
+  .bmi{background:#f0f5f2;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;color:var(--green);margin:6px 0 2px;display:none}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#3a453e;margin:14px 0 4px;padding:12px;background:#f0f5f2;border-radius:10px}
+  .consent input{margin-top:2px;width:18px;height:18px;flex:0 0 auto}
+  .btn{display:block;width:100%;padding:14px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:18px}
+  .btn.sec{background:#fff;color:var(--green);border:1px solid var(--line)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .err{color:var(--err);font-size:13px;margin-top:8px;display:none}
+  .bounce{display:none;text-align:center;padding:10px 0}
+  .bounce h2{color:var(--green)} .hide{display:none}
+  .foot{font-size:11px;color:#8a968e;text-align:center;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="brand">New Hope Weight Loss · HIPAA Secure</div>
+    <h1>Get Started — Doctor-Led Weight Loss</h1>
+    <p class="sub">Quick start, then two easy checkbox pages. Takes about 3 minutes.</p>
+    <div class="prog"><span id="p1" class="on"></span><span id="p2"></span><span id="p3"></span></div>
+
+    <form id="intake" novalidate>
+      <!-- STEP 1 — QUICK QUIZ: contact + BMI + opt-in (locks the lead) -->
+      <section id="step1">
+        <div class="stephead">Step 1: Let's get you started</div>
+        <div class="stepnote">A few quick details so the doctor can review your fit.</div>
+        <div class="row"><div class="field"><label>First Name *</label><input name="firstName" required></div>
+        <div class="field"><label>Last Name *</label><input name="lastName" required></div></div>
+        <div class="field"><label>Email *</label><input name="email" type="email" placeholder="your@email.com" required></div>
+        <div class="field"><label>Phone *</label><input name="phone" type="tel" placeholder="(555) 123-4567" required></div>
+        <div class="field"><label>Date of Birth *</label><input name="dob" type="date" required></div>
+        <div class="row"><div class="field"><label>Height (feet) *</label><input name="heightFt" type="number" min="3" max="7" required></div>
+        <div class="field"><label>Height (inches) *</label><input name="heightIn" type="number" min="0" max="11" required></div>
+        <div class="field"><label>Current weight (lbs) *</label><input name="currentWeight" type="number" min="60" max="900" required></div></div>
+        <div class="bmi" id="bmiOut"></div>
+        <div class="stephead" style="font-size:15px;margin-top:16px">Shipping / Mailing Address</div>
+        <div class="field"><label>Street Address *</label><input name="street" placeholder="123 Main St, Apt 4B" required></div>
+        <div class="row"><div class="field"><label>City *</label><input name="city" placeholder="Los Angeles" required></div>
+        <div class="field"><label>State *</label><select name="state" required><option value="">State…</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></div>
+        <div class="field"><label>ZIP *</label><input name="zip" placeholder="90210" inputmode="numeric" required></div></div>
+        <label class="consent"><input type="checkbox" id="consent" required>
+          <span>By submitting, you agree — for appointment and marketing purposes — to artificial &amp; personal voice calls, SMS, and/or emails, and that your contact information is true, valid, and current. Msg/data rates may apply; reply STOP to opt out.</span></label>
+        <div class="err" id="e1">Please complete all required fields and the consent box.</div>
+        <button type="button" class="btn" id="quizNext">Continue →</button>
+      </section>
+
+      <!-- STEP 2 — CONTRAINDICATIONS -->
+      <section id="step2" class="hide">
+        <div class="stephead">Step 2: Contra-Indicated Conditions</div>
+        <div class="stepnote">Please check all that apply. These conditions prevent treatment with GLP-1 medications.</div>
+        <div id="ci"></div>
+        <div class="err" id="e2">Please make a selection to continue.</div>
+        <button type="button" class="btn" id="contraNext">Continue</button>
+        <button type="button" class="btn sec" data-back="1">Back</button>
+      </section>
+
+      <!-- STEP 3 — HEALTH HISTORY -->
+      <section id="step3" class="hide">
+        <div class="stephead">Step 3: Additional Health History</div>
+        <div class="stepnote">Check any that apply (optional).</div>
+        <div id="hh"></div>
+        <button type="button" class="btn" id="submitBtn">Submit &amp; Continue to Payment →</button>
+        <button type="button" class="btn sec" data-back="2">Back</button>
+      </section>
+
+      <!-- CONTRAINDICATION BOUNCE -->
+      <section id="bounce" class="bounce">
+        <h2>Thank you for your honesty.</h2>
+        <p>Based on your answers, we're unable to offer GLP-1 treatment at this time. Please consult your own physician regarding your care.</p>
+      </section>
+    </form>
+    <div class="foot">Your information is kept private and secure.</div>
+  </div>
+</div>
+
+<script>
+// ===== CONFIG — fill before go-live =====
+const CONFIG = {
+  webhookUrl: "https://nhwl-start-relay.flat-sunset-9104.workers.dev/",  // GHL inbound webhook (creates+tags contact)
+  payUrl:     "https://my.newhopeweightloss.com/start",         // $119 Dr. Review & consult fee pay page
+  thankYouUrl:"https://my.newhopeweightloss.com/start-thank-you"         // thank_you.html (post-payment)
+};
+// =========================================
+const CONTRA = [
+ "End-stage kidney disease (on or about to be on dialysis)",
+ "End-stage liver disease (cirrhosis)",
+ "Current suicidal thoughts and/or prior suicidal attempt",
+ "Cancer, active diagnosis, active treatment, or in remission/cancer-free less than 5 years (excludes non-melanoma skin cancer)",
+ "History of organ transplant on anti-rejection medication",
+ "Severe gastrointestinal condition (e.g., gastroparesis, inflammatory bowel disease)",
+ "Current diagnosis of or treatment for an eating disorder (anorexia nervosa or bulimia)",
+ "Personal or family history of Medullary Thyroid Carcinoma (MTC) or Multiple Endocrine Neoplasia (MEN 2)",
+ "Currently pregnant, breastfeeding, or planning to become pregnant within 2 months",
+ "None of these conditions apply to me"
+];
+const HEALTH = [
+ "Active Gall Bladder Disease","Hypertension (high blood pressure)","Sleep apnea",
+ "Type 2 diabetes (not on insulin)","Type 2 diabetes (on insulin)","Type 1 diabetes",
+ "Diabetic retinopathy (diabetic eye disease)","Use of blood thinner warfarin (Coumadin/Jantoven)",
+ "History of or current pancreatitis","High cholesterol or triglycerides","Severe Depression",
+ "Liver disease, including fatty liver","Congestive heart failure","Urinary stress incontinence",
+ "Polycystic ovarian syndrome (PCOS)","Clinically proven low testosterone","Osteoarthritis"
+];
+const NONE = "None of these conditions apply to me";
+let contactLocked = false;
+
+function render(list,host,group){document.getElementById(host).innerHTML=list.map(t=>
+  `<label class="chk"><input type="checkbox" data-group="${group}" value="${t.replace(/"/g,'&quot;')}"><span>${t}</span></label>`).join("");}
+render(CONTRA,"ci","contra"); render(HEALTH,"hh","health");
+
+// live BMI
+function calcBMI(){const f=document.getElementById("intake");
+  const ft=+f.heightFt.value,inch=+f.heightIn.value,w=+f.currentWeight.value;
+  const tot=ft*12+inch; const out=document.getElementById("bmiOut");
+  if(tot>0&&w>0){const bmi=(703*w/(tot*tot)); out.style.display="block"; out.textContent="Your BMI: "+bmi.toFixed(1); return bmi;}
+  out.style.display="none"; return null;}
+["heightFt","heightIn","currentWeight"].forEach(n=>document.getElementById("intake")[n].addEventListener("input",calcBMI));
+
+// "None apply" clears others
+document.getElementById("ci").addEventListener("change",e=>{
+  const boxes=[...document.querySelectorAll('[data-group=contra]')]; const none=boxes.find(b=>b.value===NONE);
+  if(e.target===none&&none.checked){boxes.forEach(b=>{if(b!==none)b.checked=false;});}
+  else if(e.target!==none&&e.target.checked){none.checked=false;}
+});
+function checked(g){return [...document.querySelectorAll(`[data-group=${g}]:checked`)].map(b=>b.value);}
+function show(id){["step1","step2","step3","bounce"].forEach(s=>document.getElementById(s).classList.add("hide"));
+  document.getElementById("bounce").style.display="none";
+  if(id==="bounce")document.getElementById("bounce").style.display="block"; else document.getElementById(id).classList.remove("hide");
+  ["p1","p2","p3"].forEach((p,i)=>document.getElementById(p).classList.toggle("on", i<({step1:1,step2:2,step3:3}[id]||0)));
+  window.scrollTo(0,0);}
+
+function contactPayload(){const f=document.getElementById("intake");return{
+  firstName:f.firstName.value.trim(),lastName:f.lastName.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),
+  dob:f.dob.value,heightFt:f.heightFt.value,heightIn:f.heightIn.value,currentWeight:f.currentWeight.value,bmi:calcBMI(),
+  street:f.street.value.trim(),city:f.city.value.trim(),state:f.state.value,zip:f.zip.value.trim(),
+  consent:true,stage:"intake_started",source:"medical_intake_pmusa"};}
+
+async function post(payload){try{if(CONFIG.webhookUrl&&!CONFIG.webhookUrl.startsWith("REPLACE"))
+  await fetch(CONFIG.webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});}catch(e){}}
+
+// STEP 1 -> lock the lead (capture contact+opt-in+BMI immediately), then to checkboxes
+document.getElementById("quizNext").onclick=async ()=>{
+  const f=document.getElementById("intake");
+  const req=["firstName","lastName","email","phone","dob","heightFt","heightIn","currentWeight","street","city","state","zip"];
+  if(req.some(n=>!f[n].value)||!document.getElementById("consent").checked){document.getElementById("e1").style.display="block";return;}
+  document.getElementById("e1").style.display="none";
+  const btn=document.getElementById("quizNext"); btn.disabled=true; btn.textContent="Saving…";
+  await post(contactPayload()); contactLocked=true;         // <-- contact + opt-in captured up front
+  btn.disabled=false; btn.textContent="Continue →"; show("step2");
+};
+// STEP 2 -> contraindication gate
+document.getElementById("contraNext").onclick=()=>{
+  const sel=checked("contra");
+  if(!sel.length){document.getElementById("e2").style.display="block";return;}
+  document.getElementById("e2").style.display="none";
+  if(sel.some(v=>v!==NONE)){show("bounce");return;}  // disqualified -> bounce, no payment
+  show("step3");
+};
+document.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>show(b.dataset.back==="2"?"step2":"step1"));
+// STEP 3 -> finish intake -> payment
+document.getElementById("submitBtn").onclick=async ()=>{
+  const btn=document.getElementById("submitBtn"); btn.disabled=true; btn.textContent="Submitting…";
+  const fin={...contactPayload(),stage:"intake",contraindications:checked("contra"),healthHistory:checked("health")};
+  fin.answers="CONTRA: "+fin.contraindications.join(" | ")+"\nHISTORY: "+fin.healthHistory.join(" | ")+"\nDOB "+fin.dob+" · "+fin.heightFt+"ft"+fin.heightIn+"in · "+fin.currentWeight+"lbs · BMI "+fin.bmi+"\nADDR: "+fin.street+", "+fin.city+", "+fin.state+" "+fin.zip;
+  await post(fin);   // <-- intake complete
+  const dest=(CONFIG.payUrl&&!CONFIG.payUrl.startsWith("REPLACE"))?CONFIG.payUrl:"#pay-not-configured";
+  try{window.top.location.href=dest;}catch(e){window.location.href=dest;}
+};
+</script>
+
+<script>
+(function(){
+  try {
+    var q = new URLSearchParams(window.location.search);
+    var f = document.getElementById('intake');
+    var map = {fn:'firstName', ln:'lastName', em:'email', ph:'phone'};
+    Object.keys(map).forEach(function(k){ var v=q.get(k); if(v && f[map[k]]) f[map[k]].value=v; });
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>
