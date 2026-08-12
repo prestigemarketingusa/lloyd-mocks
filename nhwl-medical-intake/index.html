@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHWL /medical-intake — pre-approval (LP restyle preview)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#8a7a3a;--gold-d:#736327;--green:#3f7d54;--ink:#2b2a22;--dim:#6e6c5c;--line:#e7e3d3;}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#f7f5ee,#ece7d9);font-family:'Jost',-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);min-height:100vh}
+  .wrap{max-width:640px;margin:0 auto;padding:34px 18px 60px}
+  /* the seamless hand-off from the quiz */
+  .handoff{text-align:center;margin-bottom:18px}
+  .handoff .tick{display:inline-block;background:#eaf3ec;color:var(--green);font-size:12px;font-weight:600;letter-spacing:.5px;border-radius:20px;padding:6px 16px;margin-bottom:12px}
+  .handoff h1{font-family:'Fraunces',serif;font-weight:400;font-size:29px;line-height:1.2;margin:0 0 8px}
+  .handoff h1 em{color:var(--gold);font-style:italic}
+  .handoff p{color:var(--dim);font-size:15px;max-width:500px;margin:0 auto}
+  .handoff p b{color:var(--ink)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(80,70,30,.12);padding:30px 30px;margin-top:8px}
+  .lead{color:var(--dim);font-size:14px;margin:0 0 6px}
+  .sec{font-size:11px;font-weight:600;letter-spacing:.7px;color:var(--gold);text-transform:uppercase;margin:24px 0 8px;padding-top:16px;border-top:1px solid #f0ecdd}
+  .sec:first-of-type{border-top:0;padding-top:0}
+  label{display:block;font-size:12.5px;font-weight:500;color:#555241;margin:12px 0 6px}
+  input,select{width:100%;padding:13px 14px;border:1px solid #dcd8c6;border-radius:10px;font-size:15px;font-family:inherit;background:#fcfbf6;color:#33321f}
+  input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(138,122,58,.15);background:#fff}
+  .row{display:flex;gap:12px}.row>div{flex:1}
+  .prefill{font-size:11px;color:var(--green);margin-top:4px}
+  .cta{width:100%;margin-top:24px;background:var(--gold);color:#fff;border:0;border-radius:12px;padding:16px;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(138,122,58,.3)}
+  .cta:hover{background:var(--gold-d)}
+  .note{font-size:12px;color:var(--dim);text-align:center;margin-top:12px}
+  .consent{font-size:11.5px;color:#8a8672;line-height:1.5;margin:14px 2px 0}
+  .consent a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="handoff">
+    <span class="tick">✓ STEP 1 COMPLETE — YOU'RE ALMOST THERE</span>
+    <h1>Take one more minute and get <em>pre-approved — FREE</em></h1>
+    <p>Great news — you finished the qualifier. Answer a few quick questions below and our physician can <b>pre-approve you at no cost</b>. No obligation.</p>
+  </div>
+
+  <div class="card">
+    <p class="lead">Everything you already told us is saved — just fill in the rest.</p>
+
+    <div class="sec">About you</div>
+    <div class="row">
+      <div><label>Patient's First Name</label><input value="Chip"><div class="prefill">✓ carried over</div></div>
+      <div><label>Patient's Last Name</label><input value="Trimble"><div class="prefill">✓ carried over</div></div>
+    </div>
+    <div class="row">
+      <div><label>Email</label><input value="you@email.com"></div>
+      <div><label>Phone</label><input value="(555) 555-5555"></div>
+    </div>
+    <div class="row">
+      <div><label>Date of Birth</label><input placeholder="MM / DD / YYYY"></div>
+      <div><label>Occupation</label><input placeholder="Occupation"></div>
+    </div>
+
+    <div class="sec">Your goals</div>
+    <div class="row">
+      <div><label>Current Weight (lbs)</label><input placeholder="Weight in pounds"></div>
+      <div><label>Target Weight</label><input placeholder="Target weight"></div>
+    </div>
+    <div class="row">
+      <div><label>Height — Feet</label><input placeholder="Feet"></div>
+      <div><label>Height — Inches</label><input placeholder="Inches"></div>
+    </div>
+    <label>About how much weight did you gain?</label><input placeholder="How much weight did you gain?">
+    <label>How did you hear about us?</label><input placeholder="Facebook? Google? Influencer? Friend? Other?">
+
+    <div class="sec">Local pharmacy (optional)</div>
+    <label>Pharmacy Name</label><input placeholder="What's the name of your local pharmacy?">
+    <div class="row">
+      <div><label>Pharmacy Phone</label><input placeholder="Phone number of your local pharmacy?"></div>
+      <div><label>Pharmacy Address</label><input placeholder="Street address of your local pharmacy?"></div>
+    </div>
+
+    <button class="cta">Get Pre-Approved — FREE →</button>
+    <p class="note">Next: a one-time $99 doctor review (first month free if approved). No charge to see if you qualify.</p>
+
+    <p class="consent">By submitting, I agree that <b>New Hope Weight Loss &amp; its partners</b> may contact me at the number &amp; email I provide, for marketing and patient/clinic booking, by <b>live or automated (AI) voice calls, texts, and emails</b>. Consent isn't required to purchase. Msg frequency varies; msg &amp; data rates may apply. <b>Reply STOP to opt out, HELP for help.</b> See our <a href="#">Privacy Policy</a>.</p>
+  </div>
+</div>
+</body>
+</html>
