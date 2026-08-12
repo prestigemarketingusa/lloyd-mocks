@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHV Exomind — Patient Testimonials (preview)</title>
+<style>
+  :root{ --ink:#173a34; --teal:#1f8f82; --gold:#c9a24b; --soft:#f4f7f6; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+  /* ==== EMBEDDABLE SECTION (this whole block drops into a GHL Custom-Code element) ==== */
+  .exo-testi{max-width:1040px;margin:0 auto;padding:56px 20px;text-align:center}
+  .exo-testi h2{font-size:30px;margin:0 0 6px;letter-spacing:.2px}
+  .exo-testi p.sub{color:#5b7873;margin:0 auto 34px;max-width:620px;font-size:17px;line-height:1.5}
+  .exo-grid{display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+  .exo-card{flex:1 1 300px;max-width:460px;background:var(--soft);border-radius:16px;overflow:hidden;
+            box-shadow:0 6px 22px rgba(23,58,52,.08);text-align:left}
+  .exo-thumb{position:relative;cursor:pointer;display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat}
+  .exo-thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .exo-thumb .play svg{width:64px;height:64px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45));transition:transform .15s}
+  .exo-thumb:hover .play svg{transform:scale(1.08)}
+  .exo-meta{padding:16px 18px 20px}
+  .exo-meta .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+                 color:var(--teal);margin-bottom:6px}
+  .exo-meta h3{margin:0 0 4px;font-size:19px}
+  .exo-meta .cap{margin:0;color:#5b7873;font-size:15px}
+  /* lightbox — plays IN PAGE, visitor never leaves */
+  .exo-lb{position:fixed;inset:0;background:rgba(10,20,18,.86);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+  .exo-lb.open{display:flex}
+  .exo-lb .frame{position:relative;width:min(900px,96vw);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+  .exo-lb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .exo-lb .x{position:absolute;top:-44px;right:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;background:none;border:0}
+  @media(max-width:680px){ .exo-testi h2{font-size:24px} }
+  .previewnote{background:#fff6e5;border-left:4px solid var(--gold);padding:10px 16px;max-width:1040px;margin:16px auto;color:#6b5a2a;font-size:14px}
+</style>
+</head>
+<body>
+<div class="previewnote"><b>Preview for approval</b> — this is the exact section that will be embedded into the live GHL <code>newhopevitality.com/exomind/</code> page. Click a thumbnail: the video plays in a pop-up <b>on the page</b> (no click-out to Vimeo).</div>
+
+<!-- ===== BEGIN EMBED SECTION ===== -->
+<section class="exo-testi">
+  <h2>Real Stories. Real Change.</h2>
+  <p class="sub">Two New Hope patients share how Exomind helped them take their lives back — from emotional eating to renewed mental clarity.</p>
+  <div class="exo-grid">
+    <div class="exo-card">
+      <a class="exo-thumb" role="button" tabindex="0" data-vimeo="1217091340"
+         style="background-image:url('https://i.vimeocdn.com/video/2188687091-b858c015e87b8d7dd87f4748f785901a6f16c491f4f6008167602493e529d36b-d_640?region=us')">
+        <span class="play"><svg viewBox="0 0 68 68" fill="none"><circle cx="34" cy="34" r="34" fill="#1f8f82" opacity=".92"/><path d="M28 22l20 12-20 12V22z" fill="#fff"/></svg></span>
+      </a>
+      <div class="exo-meta"><span class="tag">Exomind Testimonial</span><h3>Emotional Eater</h3><p class="cap">She struggled with emotional eating — and wanted her life back.</p></div>
+    </div>
+    <div class="exo-card">
+      <a class="exo-thumb" role="button" tabindex="0" data-vimeo="1217091339"
+         style="background-image:url('https://i.vimeocdn.com/video/2188687065-fe5308be327916dbc04da00f39d732c92ef26344da9b90c8dbf35c238572ecaf-d_640?region=us')">
+        <span class="play"><svg viewBox="0 0 68 68" fill="none"><circle cx="34" cy="34" r="34" fill="#1f8f82" opacity=".92"/><path d="M28 22l20 12-20 12V22z" fill="#fff"/></svg></span>
+      </a>
+      <div class="exo-meta"><span class="tag">Exomind Testimonial</span><h3>Firefighter</h3><p class="cap">He couldn't escape reduced mental clarity — until he found his focus again.</p></div>
+    </div>
+  </div>
+</section>
+<div class="exo-lb" id="exoLB"><div class="frame"><button class="x" aria-label="Close">&times;</button><iframe id="exoIframe" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>
+<script>
+(function(){
+  var lb=document.getElementById('exoLB'),fr=document.getElementById('exoIframe');
+  function open(id){fr.src='https://player.vimeo.com/video/'+id+'?autoplay=1&title=0&byline=0&portrait=0';lb.classList.add('open');}
+  function close(){lb.classList.remove('open');fr.src='';}
+  document.querySelectorAll('.exo-thumb').forEach(function(t){
+    t.addEventListener('click',function(){open(this.getAttribute('data-vimeo'));});
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(this.getAttribute('data-vimeo'));}});
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('x'))close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+<!-- ===== END EMBED SECTION ===== -->
+</body>
+</html>
