@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NHWL /start — Dr. Review pay page (LP restyle preview)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#8a7a3a;--gold-d:#736327;--green:#3f7d54;--ink:#2b2a22;--dim:#6e6c5c;--line:#e7e3d3;}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#f7f5ee,#ece7d9);font-family:'Jost',-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);min-height:100vh}
+  .wrap{max-width:640px;margin:0 auto;padding:34px 18px 60px}
+  .head{text-align:center;margin-bottom:20px}
+  .flag{display:inline-block;background:#eaf3ec;color:var(--green);font-size:12px;font-weight:600;letter-spacing:.5px;border-radius:20px;padding:6px 16px;margin-bottom:12px}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:30px;line-height:1.18;margin:0 0 8px}
+  h1 em{color:var(--gold);font-style:italic}
+  .val{color:var(--dim);font-size:15px;max-width:500px;margin:0 auto}
+  .val b{color:var(--ink)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(80,70,30,.12);padding:30px 30px;margin-top:8px}
+  .thanks{background:#faf7ee;border:1px solid #eee3c6;border-radius:12px;padding:13px 16px;font-size:14px;color:#6b6136;margin-bottom:22px}
+  .thanks b{color:var(--gold-d)}
+  .sec{font-size:11px;font-weight:600;letter-spacing:.7px;color:var(--gold);text-transform:uppercase;margin:22px 0 8px}
+  label{display:block;font-size:12.5px;font-weight:500;color:#555241;margin:12px 0 6px}
+  input{width:100%;padding:13px 14px;border:1px solid #dcd8c6;border-radius:10px;font-size:15px;font-family:inherit;background:#fcfbf6}
+  input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(138,122,58,.15);background:#fff}
+  .row{display:flex;gap:12px}.row>div{flex:1}
+  .prefill{font-size:11px;color:var(--green);margin-top:4px}
+  /* order + coupon */
+  .order{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px}
+  .order .line{display:flex;justify-content:space-between;align-items:center;padding:13px 15px;font-size:14.5px}
+  .order .line.head{background:#faf8f1;font-size:12px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.4px}
+  .strike{color:#b3ae9c;text-decoration:line-through;font-size:13px;margin-right:8px}
+  .now{color:var(--green);font-weight:700}
+  .coupon-help{background:#eef6ef;border-left:4px solid var(--green);border-radius:8px;padding:11px 14px;font-size:13.5px;color:#3c6b4c;margin:14px 0}
+  .coupon-help b{color:#2f5a3d}
+  .coupon-row{display:flex;gap:10px;margin-top:8px}
+  .coupon-row input{flex:1}
+  .coupon-row button{background:#efe9d8;border:1px solid var(--line);border-radius:10px;padding:0 20px;font-weight:600;color:#6b6136;cursor:pointer}
+  .total{display:flex;justify-content:space-between;padding:14px 2px 4px;font-size:17px;font-weight:600}
+  .total .now{font-size:19px}
+  .cta{width:100%;margin-top:20px;background:var(--gold);color:#fff;border:0;border-radius:12px;padding:17px;font-size:17px;font-weight:600;letter-spacing:.3px;cursor:pointer;box-shadow:0 8px 20px rgba(138,122,58,.32)}
+  .cta:hover{background:var(--gold-d)}
+  .consent{font-size:11.5px;color:#8a8672;line-height:1.5;margin:14px 2px 0}
+  .consent a{color:var(--gold);text-decoration:none}
+  /* reassurance panel (was bare black text) */
+  .reassure{margin-top:22px;background:linear-gradient(180deg,#fbf9f2,#f6f2e6);border:1px solid #eadfbf;border-radius:16px;padding:24px 26px;text-align:center}
+  .reassure .doc{width:46px;height:46px;border-radius:50%;background:var(--green);display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .reassure p{font-family:'Fraunces',serif;font-size:18px;line-height:1.45;color:#43402f;margin:0 0 10px}
+  .reassure .kicker{font-family:'Jost',sans-serif;font-weight:600;font-size:15px;color:var(--green);margin:0}
+  .foot{font-size:11px;color:#9a9782;text-align:center;line-height:1.55;margin-top:26px;padding:0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <span class="flag">✓ YOUR FIRST MONTH IS FREE</span>
+    <h1>One last step to your <em>physician-approved</em> start</h1>
+    <p class="val">Semaglutide or Tirzepatide — <b>if medically approved</b>. This is a <b>one-time</b> doctor-review fee (never recurring). Use code <b>DOCTOR20</b> to take the $119 review down to <b>$99</b>.</p>
+  </div>
+
+  <div class="card">
+    <div class="thanks">💚 <b>Thank you for finishing each step.</b> This page is only here to save you <b>$20 on your doctor approval</b> — tied directly to the medical intake you just completed.</div>
+
+    <div class="sec">Your details</div>
+    <label>Full Name</label><input value="Chip Trimble"><div class="prefill">✓ carried over from your intake</div>
+    <div class="row">
+      <div><label>Email</label><input value="you@email.com"></div>
+      <div><label>Phone</label><input value="(555) 555-5555"></div>
+    </div>
+
+    <div class="sec">Doctor review</div>
+    <div class="order">
+      <div class="line head"><span>Item</span><span>Price</span></div>
+      <div class="line"><span>Dr. Review – Consultation – Prescription Fee</span><span><span class="strike">$119</span><span class="now">$99.00</span></span></div>
+    </div>
+    <div class="coupon-help">💡 <b>Just for you today:</b> type <b>DOCTOR20</b> in the box below (exactly), hit <b>Apply</b>, and watch the <b>$20 discount</b> drop your Dr. Fee to <b>$99</b>.</div>
+    <div class="coupon-row"><input placeholder="Enter coupon code" value="DOCTOR20"><button>Apply</button></div>
+
+    <div class="total"><span>Order Total</span><span><span class="strike">$119</span><span class="now">$99.00</span></span></div>
+
+    <div class="sec">Payment</div>
+    <label>Card Number</label><input placeholder="1234 1234 1234 1234">
+    <div class="row">
+      <div><label>Expiration</label><input placeholder="MM / YY"></div>
+      <div><label>CVC</label><input placeholder="CVC"></div>
+      <div><label>Billing ZIP *</label><input placeholder="ZIP"></div>
+    </div>
+    <div class="prefill" style="color:var(--dim)">Cardholder ZIP is required to authorize the payment.</div>
+
+    <button class="cta">🔒 Complete Order — Get Fully Approved</button>
+
+    <p class="consent">By submitting, I agree that <b>New Hope Weight Loss &amp; its partners</b> may contact me at the number &amp; email I provide, for marketing and patient/clinic booking, by <b>live or automated (AI) voice calls, texts, and emails</b>. Consent isn't required to purchase. Msg frequency varies; msg &amp; data rates may apply. <b>Reply STOP to opt out, HELP for help.</b> See our <a href="#">Privacy Policy</a>.</p>
+  </div>
+
+  <div class="reassure">
+    <span class="doc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a4 4 0 100 8 4 4 0 000-8zM5 21a7 7 0 0114 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+    <p>You will <b>really speak with the Doctor</b> — after payment, watch for a call from a <b>719 area code</b>. If, for any reason, the Doctor determines this medication isn't right for you, the amount you pay is <b>fully refunded</b>.</p>
+    <p class="kicker">Nothing to lose by getting fully approved. 💚</p>
+  </div>
+
+  <p class="foot">The doctor fee is ONE-TIME only — nothing recurring, and NO additional doctor fees while you're on our protocol. Cold-pack shipping ($35) applies to medication delivery, or pick up FREE at our Costa Mesa clinic. Eligibility determined by a licensed physician.<br><br>© 2026 New Hope Wellness Advisors, LLC · Privacy · HIPAA · Terms</p>
+</div>
+</body>
+</html>
