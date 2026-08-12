@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GLP Wellness Logo Concepts</title>
+  <meta name="description" content="Three premium logo concepts for GLP Wellness.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10263f;
+      --ink-2: #30465e;
+      --muted: #6b7c8f;
+      --teal: #0d8c83;
+      --teal-dark: #086c66;
+      --emerald: #22966c;
+      --mint: #e5f5ef;
+      --cream: #fbf7ef;
+      --warm: #f5ead8;
+      --amber: #d89a3d;
+      --surface: #ffffff;
+      --line: #dce8e3;
+      --shadow: 0 18px 46px rgba(16, 38, 63, 0.1);
+      --shadow-soft: 0 10px 28px rgba(16, 38, 63, 0.08);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(34, 150, 108, 0.14), transparent 28rem),
+        radial-gradient(circle at 86% 12%, rgba(216, 154, 61, 0.12), transparent 23rem),
+        linear-gradient(180deg, var(--cream) 0%, #ffffff 44%, #f4fbf8 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .page-header {
+      padding: 48px 0 26px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-dark);
+      font-size: 0.79rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 5px rgba(34, 150, 108, 0.13);
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 12px;
+      font-size: clamp(2.45rem, 7vw, 4.65rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: var(--ink-2);
+      font-size: 1.08rem;
+    }
+
+    .concept-grid {
+      display: grid;
+      gap: 22px;
+      padding: 22px 0 64px;
+    }
+
+    .concept-card {
+      display: grid;
+      gap: 24px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .card-letter {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .card-title h2 {
+      margin-bottom: 0;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .card-head p {
+      max-width: 430px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: right;
+    }
+
+    .variants {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .variant {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      min-height: 230px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(251, 253, 252, 0.94)),
+        #ffffff;
+    }
+
+    .variant-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-canvas {
+      display: grid;
+      place-items: center;
+      min-height: 132px;
+    }
+
+    .logo-svg {
+      width: min(100%, 360px);
+    }
+
+    .logo-svg.compact {
+      width: min(100%, 330px);
+    }
+
+    .small-check {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .small-check svg {
+      width: 92px;
+      height: auto;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(216, 154, 61, 0.55);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 820px) {
+      .card-head,
+      .variants {
+        grid-template-columns: 1fr;
+      }
+
+      .card-head {
+        display: grid;
+      }
+
+      .card-head p {
+        max-width: none;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .page-header {
+        padding-top: 34px;
+      }
+
+      .concept-card,
+      .variant {
+        padding: 20px;
+      }
+
+      .card-title {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <span class="eyebrow">Logo concept picker</span>
+        <h1>GLP Wellness brand marks</h1>
+        <p class="lead">Three distinct SVG logo concepts using the current site palette and Inter type system.</p>
+      </div>
+    </header>
+
+    <div class="container concept-grid">
+      <article class="concept-card">
+        <div class="card-head">
+          <div class="card-title">
+            <span class="card-letter">A</span>
+            <h2>Monogram</h2>
+          </div>
+          <p>Geometric GLP lockup with a compact clinical mark and clear wordmark for small navigation use.</p>
+        </div>
+        <div class="variants">
+          <section class="variant" aria-label="Monogram full-color logo">
+            <span class="variant-label">Full-color</span>
+            <div class="logo-canvas">
+              <svg class="logo-svg" viewBox="0 0 226 84" role="img" aria-labelledby="monogram-color-title">
+                <title id="monogram-color-title">GLP Wellness Monogram logo, full color</title>
+                <defs>
+                  <linearGradient id="monogramGradient" x1="8" y1="8" x2="68" y2="76" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0d8c83"/>
+                    <stop offset="1" stop-color="#22966c"/>
+                  </linearGradient>
+                </defs>
+                <rect x="8" y="8" width="68" height="68" rx="16" fill="url(#monogramGradient)"/>
+                <path d="M49 28c-3.3-4.3-8.7-6.9-14.7-6.4-9.1.8-15.7 8.5-15 17.8.8 9.5 8.8 16.1 18.4 15.2 5-.5 9-2.7 11.7-6.2" fill="none" stroke="#ffffff" stroke-width="5.6" stroke-linecap="round"/>
+                <path d="M37 39h17v13" fill="none" stroke="#ffffff" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M58 23v37" fill="none" stroke="#d9fff3" stroke-width="5.6" stroke-linecap="round"/>
+                <path d="M58 25h8.5c6 0 10 3.9 10 9.2s-4 9.2-10 9.2H58" fill="none" stroke="#d9fff3" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="66" cy="58" r="4.5" fill="#f5ead8"/>
+                <text x="92" y="39" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800" letter-spacing="0">GLP</text>
+                <text x="92" y="64" fill="#30465e" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="600" letter-spacing="0">Wellness</text>
+              </svg>
+            </div>
+            <div class="small-check">
+              <svg viewBox="0 0 226 84" aria-hidden="true">
+                <rect x="8" y="8" width="68" height="68" rx="16" fill="#0d8c83"/>
+                <path d="M49 28c-3.3-4.3-8.7-6.9-14.7-6.4-9.1.8-15.7 8.5-15 17.8.8 9.5 8.8 16.1 18.4 15.2 5-.5 9-2.7 11.7-6.2" fill="none" stroke="#fff" stroke-width="5.6" stroke-linecap="round"/>
+                <path d="M37 39h17v13M58 23v37M58 25h8.5c6 0 10 3.9 10 9.2s-4 9.2-10 9.2H58" fill="none" stroke="#fff" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="92" y="39" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800">GLP</text>
+                <text x="92" y="64" fill="#30465e" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="600">Wellness</text>
+              </svg>
+              <span>Small-size check</span>
+            </div>
+          </section>
+          <section class="variant" aria-label="Monogram monochrome logo">
+            <span class="variant-label">Monochrome</span>
+            <div class="logo-canvas">
+              <svg class="logo-svg" viewBox="0 0 226 84" role="img" aria-labelledby="monogram-mono-title">
+                <title id="monogram-mono-title">GLP Wellness Monogram logo, monochrome</title>
+                <rect x="8" y="8" width="68" height="68" rx="16" fill="#10263f"/>
+                <path d="M49 28c-3.3-4.3-8.7-6.9-14.7-6.4-9.1.8-15.7 8.5-15 17.8.8 9.5 8.8 16.1 18.4 15.2 5-.5 9-2.7 11.7-6.2" fill="none" stroke="#ffffff" stroke-width="5.6" stroke-linecap="round"/>
+                <path d="M37 39h17v13M58 23v37M58 25h8.5c6 0 10 3.9 10 9.2s-4 9.2-10 9.2H58" fill="none" stroke="#ffffff" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="92" y="39" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800" letter-spacing="0">GLP</text>
+                <text x="92" y="64" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="600" letter-spacing="0">Wellness</text>
+              </svg>
+            </div>
+            <div class="small-check">
+              <svg viewBox="0 0 226 84" aria-hidden="true">
+                <rect x="8" y="8" width="68" height="68" rx="16" fill="#10263f"/>
+                <path d="M49 28c-3.3-4.3-8.7-6.9-14.7-6.4-9.1.8-15.7 8.5-15 17.8.8 9.5 8.8 16.1 18.4 15.2 5-.5 9-2.7 11.7-6.2" fill="none" stroke="#fff" stroke-width="5.6" stroke-linecap="round"/>
+                <path d="M37 39h17v13M58 23v37M58 25h8.5c6 0 10 3.9 10 9.2s-4 9.2-10 9.2H58" fill="none" stroke="#fff" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="92" y="39" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800">GLP</text>
+                <text x="92" y="64" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="600">Wellness</text>
+              </svg>
+              <span>Small-size check</span>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <article class="concept-card">
+        <div class="card-head">
+          <div class="card-title">
+            <span class="card-letter">B</span>
+            <h2>Vital Leaf</h2>
+          </div>
+          <p>Minimal wellness leaf with a refined stem line, balanced against a confident healthtech wordmark.</p>
+        </div>
+        <div class="variants">
+          <section class="variant" aria-label="Vital Leaf full-color logo">
+            <span class="variant-label">Full-color</span>
+            <div class="logo-canvas">
+              <svg class="logo-svg compact" viewBox="0 0 258 86" role="img" aria-labelledby="leaf-color-title">
+                <title id="leaf-color-title">GLP Wellness Vital Leaf logo, full color</title>
+                <defs>
+                  <linearGradient id="leafGradient" x1="8" y1="67" x2="75" y2="13" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#086c66"/>
+                    <stop offset="1" stop-color="#22966c"/>
+                  </linearGradient>
+                </defs>
+                <path d="M73 17c-23.8-1.5-44.7 7.8-56.8 25.4-6.1 8.9-8.1 19.7-5.1 28.9 9.4 2.6 20.4.4 29.1-6.2C57.6 51.8 67 32.3 73 17Z" fill="url(#leafGradient)"/>
+                <path d="M21 64c13.3-16.6 29.6-28 49.4-43.9" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                <path d="M37 52c-2.9-7.4-3.1-14.4-.5-21" fill="none" stroke="#d9fff3" stroke-width="3.6" stroke-linecap="round" opacity="0.95"/>
+                <circle cx="68" cy="65" r="5" fill="#d89a3d"/>
+                <text x="94" y="42" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" letter-spacing="0">GLP</text>
+                <text x="94" y="65" fill="#30465e" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="0">Wellness</text>
+                <path d="M180 57c18-17 40-18 61 0" fill="none" stroke="#0d8c83" stroke-width="3.2" stroke-linecap="round" opacity="0.34"/>
+              </svg>
+            </div>
+            <div class="small-check">
+              <svg viewBox="0 0 258 86" aria-hidden="true">
+                <path d="M73 17c-23.8-1.5-44.7 7.8-56.8 25.4-6.1 8.9-8.1 19.7-5.1 28.9 9.4 2.6 20.4.4 29.1-6.2C57.6 51.8 67 32.3 73 17Z" fill="#0d8c83"/>
+                <path d="M21 64c13.3-16.6 29.6-28 49.4-43.9" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                <text x="94" y="42" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">GLP</text>
+                <text x="94" y="65" fill="#30465e" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600">Wellness</text>
+              </svg>
+              <span>Small-size check</span>
+            </div>
+          </section>
+          <section class="variant" aria-label="Vital Leaf monochrome logo">
+            <span class="variant-label">Monochrome</span>
+            <div class="logo-canvas">
+              <svg class="logo-svg compact" viewBox="0 0 258 86" role="img" aria-labelledby="leaf-mono-title">
+                <title id="leaf-mono-title">GLP Wellness Vital Leaf logo, monochrome</title>
+                <path d="M73 17c-23.8-1.5-44.7 7.8-56.8 25.4-6.1 8.9-8.1 19.7-5.1 28.9 9.4 2.6 20.4.4 29.1-6.2C57.6 51.8 67 32.3 73 17Z" fill="#10263f"/>
+                <path d="M21 64c13.3-16.6 29.6-28 49.4-43.9" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+                <path d="M37 52c-2.9-7.4-3.1-14.4-.5-21" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" opacity="0.9"/>
+                <text x="94" y="42" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" letter-spacing="0">GLP</text>
+                <text x="94" y="65" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="0">Wellness</text>
+                <path d="M180 57c18-17 40-18 61 0" fill="none" stroke="#10263f" stroke-width="3.2" stroke-linecap="round" opacity="0.28"/>
+              </svg>
+            </div>
+            <div class="small-check">
+              <svg viewBox="0 0 258 86" aria-hidden="true">
+                <path d="M73 17c-23.8-1.5-44.7 7.8-56.8 25.4-6.1 8.9-8.1 19.7-5.1 28.9 9.4 2.6 20.4.4 29.1-6.2C57.6 51.8 67 32.3 73 17Z" fill="#10263f"/>
+                <path d="M21 64c13.3-16.6 29.6-28 49.4-43.9" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                <text x="94" y="42" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">GLP</text>
+                <text x="94" y="65" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600">Wellness</text>
+              </svg>
+              <span>Small-size check</span>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <article class="concept-card">
+        <div class="card-head">
+          <div class="card-title">
+            <span class="card-letter">C</span>
+            <h2>Balance</h2>
+          </div>
+          <p>Abstract balance-and-transformation mark with a calm downward motion resolving into wellness.</p>
+        </div>
+        <div class="variants">
+          <section class="variant" aria-label="Balance full-color logo">
+            <span class="variant-label">Full-color</span>
+            <div class="logo-canvas">
+              <svg class="logo-svg" viewBox="0 0 232 86" role="img" aria-labelledby="balance-color-title">
+                <title id="balance-color-title">GLP Wellness Balance logo, full color</title>
+                <defs>
+                  <linearGradient id="balanceGradient" x1="10" y1="14" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0d8c83"/>
+                    <stop offset="1" stop-color="#086c66"/>
+                  </linearGradient>
+                </defs>
+                <rect x="9" y="10" width="68" height="68" rx="34" fill="#e5f5ef"/>
+                <path d="M23 49c8-18 22-26 39-25" fill="none" stroke="url(#balanceGradient)" stroke-width="7" stroke-linecap="round"/>
+                <path d="M23 49c10 7 22 9 36 5" fill="none" stroke="#22966c" stroke-width="7" stroke-linecap="round"/>
+                <path d="M31 32h32" fill="none" stroke="#10263f" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="27" cy="32" r="4.8" fill="#d89a3d"/>
+                <circle cx="67" cy="54" r="5.6" fill="#0d8c83"/>
+                <text x="96" y="41" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" letter-spacing="0">GLP</text>
+                <text x="96" y="65" fill="#30465e" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="23" font-weight="600" letter-spacing="0">Wellness</text>
+              </svg>
+            </div>
+            <div class="small-check">
+              <svg viewBox="0 0 232 86" aria-hidden="true">
+                <rect x="9" y="10" width="68" height="68" rx="34" fill="#e5f5ef"/>
+                <path d="M23 49c8-18 22-26 39-25M23 49c10 7 22 9 36 5" fill="none" stroke="#0d8c83" stroke-width="7" stroke-linecap="round"/>
+                <path d="M31 32h32" fill="none" stroke="#10263f" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="67" cy="54" r="5.6" fill="#0d8c83"/>
+                <text x="96" y="41" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">GLP</text>
+                <text x="96" y="65" fill="#30465e" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="23" font-weight="600">Wellness</text>
+              </svg>
+              <span>Small-size check</span>
+            </div>
+          </section>
+          <section class="variant" aria-label="Balance monochrome logo">
+            <span class="variant-label">Monochrome</span>
+            <div class="logo-canvas">
+              <svg class="logo-svg" viewBox="0 0 232 86" role="img" aria-labelledby="balance-mono-title">
+                <title id="balance-mono-title">GLP Wellness Balance logo, monochrome</title>
+                <rect x="9" y="10" width="68" height="68" rx="34" fill="#f2f5f4"/>
+                <path d="M23 49c8-18 22-26 39-25M23 49c10 7 22 9 36 5" fill="none" stroke="#10263f" stroke-width="7" stroke-linecap="round"/>
+                <path d="M31 32h32" fill="none" stroke="#10263f" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="27" cy="32" r="4.8" fill="#10263f"/>
+                <circle cx="67" cy="54" r="5.6" fill="#10263f"/>
+                <text x="96" y="41" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" letter-spacing="0">GLP</text>
+                <text x="96" y="65" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="23" font-weight="600" letter-spacing="0">Wellness</text>
+              </svg>
+            </div>
+            <div class="small-check">
+              <svg viewBox="0 0 232 86" aria-hidden="true">
+                <rect x="9" y="10" width="68" height="68" rx="34" fill="#f2f5f4"/>
+                <path d="M23 49c8-18 22-26 39-25M23 49c10 7 22 9 36 5" fill="none" stroke="#10263f" stroke-width="7" stroke-linecap="round"/>
+                <path d="M31 32h32" fill="none" stroke="#10263f" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="67" cy="54" r="5.6" fill="#10263f"/>
+                <text x="96" y="41" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">GLP</text>
+                <text x="96" y="65" fill="#10263f" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="23" font-weight="600">Wellness</text>
+              </svg>
+              <span>Small-size check</span>
+            </div>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

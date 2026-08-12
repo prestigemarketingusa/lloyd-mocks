@@ -353,6 +353,65 @@
       font-weight: 800;
     }
 
+    .opt-in-form {
+      display: grid;
+      gap: 14px;
+      padding: 24px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .field input {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .field input::placeholder {
+      color: #91a0af;
+    }
+
+    .consent-row {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin-top: 4px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--ink-2);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .consent-row input {
+      width: 18px;
+      height: 18px;
+      margin: 2px 0 0;
+      accent-color: var(--teal);
+    }
+
+    .consent-row a {
+      color: var(--teal-dark);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -620,16 +679,29 @@
         </div>
 
         <aside class="qualify-panel" id="qualify" aria-label="Eligibility check overview">
-          <!-- Future GHL form embed can replace this panel. -->
           <div class="qualify-head">
             <strong>Your online start</strong>
             <span>Simple, private, and reviewed by a licensed provider.</span>
           </div>
-          <ul class="checklist">
-            <li><span class="check">&#10003;</span><span>Complete your short health intake from your phone or computer.</span></li>
-            <li><span class="check">&#10003;</span><span>Review clear next steps before continuing with any plan.</span></li>
-            <li><span class="check">&#10003;</span><span>Use provider messaging if you have questions during care.</span></li>
-          </ul>
+          <form class="opt-in-form" aria-label="Eligibility opt-in form" action="#" method="post">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="first-name" type="text" autocomplete="given-name" placeholder="First name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" required>
+            </div>
+            <label class="consent-row" for="contact-consent">
+              <input id="contact-consent" name="contact-consent" type="checkbox" required>
+              <span>By checking this box and clicking Submit, I agree that GLP Wellness and its associates may contact me at the phone number and email I provide — including by live (personal) and artificial, prerecorded, or AI-generated voice calls, text messages (SMS/MMS), and email — for both clinical/telehealth and marketing purposes, using automated technology. I understand that consent is not a condition of any purchase or treatment. Message and data rates may apply; message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="privacy-policy.html">Privacy Policy</a>, <a href="terms.html">Terms of Service</a>, <a href="hipaa-npp.html">Notice of Privacy Practices</a>, and <a href="telehealth-consent.html">Telehealth Consent</a>.</span>
+            </label>
+            <button class="button" type="submit">Submit</button>
+          </form>
         </aside>
       </div>
     </section>
@@ -668,7 +740,7 @@
             <path d="M12 3 4 7v6c0 4.6 3.4 7.2 8 8 4.6-.8 8-3.4 8-8V7l-8-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
             <path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          <span>Discreet, fast shipping</span>
+          <span>Discreet shipping</span>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -715,6 +787,11 @@
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
         <a href="get-started.html">Get Started</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="hipaa-npp.html">HIPAA Notice</a>
+        <a href="telehealth-consent.html">Telehealth Consent</a>
+        <a href="refund-policy.html">Refund Policy</a>
       </nav>
       <p class="disclaimer">Prescription products require an online evaluation by a licensed provider; not everyone qualifies. Results vary. This is not medical advice.</p>
     </div>

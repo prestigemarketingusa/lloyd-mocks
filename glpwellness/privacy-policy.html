@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | GLP Wellness</title>
+  <meta name="description" content="Privacy Policy template for GLP Wellness telehealth weight-loss services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10263f;
+      --ink-2: #30465e;
+      --muted: #6b7c8f;
+      --teal: #0d8c83;
+      --teal-dark: #086c66;
+      --emerald: #22966c;
+      --mint: #e5f5ef;
+      --cream: #fbf7ef;
+      --warm: #f5ead8;
+      --amber: #d89a3d;
+      --surface: #ffffff;
+      --line: #dce8e3;
+      --shadow: 0 18px 46px rgba(16, 38, 63, 0.1);
+      --shadow-soft: 0 10px 28px rgba(16, 38, 63, 0.08);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(34, 150, 108, 0.14), transparent 28rem),
+        radial-gradient(circle at 86% 12%, rgba(216, 154, 61, 0.12), transparent 23rem),
+        linear-gradient(180deg, var(--cream) 0%, #ffffff 44%, #f4fbf8 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    svg {
+      display: block;
+      flex: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .draft-banner {
+      padding: 11px 0;
+      border-bottom: 1px solid #e8d7b6;
+      background: #fff8e8;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(220, 232, 227, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--teal), var(--emerald));
+      box-shadow: 0 10px 24px rgba(13, 140, 131, 0.24);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--teal-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(13, 140, 131, 0.25);
+      font-size: 0.96rem;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--teal-dark);
+      box-shadow: 0 18px 36px rgba(13, 140, 131, 0.3);
+    }
+
+    .nav .button {
+      min-height: 42px;
+      padding: 0 16px;
+      font-size: 0.86rem;
+    }
+
+    .legal-hero {
+      padding: 72px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-dark);
+      font-size: 0.79rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 5px rgba(34, 150, 108, 0.13);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin-bottom: 18px;
+      font-size: 4.2rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--ink-2);
+      font-size: 1.12rem;
+    }
+
+    .legal-document {
+      padding: 20px 0 84px;
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 38px;
+      align-items: start;
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: 102px;
+      display: grid;
+      gap: 10px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .legal-toc strong {
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+    }
+
+    .legal-toc a {
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .legal-toc a:hover,
+    .legal-content a {
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .legal-content {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .legal-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-section ul {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 0;
+      padding-left: 22px;
+      color: var(--ink-2);
+    }
+
+    .legal-section li {
+      padding-left: 3px;
+    }
+
+    .legal-note {
+      margin: 18px 0 0;
+      padding: 18px;
+      border-left: 4px solid var(--teal);
+      border-radius: var(--radius);
+      background: var(--mint);
+      color: var(--ink-2);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer p {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer strong {
+      color: var(--ink);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px 18px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal-dark);
+    }
+
+    .disclaimer {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(216, 154, 61, 0.55);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 980px) {
+      .legal-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-toc {
+        position: static;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-menu {
+        display: none;
+        width: 100%;
+        flex: 0 0 100%;
+        align-items: stretch;
+        padding: 14px 0 4px;
+        border-top: 1px solid var(--line);
+      }
+
+      .nav.is-open .nav-menu {
+        display: grid;
+        gap: 14px;
+      }
+
+      .nav-links {
+        display: grid;
+        gap: 12px;
+      }
+
+      .nav .button {
+        width: 100%;
+        min-height: 46px;
+      }
+
+      .legal-hero {
+        padding: 50px 0 30px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="draft-banner">DRAFT — pending review by legal counsel. Not legal advice.</div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="GLP Wellness home">
+        <span class="brand-mark">GLP</span>
+        <span>GLP Wellness</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="sr-only">Menu</span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="weight-loss.html">Weight Loss</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a class="button" href="get-started.html">See If I Qualify</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <div class="container">
+        <span class="eyebrow">Legal template</span>
+        <h1>Privacy Policy</h1>
+        <p class="lead">Last updated: June 18, 2026. This draft explains how GLP Wellness, a Texas LLC, may collect, use, disclose, retain, and protect personal information in connection with telehealth weight-loss services.</p>
+      </div>
+    </section>
+
+    <section class="legal-document">
+      <div class="container legal-layout">
+        <aside class="legal-toc" aria-label="Privacy Policy sections">
+          <strong>On this page</strong>
+          <a href="#scope">Scope</a>
+          <a href="#information">Information We Collect</a>
+          <a href="#use">How We Use Information</a>
+          <a href="#sharing">How We Share Information</a>
+          <a href="#communications">SMS, Email, and AI Voice</a>
+          <a href="#retention">Retention and Security</a>
+          <a href="#rights">Rights and Choices</a>
+          <a href="#contact">Contact</a>
+        </aside>
+
+        <article class="legal-content">
+          <section class="legal-section" id="scope">
+            <h2>1. Scope</h2>
+            <p>This Privacy Policy applies to information collected through GLP Wellness websites, online forms, telehealth intake workflows, messaging, phone calls, email, text messages, and related services. Health information used by health care providers may also be protected by HIPAA and described in our <a href="hipaa-npp.html">Notice of Privacy Practices</a>.</p>
+            <p>This Policy is intended as a starting template and should be reviewed for GLP Wellness operations, vendor relationships, and applicable state and federal law.</p>
+          </section>
+
+          <section class="legal-section" id="information">
+            <h2>2. Information We Collect</h2>
+            <p>We may collect information that you provide directly, information created during your use of services, and information collected automatically from your device.</p>
+            <ul>
+              <li>Contact and account information, such as name, address, email address, phone number, date of birth, and login details.</li>
+              <li>Health and intake information, such as weight-management goals, medical history, medication history, allergies, health measurements, photos, identity verification details, and provider communications.</li>
+              <li>Payment and transaction information, such as billing details, plan selections, payment status, refund requests, and order history.</li>
+              <li>Communications information, including messages, calls, texts, emails, form submissions, support requests, call recordings where permitted, and marketing preferences.</li>
+              <li>Device and usage information, such as IP address, browser type, pages viewed, referring pages, approximate location, cookie identifiers, and website analytics data.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="use">
+            <h2>3. How We Use Information</h2>
+            <p>GLP Wellness may use information for operational, clinical, administrative, and compliance purposes.</p>
+            <ul>
+              <li>To provide websites, intake forms, telehealth workflows, provider review, support, pharmacy coordination, shipping coordination, and account services.</li>
+              <li>To evaluate eligibility, verify identity, support provider decision-making, process payments, manage subscriptions, and respond to requests.</li>
+              <li>To send service messages, appointment reminders, care-related notices, billing notices, policy updates, and requested information.</li>
+              <li>To send marketing communications where permitted and consistent with your choices.</li>
+              <li>To monitor, secure, debug, improve, and personalize websites, forms, and services.</li>
+              <li>To comply with legal duties, enforce agreements, prevent fraud, and protect the rights, safety, and security of GLP Wellness, patients, providers, and others.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="sharing">
+            <h2>4. How We Share Information</h2>
+            <p>We may disclose information to support services, meet legal obligations, and operate the business. We do not sell protected health information.</p>
+            <ul>
+              <li>Providers and clinical partners involved in reviewing, coordinating, or providing care.</li>
+              <li>Pharmacies, laboratories, shipping partners, payment processors, identity verification vendors, technology vendors, analytics vendors, communications vendors, and customer support vendors.</li>
+              <li>Professional advisors, insurers, auditors, and compliance consultants.</li>
+              <li>Government authorities, regulators, courts, or other parties when required or permitted by law.</li>
+              <li>Successors or parties to a business transaction, such as a merger, acquisition, financing, reorganization, or asset transfer, subject to appropriate safeguards.</li>
+            </ul>
+            <p>Where HIPAA applies, uses and disclosures of protected health information are handled as described in the <a href="hipaa-npp.html">Notice of Privacy Practices</a> and applicable business associate agreements.</p>
+          </section>
+
+          <section class="legal-section" id="communications">
+            <h2>5. SMS, Email, and AI Voice Contact</h2>
+            <p>When you provide contact information, GLP Wellness and its associates may contact you by live calls, artificial, prerecorded, or AI-generated voice calls, text messages, SMS/MMS, and email for clinical, telehealth, account, transactional, and marketing purposes where permitted. Message and data rates may apply. Message frequency varies.</p>
+            <p>You can reply STOP to text messages to opt out of promotional texts and HELP for help. You can use unsubscribe links in marketing emails where available. Opting out of marketing communications does not prevent GLP Wellness from sending legally permitted service, clinical, safety, billing, or account communications.</p>
+          </section>
+
+          <section class="legal-section" id="retention">
+            <h2>6. Retention and Security</h2>
+            <p>We retain information for as long as reasonably needed for the purposes described in this Policy, including to provide services, maintain records, comply with legal and professional obligations, resolve disputes, enforce agreements, and support business operations.</p>
+            <p>We use administrative, technical, and physical safeguards designed to protect information. No website, system, or transmission method is completely secure, so users should also protect their own account credentials and devices.</p>
+          </section>
+
+          <section class="legal-section" id="rights">
+            <h2>7. Rights and Choices</h2>
+            <p>Depending on your location and the type of information involved, you may have rights to access, correct, delete, restrict, or receive a copy of certain personal information. You may also have HIPAA rights related to protected health information, as described in the <a href="hipaa-npp.html">Notice of Privacy Practices</a>.</p>
+            <ul>
+              <li>Contact us to request access, correction, deletion, or other privacy assistance.</li>
+              <li>Use browser settings to block or delete cookies, recognizing that some site features may not work as intended.</li>
+              <li>Opt out of marketing emails through unsubscribe links or by contacting us.</li>
+              <li>Opt out of promotional texts by replying STOP.</li>
+            </ul>
+            <p>We may need to verify your identity before completing certain requests.</p>
+          </section>
+
+          <section class="legal-section" id="contact">
+            <h2>8. Contact</h2>
+            <p>GLP Wellness, a Texas LLC</p>
+            <p><a href="tel:+14694572876">(469) 457-2876</a><br><a href="mailto:info@glpwellness.com">info@glpwellness.com</a></p>
+            <p class="legal-note">For health information rights under HIPAA, also review the <a href="hipaa-npp.html">HIPAA Notice of Privacy Practices</a>.</p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>GLP Wellness</strong> &middot; a Texas LLC</p>
+        <p><a href="tel:+14694572876">(469) 457-2876</a> &middot; <a href="mailto:info@glpwellness.com">info@glpwellness.com</a></p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a>
+        <a href="weight-loss.html">Weight Loss</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="get-started.html">Get Started</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="hipaa-npp.html">HIPAA Notice</a>
+        <a href="telehealth-consent.html">Telehealth Consent</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </nav>
+      <p class="disclaimer">Prescription products require an online evaluation by a licensed provider; not everyone qualifies. Results vary. This is not medical advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector(".nav");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if (nav && toggle) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+  </script>
+</body>
+</html>

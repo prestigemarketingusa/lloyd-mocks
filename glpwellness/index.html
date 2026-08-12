@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GLP Wellness | Doctor-Supervised GLP-1 Weight Management</title>
-  <meta name="description" content="GLP Wellness provides doctor-supervised GLP-1 weight-management care delivered 100% online, with licensed provider review and discreet shipping.">
+  <title>GLP Wellness | Medically Supervised GLP-1 Weight Management</title>
+  <meta name="description" content="GLP Wellness provides medically supervised GLP-1 weight-management care delivered 100% online, with licensed provider review and discreet shipping.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -95,24 +95,20 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
       color: var(--ink);
-      font-weight: 800;
       letter-spacing: 0;
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius);
-      color: #ffffff;
-      background: linear-gradient(135deg, var(--teal), var(--emerald));
-      box-shadow: 0 10px 24px rgba(13, 140, 131, 0.24);
-      font-size: 0.75rem;
-      font-weight: 800;
+    .brand-logo {
+      width: 136px;
+      height: auto;
+      color: var(--ink);
+      filter: drop-shadow(0 8px 18px rgba(13, 140, 131, 0.08));
+    }
+
+    .brand:hover .brand-logo {
+      color: var(--teal-dark);
     }
 
     .nav-menu {
@@ -774,6 +770,10 @@
         min-height: 46px;
       }
 
+      .brand-logo {
+        width: 124px;
+      }
+
       .hero {
         padding: 50px 0 36px;
       }
@@ -863,8 +863,28 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Primary navigation">
       <a class="brand" href="index.html" aria-label="GLP Wellness home">
-        <span class="brand-mark">GLP</span>
-        <span>GLP Wellness</span>
+        <svg class="brand-logo" viewBox="0 0 226 84" role="img" aria-labelledby="home-logo-title">
+          <title id="home-logo-title">GLP Wellness</title>
+          <defs>
+            <linearGradient id="homeLogoGradient" x1="8" y1="8" x2="68" y2="76" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0d8c83"/>
+              <stop offset="1" stop-color="#22966c"/>
+            </linearGradient>
+          </defs>
+          <g>
+            <rect x="8" y="8" width="68" height="68" rx="16" fill="url(#homeLogoGradient)"/>
+            <path d="M49 28c-3.3-4.3-8.7-6.9-14.7-6.4-9.1.8-15.7 8.5-15 17.8.8 9.5 8.8 16.1 18.4 15.2 5-.5 9-2.7 11.7-6.2" fill="none" stroke="#fff" stroke-width="5.6" stroke-linecap="round"/>
+            <path d="M37 39h17v13" fill="none" stroke="#fff" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M58 23v37" fill="none" stroke="#d9fff3" stroke-width="5.6" stroke-linecap="round"/>
+            <path d="M58 25h8.5c6 0 10 3.9 10 9.2s-4 9.2-10 9.2H58" fill="none" stroke="#d9fff3" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="66" cy="58" r="4.5" fill="#f5ead8"/>
+          </g>
+          <g fill="currentColor">
+            <text x="92" y="39" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800" letter-spacing="0">GLP</text>
+            <text x="92" y="64" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="600" letter-spacing="0" fill="#30465e">Wellness</text>
+          </g>
+        </svg>
+        <span class="sr-only">GLP Wellness</span>
       </a>
       <button class="menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
@@ -972,7 +992,7 @@
             <path d="M12 3 4 7v6c0 4.6 3.4 7.2 8 8 4.6-.8 8-3.4 8-8V7l-8-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
             <path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          <span>Discreet, fast shipping</span>
+          <span>Discreet shipping</span>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1130,6 +1150,11 @@
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
         <a href="get-started.html">Get Started</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="hipaa-npp.html">HIPAA Notice</a>
+        <a href="telehealth-consent.html">Telehealth Consent</a>
+        <a href="refund-policy.html">Refund Policy</a>
       </nav>
       <p class="disclaimer">Prescription products require an online evaluation by a licensed provider; not everyone qualifies. Results vary. This is not medical advice.</p>
     </div>

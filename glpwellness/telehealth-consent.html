@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Telehealth Consent | GLP Wellness</title>
+  <meta name="description" content="Telehealth Consent template for GLP Wellness telehealth weight-loss services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10263f;
+      --ink-2: #30465e;
+      --muted: #6b7c8f;
+      --teal: #0d8c83;
+      --teal-dark: #086c66;
+      --emerald: #22966c;
+      --mint: #e5f5ef;
+      --cream: #fbf7ef;
+      --warm: #f5ead8;
+      --amber: #d89a3d;
+      --surface: #ffffff;
+      --line: #dce8e3;
+      --shadow: 0 18px 46px rgba(16, 38, 63, 0.1);
+      --shadow-soft: 0 10px 28px rgba(16, 38, 63, 0.08);
+      --radius: 8px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(34, 150, 108, 0.14), transparent 28rem),
+        radial-gradient(circle at 86% 12%, rgba(216, 154, 61, 0.12), transparent 23rem),
+        linear-gradient(180deg, var(--cream) 0%, #ffffff 44%, #f4fbf8 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    svg {
+      display: block;
+      flex: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .draft-banner {
+      padding: 11px 0;
+      border-bottom: 1px solid #e8d7b6;
+      background: #fff8e8;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(220, 232, 227, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--teal), var(--emerald));
+      box-shadow: 0 10px 24px rgba(13, 140, 131, 0.24);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--teal-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(13, 140, 131, 0.25);
+      font-size: 0.96rem;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--teal-dark);
+      box-shadow: 0 18px 36px rgba(13, 140, 131, 0.3);
+    }
+
+    .nav .button {
+      min-height: 42px;
+      padding: 0 16px;
+      font-size: 0.86rem;
+    }
+
+    .legal-hero {
+      padding: 72px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--teal-dark);
+      font-size: 0.79rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 5px rgba(34, 150, 108, 0.13);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin-bottom: 18px;
+      font-size: 4.2rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--ink-2);
+      font-size: 1.12rem;
+    }
+
+    .legal-document {
+      padding: 20px 0 84px;
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 38px;
+      align-items: start;
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: 102px;
+      display: grid;
+      gap: 10px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .legal-toc strong {
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+    }
+
+    .legal-toc a {
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .legal-toc a:hover,
+    .legal-content a {
+      color: var(--teal-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .legal-content {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .legal-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-section ul {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 0;
+      padding-left: 22px;
+      color: var(--ink-2);
+    }
+
+    .legal-section li {
+      padding-left: 3px;
+    }
+
+    .legal-note {
+      margin: 18px 0 0;
+      padding: 18px;
+      border-left: 4px solid var(--teal);
+      border-radius: var(--radius);
+      background: var(--mint);
+      color: var(--ink-2);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer p {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer strong {
+      color: var(--ink);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px 18px;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal-dark);
+    }
+
+    .disclaimer {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(216, 154, 61, 0.55);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 980px) {
+      .legal-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-toc {
+        position: static;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-menu {
+        display: none;
+        width: 100%;
+        flex: 0 0 100%;
+        align-items: stretch;
+        padding: 14px 0 4px;
+        border-top: 1px solid var(--line);
+      }
+
+      .nav.is-open .nav-menu {
+        display: grid;
+        gap: 14px;
+      }
+
+      .nav-links {
+        display: grid;
+        gap: 12px;
+      }
+
+      .nav .button {
+        width: 100%;
+        min-height: 46px;
+      }
+
+      .legal-hero {
+        padding: 50px 0 30px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="draft-banner">DRAFT — pending review by legal counsel. Not legal advice.</div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="GLP Wellness home">
+        <span class="brand-mark">GLP</span>
+        <span>GLP Wellness</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="sr-only">Menu</span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="weight-loss.html">Weight Loss</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a class="button" href="get-started.html">See If I Qualify</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <div class="container">
+        <span class="eyebrow">Legal template</span>
+        <h1>Telehealth Consent</h1>
+        <p class="lead">Last updated: June 18, 2026. This draft consent explains the nature, benefits, limits, and risks of receiving weight-loss care through telehealth.</p>
+      </div>
+    </section>
+
+    <section class="legal-document">
+      <div class="container legal-layout">
+        <aside class="legal-toc" aria-label="Telehealth Consent sections">
+          <strong>On this page</strong>
+          <a href="#consent">Consent</a>
+          <a href="#nature">Nature of Telehealth</a>
+          <a href="#relationship">Provider Relationship</a>
+          <a href="#risks">Risks and Limits</a>
+          <a href="#prescriptions">Prescriptions</a>
+          <a href="#responsibilities">Patient Responsibilities</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#withdraw">Right to Withdraw</a>
+          <a href="#contact">Contact</a>
+        </aside>
+
+        <article class="legal-content">
+          <section class="legal-section" id="consent">
+            <h2>1. Consent to Telehealth</h2>
+            <p>By using GLP Wellness telehealth services, you consent to receive care through remote technologies such as online intake forms, secure messaging, video, phone, text, email, electronic records, and other digital tools when appropriate.</p>
+            <p>You understand that telehealth may be used for weight-management evaluation, provider review, care coordination, prescription decisions when appropriate, follow-up, education, and support.</p>
+          </section>
+
+          <section class="legal-section" id="nature">
+            <h2>2. Nature of Telehealth</h2>
+            <p>Telehealth allows a licensed provider to evaluate and communicate with you while you and the provider are in different locations. Telehealth may involve asynchronous review of information you submit, live or recorded communications where permitted, secure messaging, remote monitoring information, pharmacy coordination, and electronic prescribing when appropriate.</p>
+            <ul>
+              <li>Telehealth is not the same as an in-person examination.</li>
+              <li>A provider may determine that telehealth is not appropriate for your situation.</li>
+              <li>You may be asked to seek in-person care, urgent care, lab testing, or additional evaluation before treatment can continue.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="relationship">
+            <h2>3. Provider Relationship</h2>
+            <p>A provider-patient relationship is not created merely by visiting the website, reading site content, submitting a general inquiry, or starting an intake. A relationship may be formed only when a licensed provider reviews your information, accepts responsibility for your care, and applicable legal requirements are met.</p>
+            <p>Providers use professional judgment to decide whether weight-loss treatment, including prescription medication, is clinically appropriate. Not everyone qualifies.</p>
+          </section>
+
+          <section class="legal-section" id="risks">
+            <h2>4. Risks, Limits, and No Promised Outcome</h2>
+            <p>Telehealth has potential benefits, including convenience and access to remote provider review, but it also has limitations and risks.</p>
+            <ul>
+              <li>Information may be incomplete, inaccurate, delayed, or misunderstood because the provider is not physically present.</li>
+              <li>Technology can fail, including internet outages, platform issues, message delays, device problems, or data transmission errors.</li>
+              <li>Remote care may not identify every medical issue that could be found during an in-person examination.</li>
+              <li>Security safeguards reduce risk but cannot eliminate every privacy or cybersecurity risk.</li>
+              <li>Treatment may cause side effects or may not be appropriate for you.</li>
+            </ul>
+            <p>Weight-loss outcomes and treatment experiences vary. No provider, medication, plan, or service promises a specific result.</p>
+          </section>
+
+          <section class="legal-section" id="prescriptions">
+            <h2>5. Prescriptions and Medication</h2>
+            <p>Prescription medication is provided only if a licensed provider determines it is appropriate after reviewing your information. A provider may decline to prescribe, request more information, change treatment, discontinue treatment, or refer you to other care.</p>
+            <ul>
+              <li>Read all medication instructions, warnings, and pharmacy materials.</li>
+              <li>Use medications only as prescribed for you.</li>
+              <li>Tell your provider about side effects, medication changes, pregnancy, new diagnoses, surgery plans, hospitalizations, or other relevant changes.</li>
+              <li>Do not share medication with anyone else.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="responsibilities">
+            <h2>6. Patient Responsibilities</h2>
+            <p>You agree to provide accurate, current, and complete information and to update GLP Wellness and your provider when information changes. You are responsible for maintaining access to the email, phone, device, and internet connection used for telehealth.</p>
+            <ul>
+              <li>Respond promptly to provider questions and safety-related messages.</li>
+              <li>Follow provider instructions and seek in-person or emergency care when directed.</li>
+              <li>Use a private location and secure device when sharing health information.</li>
+              <li>Confirm that you are physically located in a state where services are available before each telehealth interaction.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="privacy">
+            <h2>7. Privacy and Communications</h2>
+            <p>Your health information may be used and disclosed as described in the <a href="privacy-policy.html">Privacy Policy</a> and <a href="hipaa-npp.html">Notice of Privacy Practices</a>. Telehealth communications may involve vendors that support intake, messaging, phone, text, email, identity verification, payment, pharmacy coordination, and technology operations.</p>
+            <p>You authorize GLP Wellness and its associates to contact you using the contact information you provide for care, account, billing, support, and marketing purposes where permitted. Message and data rates may apply.</p>
+          </section>
+
+          <section class="legal-section" id="withdraw">
+            <h2>8. Right to Withdraw or Stop Telehealth</h2>
+            <p>You may decline telehealth services or stop using telehealth services at any time, subject to any consequences of ending treatment or failing to complete recommended follow-up. You may request information about alternative care options, including in-person care.</p>
+            <p class="legal-note">If you believe you have a medical emergency, call 911 or seek emergency care immediately. GLP Wellness telehealth services are not for emergencies.</p>
+          </section>
+
+          <section class="legal-section" id="contact">
+            <h2>9. Contact</h2>
+            <p>GLP Wellness, a Texas LLC</p>
+            <p><a href="tel:+14694572876">(469) 457-2876</a><br><a href="mailto:info@glpwellness.com">info@glpwellness.com</a></p>
+            <p>Use this contact information for questions about telehealth, account support, cancellations, or privacy documents.</p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>GLP Wellness</strong> &middot; a Texas LLC</p>
+        <p><a href="tel:+14694572876">(469) 457-2876</a> &middot; <a href="mailto:info@glpwellness.com">info@glpwellness.com</a></p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="index.html">Home</a>
+        <a href="weight-loss.html">Weight Loss</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="get-started.html">Get Started</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="hipaa-npp.html">HIPAA Notice</a>
+        <a href="telehealth-consent.html">Telehealth Consent</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </nav>
+      <p class="disclaimer">Prescription products require an online evaluation by a licensed provider; not everyone qualifies. Results vary. This is not medical advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector(".nav");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if (nav && toggle) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+  </script>
+</body>
+</html>
