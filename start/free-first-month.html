@@ -73,6 +73,10 @@
   .reassure b{color:var(--text-sub)}
   .reassure-num{display:inline-block;margin-top:8px;color:var(--accent);font-weight:700}
   .ship-note{font-size:13px;line-height:1.5;color:var(--text-muted);background:var(--bg-subtle);border-radius:8px;padding:10px 12px;margin:4px 0 14px;text-wrap:pretty}
+  .ship-addr{margin:0 0 14px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .ship-addr-h{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px}
+  .addr-row{display:flex;gap:8px}
+  .addr-row input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:#fff}
   footer{padding:28px 0 44px;font-size:12px;color:var(--text-muted);text-align:center}
   footer p{margin-bottom:8px;max-width:600px;margin-left:auto;margin-right:auto}
   .mock-note{background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;font-size:12.5px;padding:8px 14px;text-align:center}
@@ -196,6 +200,12 @@
         <div class="order-total"><span>Due today</span><span id="orderTotal">$134.00</span></div>
       </div>
       <div class="ship-note">Local to Costa Mesa? <b>Uncheck shipping</b> to pick up your free first month — call <b>657-837-3342</b> to schedule. Too far to drive? Cold-pack shipping is a flat <b>$35</b> anywhere. We've checked it for you, since most patients are outside driving distance.</div>
+      <div id="shipAddr" class="ship-addr">
+        <div class="ship-addr-h">Where should we ship your cold pack?</div>
+        <div class="field"><input type="text" placeholder="Street address"></div>
+        <div class="field"><input type="text" placeholder="Apt / suite (optional)"></div>
+        <div class="addr-row"><input type="text" placeholder="City"><input type="text" placeholder="State"><input type="text" placeholder="ZIP"></div>
+      </div>
       <label class="optin"><input type="checkbox" checked> Yes — I'd like to continue with New Hope Weight Loss. I authorize you to contact me about my treatment and reorders by call, text and email (live or automated); consent isn't required to purchase; msg &amp; data rates may apply; reply STOP to opt out, HELP for help.</label>
       <button class="btn" id="payBtn" style="width:100%" type="button">Pay $134 &amp; start my free month</button>
       <span class="btn-sub">Secure checkout. Fully refunded if you're not medically approved.</span>
@@ -239,6 +249,7 @@
   var shipChk = document.getElementById('shipChk');
   var shipAmt = document.getElementById('shipAmt');
   var payBtn  = document.getElementById('payBtn');
+  var shipAddr= document.getElementById('shipAddr');
 
   var promoOn = true;
 
@@ -254,6 +265,7 @@
     var due = doctor + ship;
     total.textContent    = money(due);
     payBtn.textContent   = 'Pay ' + money(due) + ' & start my free month';
+    shipAddr.style.display = shipChk.checked ? 'block' : 'none';  // address only when shipping
   }
 
   btn.addEventListener('click', function(){
