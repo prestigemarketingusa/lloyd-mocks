@@ -221,7 +221,7 @@
         <div class="addr-row"><input type="text" placeholder="City"><input type="text" placeholder="State"><input type="text" placeholder="ZIP"></div>
       </div>
       <label class="optin"><input type="checkbox" checked> Yes — I'd like to continue with New Hope Weight Loss. I authorize you to contact me about my treatment and reorders by call, text and email (live or automated); consent isn't required to purchase; msg &amp; data rates may apply; reply STOP to opt out, HELP for help.</label>
-      <button class="btn" id="payBtn" style="width:100%" type="button">Pay $134 &amp; start my free month</button>
+      <button class="btn" id="payBtn" style="width:100%" type="button">Get started — $99 doctor visit</button>
       <span class="btn-sub">Secure checkout. Fully refunded if you're not medically approved.</span>
       <div class="reassure">
         <b>Not sure whether semaglutide or tirzepatide is right for you?</b><br>
@@ -277,8 +277,7 @@
     var ship   = shipChk.checked ? 35 : 0;
     shipAmt.textContent  = money(ship);
     var due = doctor + ship;
-    total.textContent    = money(due);
-    payBtn.textContent   = 'Pay ' + money(due) + ' & start my free month';
+    total.textContent    = money(due);   // "Due today" carries the true figure ($134 / $99 pickup)
     shipAddr.style.display = shipChk.checked ? 'block' : 'none';  // address only when shipping
   }
 
