@@ -128,8 +128,13 @@
       </li>
       <li class="free">
         <span class="chk">✓</span>
-        <div><div class="lbl">Your first month — semaglutide or tirzepatide</div><div class="desc">Included with your doctor review. Nothing extra to start.</div></div>
+        <div><div class="lbl">Your first month — semaglutide or tirzepatide</div><div class="desc">Included free with your doctor review — your physician prescribes the right one for you.</div></div>
         <span class="amt free">$0</span>
+      </li>
+      <li>
+        <span class="chk">✓</span>
+        <div><div class="lbl">First-order shipping</div><div class="desc">One-time $35 cold-pack shipping so your medication reaches you safely. Required.</div></div>
+        <span class="amt">$35</span>
       </li>
       <li>
         <span class="chk">✓</span>
@@ -172,7 +177,7 @@
   <div class="wrap">
     <div class="form-card">
       <h3>Start your first free month</h3>
-      <p class="fc-sub">Quick doctor review — $99 with DOCTOR20. First month free.</p>
+      <p class="fc-sub">Quick doctor review — $99 with DOCTOR20. First month free, plus a one-time $35 shipping fee.</p>
       <div class="field"><label>Full name</label><input type="text" placeholder="Your name"></div>
       <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
       <div class="field"><label>Mobile phone</label><input type="tel" placeholder="(___) ___-____"></div>
@@ -185,11 +190,12 @@
       <div class="order">
         <div class="order-line"><span>Doctor review, consult &amp; prescription fee</span><span>$119.00</span></div>
         <div class="order-line" id="discountLine"><span>DOCTOR20 discount</span><span>−$20.00</span></div>
-        <div class="order-line free-line"><span><input type="checkbox" checked disabled style="accent-color:#10B981;vertical-align:-1px"> First month — semaglutide or tirzepatide</span><span>$0.00</span></div>
-        <div class="order-total"><span>Due today (one-time)</span><span id="orderTotal">$99.00</span></div>
+        <div class="order-line free-line"><span><input type="radio" checked disabled style="accent-color:#10B981;vertical-align:-1px"> First month — semaglutide or tirzepatide</span><span>$0.00</span></div>
+        <div class="order-line"><span>Shipping (required)</span><span>$35.00</span></div>
+        <div class="order-total"><span>Due today</span><span id="orderTotal">$134.00</span></div>
       </div>
       <label class="optin"><input type="checkbox" checked> Yes — I'd like to continue with New Hope Weight Loss. I authorize you to contact me about my treatment and reorders by call, text and email (live or automated); consent isn't required to purchase; msg &amp; data rates may apply; reply STOP to opt out, HELP for help.</label>
-      <button class="btn" style="width:100%" type="button">Pay $99 &amp; start my free month</button>
+      <button class="btn" style="width:100%" type="button">Pay $134 &amp; start my free month</button>
       <span class="btn-sub">Secure checkout. Fully refunded if you're not medically approved.</span>
       <div class="reassure">
         <b>Not sure whether semaglutide or tirzepatide is right for you?</b><br>
@@ -213,16 +219,16 @@
 <footer>
   <div class="wrap">
     <p>The $99 doctor review is a <b>one-time fee, never recurring</b>. No additional doctor fees while you're on our protocol. If you're not medically approved, your $99 is fully refunded.</p>
-    <p>After payment, watch for a call from a <b>719 area code</b> — that's your doctor. Once prescribed, your medication is delivered to you, or pick up free at our Costa Mesa clinic.</p>
+    <p>After payment, watch for a call from a <b>719 area code</b> — that's your doctor. Once prescribed, your medication ships directly to you. A one-time <b>$35 cold-pack shipping fee</b> applies to your order.</p>
     <p>New Hope Weight Loss · Costa Mesa, CA · By reaching out you agree to our Terms &amp; Privacy Policy. Reply STOP to opt out, HELP for help.</p>
-    <p class="legal">Ozempic® and Wegovy® (semaglutide) are registered trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® (tirzepatide) are registered trademarks of Eli Lilly and Company. New Hope Weight Loss is not affiliated with, endorsed by, or sponsored by Novo Nordisk or Eli Lilly. Semaglutide and tirzepatide are prescription medications dispensed only after a medical evaluation; eligibility, treatment, and the first month free are subject to physician approval. The $99 doctor review is a one-time fee, refunded if you are not medically approved. Weight-loss figures reflect published clinical studies; individual results vary and are not guaranteed. The Summer2Remember offer — first month free and our lowest per-vial pricing — is available to new New Hope Weight Loss patients only, for a limited time. Pricing, promotions, and medication availability may change without notice. This page is for informational purposes and is not medical advice.</p>
+    <p class="legal">Ozempic® and Wegovy® (semaglutide) are registered trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® (tirzepatide) are registered trademarks of Eli Lilly and Company. New Hope Weight Loss is not affiliated with, endorsed by, or sponsored by Novo Nordisk or Eli Lilly. Semaglutide and tirzepatide are prescription medications dispensed only after a medical evaluation; eligibility, treatment, and the first month free are subject to physician approval. The $99 doctor review is a one-time fee, refunded if you are not medically approved. A one-time $35 cold-pack shipping fee applies to your order. Weight-loss figures reflect published clinical studies; individual results vary and are not guaranteed. The Summer2Remember offer — first month free and our lowest per-vial pricing — is available to new New Hope Weight Loss patients only, for a limited time. Pricing, promotions, and medication availability may change without notice. This page is for informational purposes and is not medical advice.</p>
   </div>
 </footer>
 
 <script>
 (function(){
   // Live promo-code behavior — proves DOCTOR20 is a real code:
-  // apply it -> $99; remove/clear it -> price returns to $119.
+  // apply it -> $134 ($99 visit + $35 shipping); remove/clear it -> $154 ($119 + $35).
   var input   = document.getElementById('promo');
   var btn     = document.getElementById('applyBtn');
   var banner  = document.getElementById('appliedBanner');
@@ -232,7 +238,7 @@
   function applied(on){
     banner.style.display = on ? 'flex'  : 'none';
     disc.style.display   = on ? 'flex'  : 'none';
-    total.textContent    = on ? '$99.00' : '$119.00';
+    total.textContent    = on ? '$134.00' : '$154.00';
     btn.textContent      = on ? 'Remove' : 'Apply';
   }
 
@@ -248,7 +254,7 @@
       applied(true);
     } else {
       applied(false);
-      total.textContent = '$119.00';
+      total.textContent = '$154.00';
     }
   });
 
