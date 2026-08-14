@@ -72,6 +72,7 @@
   .reassure{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--text-muted);line-height:1.5;text-wrap:pretty}
   .reassure b{color:var(--text-sub)}
   .reassure-num{display:inline-block;margin-top:8px;color:var(--accent);font-weight:700}
+  .ship-note{font-size:13px;line-height:1.5;color:var(--text-muted);background:var(--bg-subtle);border-radius:8px;padding:10px 12px;margin:4px 0 14px;text-wrap:pretty}
   footer{padding:28px 0 44px;font-size:12px;color:var(--text-muted);text-align:center}
   footer p{margin-bottom:8px;max-width:600px;margin-left:auto;margin-right:auto}
   .mock-note{background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;font-size:12.5px;padding:8px 14px;text-align:center}
@@ -133,7 +134,7 @@
       </li>
       <li>
         <span class="chk">✓</span>
-        <div><div class="lbl">First-order shipping</div><div class="desc">One-time $35 cold-pack shipping so your medication reaches you safely. Required.</div></div>
+        <div><div class="lbl">First-order shipping</div><div class="desc">Flat $35 cold-pack shipping anywhere — or pick up free at our Costa Mesa clinic (uncheck shipping on the form and call to schedule).</div></div>
         <span class="amt">$35</span>
       </li>
       <li>
@@ -177,7 +178,7 @@
   <div class="wrap">
     <div class="form-card">
       <h3>Start your first free month</h3>
-      <p class="fc-sub">Quick doctor review — $99 with DOCTOR20. First month free, plus a one-time $35 shipping fee.</p>
+      <p class="fc-sub">Quick doctor review — $99 with DOCTOR20. First month free. Flat $35 cold-pack shipping, or pick up free locally.</p>
       <div class="field"><label>Full name</label><input type="text" placeholder="Your name"></div>
       <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
       <div class="field"><label>Mobile phone</label><input type="tel" placeholder="(___) ___-____"></div>
@@ -191,11 +192,12 @@
         <div class="order-line"><span>Doctor review, consult &amp; prescription fee</span><span>$119.00</span></div>
         <div class="order-line" id="discountLine"><span>DOCTOR20 discount</span><span>−$20.00</span></div>
         <div class="order-line free-line"><span><input type="radio" checked disabled style="accent-color:#10B981;vertical-align:-1px"> First month — semaglutide or tirzepatide</span><span>$0.00</span></div>
-        <div class="order-line"><span>Shipping (required)</span><span>$35.00</span></div>
+        <div class="order-line" id="shipLine"><span><input type="checkbox" id="shipChk" checked style="accent-color:var(--accent);vertical-align:-1px"> Cold-pack shipping <span style="color:var(--text-muted);font-weight:400">(flat rate, anywhere)</span></span><span id="shipAmt">$35.00</span></div>
         <div class="order-total"><span>Due today</span><span id="orderTotal">$134.00</span></div>
       </div>
+      <div class="ship-note">Local to Costa Mesa? <b>Uncheck shipping</b> to pick up your free first month — call <b>657-837-3342</b> to schedule. Too far to drive? Cold-pack shipping is a flat <b>$35</b> anywhere. We've checked it for you, since most patients are outside driving distance.</div>
       <label class="optin"><input type="checkbox" checked> Yes — I'd like to continue with New Hope Weight Loss. I authorize you to contact me about my treatment and reorders by call, text and email (live or automated); consent isn't required to purchase; msg &amp; data rates may apply; reply STOP to opt out, HELP for help.</label>
-      <button class="btn" style="width:100%" type="button">Pay $134 &amp; start my free month</button>
+      <button class="btn" id="payBtn" style="width:100%" type="button">Pay $134 &amp; start my free month</button>
       <span class="btn-sub">Secure checkout. Fully refunded if you're not medically approved.</span>
       <div class="reassure">
         <b>Not sure whether semaglutide or tirzepatide is right for you?</b><br>
@@ -219,9 +221,9 @@
 <footer>
   <div class="wrap">
     <p>The $99 doctor review is a <b>one-time fee, never recurring</b>. No additional doctor fees while you're on our protocol. If you're not medically approved, your $99 is fully refunded.</p>
-    <p>After payment, watch for a call from a <b>719 area code</b> — that's your doctor. Once prescribed, your medication ships directly to you. A one-time <b>$35 cold-pack shipping fee</b> applies to your order.</p>
+    <p>After payment, watch for a call from a <b>719 area code</b> — that's your doctor. Once prescribed, your medication ships directly to you — flat <b>$35 cold-pack shipping</b> anywhere. Local to Costa Mesa? Pick up free by scheduling an appointment.</p>
     <p>New Hope Weight Loss · Costa Mesa, CA · By reaching out you agree to our Terms &amp; Privacy Policy. Reply STOP to opt out, HELP for help.</p>
-    <p class="legal">Ozempic® and Wegovy® (semaglutide) are registered trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® (tirzepatide) are registered trademarks of Eli Lilly and Company. New Hope Weight Loss is not affiliated with, endorsed by, or sponsored by Novo Nordisk or Eli Lilly. Semaglutide and tirzepatide are prescription medications dispensed only after a medical evaluation; eligibility, treatment, and the first month free are subject to physician approval. The $99 doctor review is a one-time fee, refunded if you are not medically approved. A one-time $35 cold-pack shipping fee applies to your order. Weight-loss figures reflect published clinical studies; individual results vary and are not guaranteed. The Summer2Remember offer — first month free and our lowest per-vial pricing — is available to new New Hope Weight Loss patients only, for a limited time. Pricing, promotions, and medication availability may change without notice. This page is for informational purposes and is not medical advice.</p>
+    <p class="legal">Ozempic® and Wegovy® (semaglutide) are registered trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® (tirzepatide) are registered trademarks of Eli Lilly and Company. New Hope Weight Loss is not affiliated with, endorsed by, or sponsored by Novo Nordisk or Eli Lilly. Semaglutide and tirzepatide are prescription medications dispensed only after a medical evaluation; eligibility, treatment, and the first month free are subject to physician approval. The $99 doctor review is a one-time fee, refunded if you are not medically approved. Cold-pack shipping is a flat $35 anywhere; local patients may pick up free at our Costa Mesa clinic by appointment. Weight-loss figures reflect published clinical studies; individual results vary and are not guaranteed. The Summer2Remember offer — first month free and our lowest per-vial pricing — is available to new New Hope Weight Loss patients only, for a limited time. Pricing, promotions, and medication availability may change without notice. This page is for informational purposes and is not medical advice.</p>
   </div>
 </footer>
 
@@ -234,38 +236,44 @@
   var banner  = document.getElementById('appliedBanner');
   var disc    = document.getElementById('discountLine');
   var total   = document.getElementById('orderTotal');
+  var shipChk = document.getElementById('shipChk');
+  var shipAmt = document.getElementById('shipAmt');
+  var payBtn  = document.getElementById('payBtn');
 
-  function applied(on){
-    banner.style.display = on ? 'flex'  : 'none';
-    disc.style.display   = on ? 'flex'  : 'none';
-    total.textContent    = on ? '$134.00' : '$154.00';
-    btn.textContent      = on ? 'Remove' : 'Apply';
+  var promoOn = true;
+
+  function money(n){ return '$'+n.toFixed(2); }
+
+  function render(){
+    banner.style.display = promoOn ? 'flex' : 'none';
+    disc.style.display   = promoOn ? 'flex' : 'none';
+    btn.textContent      = promoOn ? 'Remove' : 'Apply';
+    var doctor = promoOn ? 99 : 119;
+    var ship   = shipChk.checked ? 35 : 0;
+    shipAmt.textContent  = money(ship);
+    var due = doctor + ship;
+    total.textContent    = money(due);
+    payBtn.textContent   = 'Pay ' + money(due) + ' & start my free month';
   }
 
   btn.addEventListener('click', function(){
     var code = input.value.trim().toUpperCase();
-    if (btn.textContent === 'Remove'){
-      input.value = '';
-      applied(false);
-      return;
-    }
-    if (code === 'DOCTOR20'){
-      input.value = 'DOCTOR20';
-      applied(true);
-    } else {
-      applied(false);
-      total.textContent = '$154.00';
-    }
+    if (promoOn){ input.value = ''; promoOn = false; render(); return; }
+    if (code === 'DOCTOR20'){ input.value = 'DOCTOR20'; promoOn = true; }
+    else { promoOn = false; }
+    render();
   });
 
-  // If the field is emptied by hand, revert to full price immediately.
+  // If the field is emptied/changed by hand, drop the discount immediately.
   input.addEventListener('input', function(){
-    if (input.value.trim().toUpperCase() !== 'DOCTOR20'){
-      applied(false);
-    }
+    promoOn = (input.value.trim().toUpperCase() === 'DOCTOR20');
+    render();
   });
 
-  applied(true); // page loads with the code pre-applied for them
+  // Local pickup: unchecking shipping waives the $35 and drops the total.
+  shipChk.addEventListener('change', render);
+
+  render(); // page loads: code pre-applied, shipping pre-checked
 })();
 </script>
 </body>
