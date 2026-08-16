@@ -127,7 +127,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,B
 // Shipping form → GHL. WIRING: set GHL_WEBHOOK to the funnel/workflow Inbound Webhook URL
 // (created in GHL). The form POSTs name/email/phone/address so GHL upserts the contact by email
 // and tags fmf-shipping-provided. Until the webhook is set, it still confirms visually.
-var GHL_WEBHOOK = ""; // <-- paste GHL Inbound Webhook URL here
+var GHL_WEBHOOK = "https://fmf-shipping.flat-sunset-9104.workers.dev"; // Cloudflare Worker -> GHL contacts upsert (server-side token)
 document.getElementById('ship').addEventListener('submit',function(e){
   e.preventDefault();
   var data={};new FormData(e.target).forEach(function(v,k){data[k]=v;});
