@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You're in — welcome to New Hope Weight Loss</title>
+<style>
+:root{--bg:#F5FAF1;--card:#fff;--sub:#E0EED7;--panel:#D7E8CF;--text:#0E150B;--tsub:#25361E;--muted:#3D5235;--accent:#6A5410;--accentH:#4F3D09;--success:#0B8756;--line:#BDD0B2;--pink:#E0218A;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;}
+.w{max-width:640px;margin:0 auto;padding:0 20px;}
+.header{background:#fff;border-bottom:1px solid var(--line);padding:14px 0;text-align:center;}
+.brand{font-weight:700;font-size:18px;}.brand span{color:var(--accent);}
+.hero{background:linear-gradient(165deg,#CFE3C4 0%,#E0EED7 50%,#FFFFFF 100%);border-bottom:1px solid var(--line);padding:46px 0 40px;text-align:center;}
+.check{width:64px;height:64px;border-radius:50%;background:var(--success);color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 18px;box-shadow:0 8px 22px rgba(11,135,86,.28);}
+.hero h1{font-size:clamp(26px,7vw,34px);line-height:1.15;letter-spacing:-.5px;margin:0 0 12px;font-weight:800;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero p{font-size:18px;color:var(--tsub);max-width:520px;margin:0 auto;}
+.hero p b{color:var(--text);}
+.sec{padding:34px 0;border-bottom:1px solid var(--line);background:#fff;}
+.sec:nth-of-type(even){background:linear-gradient(180deg,var(--sub) 0%,#EEF6EA 100%);}
+.sec h2{font-size:23px;letter-spacing:-.3px;margin:0 0 10px;text-align:center;font-weight:800;}
+.lead{text-align:center;color:var(--muted);max-width:540px;margin:0 auto;}
+.call{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:14px;padding:22px 22px;max-width:560px;margin:0 auto;box-shadow:0 10px 24px rgba(14,21,11,.07);}
+.call .ph{font-size:19px;font-weight:800;margin:0 0 8px;display:flex;align-items:center;gap:10px;}
+.call .ph .num{color:var(--accent);}
+.call p{margin:0;color:var(--tsub);font-size:16px;}
+.call p b{color:var(--text);}
+.steps{list-style:none;max-width:560px;margin:0 auto;padding:0;}
+.steps li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;box-shadow:0 6px 16px rgba(14,21,11,.045);}
+.steps .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;}
+.steps .lbl{font-weight:700;font-size:16.5px;margin-bottom:2px;}
+.steps .desc{color:var(--muted);font-size:14.5px;}
+.love{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:560px;margin:0 auto;text-align:center;box-shadow:0 10px 24px rgba(14,21,11,.07);}
+.love p{font-size:16.5px;color:var(--tsub);margin:0 0 12px;}.love p:last-child{margin:0;}
+.love b{color:var(--text);}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;text-align:center;}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;max-width:560px;margin:0 auto;box-shadow:0 8px 30px rgba(26,31,22,.07);}
+.form-card label{display:block;font-size:13.5px;font-weight:700;color:var(--tsub);margin:12px 0 5px;}
+.form-card input,.form-card select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:#fff;color:var(--text);}
+.row2{display:flex;gap:12px;}.row2>div{flex:1;}
+.btn{display:block;width:100%;margin-top:18px;background:var(--accent);color:#fff;font-weight:800;font-size:17px;padding:15px;border:none;border-radius:12px;cursor:pointer;box-shadow:0 6px 18px rgba(133,112,38,.28);}
+.btn:hover{background:var(--accentH);}
+.formnote{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px;}
+.done{display:none;text-align:center;padding:14px;background:#ECFDF5;border:1px solid var(--success);border-radius:12px;color:#065F46;font-weight:700;margin-top:14px;}
+.foot{padding:28px 0 44px;font-size:13px;color:var(--muted);text-align:center;}
+.foot p{margin:0 auto 8px;max-width:560px;}.foot b{color:var(--tsub);}
+@media(max-width:560px){.row2{flex-direction:column;gap:0;}}
+</style>
+</head>
+<body>
+  <div class="header"><div class="w"><div class="brand">New Hope <span>Weight Loss</span></div></div></div>
+
+  <div class="hero"><div class="w">
+    <div class="check">&#10003;</div>
+    <h1>You're in — and we're<br><em>so excited to journey with you.</em></h1>
+    <p>Your <b>$99 doctor review is confirmed.</b> This is the beginning of a chapter you're going to be really glad you started.</p>
+  </div></div>
+
+  <div class="sec"><div class="w">
+    <div class="eyebrow">Your very next step</div>
+    <div class="call">
+      <div class="ph">&#128222; <span>Be ready for a call from a <span class="num">719 area code</span></span></div>
+      <p>That's <b>your New Hope physician</b> — calling to review your medical history and confirm your approval. Please pick up; it's a friendly, quick call, and it's the last step before we get you started. Miss it and we'll try again, but answering that <b>719</b> number gets you moving fastest.</p>
+    </div>
+  </div></div>
+
+  <div class="sec"><div class="w">
+    <h2>What happens from here</h2>
+    <p class="lead" style="margin-bottom:20px">A real person, real guidance &mdash; every step of the way.</p>
+    <ul class="steps">
+      <li><span class="n">1</span><div><div class="lbl">Your doctor calls (719)</div><div class="desc">A licensed New Hope physician reviews your history and confirms your approval &mdash; the way real care should work.</div></div></li>
+      <li><span class="n">2</span><div><div class="lbl">Your first month &mdash; a real conversation</div><div class="desc">Our health advisors reach out to walk you through your first month of medication, guided by your doctor's dosing protocols. You're never guessing &mdash; we're right there with you.</div></div></li>
+      <li><span class="n">3</span><div><div class="lbl">We check in &amp; cheer you on</div><div class="desc">A couple of weeks in, we'll connect again to see how you're feeling and fine-tune. That first month goes a <b>long</b> way &mdash; and honestly, you're going to love what you see even early on.</div></div></li>
+    </ul>
+  </div></div>
+
+  <div class="sec"><div class="w">
+    <div class="love">
+      <div class="eyebrow">From all of us at New Hope</div>
+      <p>We <b>love our patients</b> &mdash; and that's not a slogan. You just took a brave, hopeful step for your health, and we don't take that lightly.</p>
+      <p>This page isn't a finish line. It's the <b>first page of a new chapter</b> &mdash; and we get to write it with you. Welcome to the family. &#128153;</p>
+    </div>
+  </div></div>
+
+  <div class="sec"><div class="w">
+    <h2>Where should we ship your medication?</h2>
+    <p class="lead" style="margin-bottom:20px">So we're ready the moment your doctor approves you, add your delivery address below. <b>This is just your shipping info</b> &mdash; separate from your payment.</p>
+    <div class="form-card">
+      <form id="ship">
+        <label>Full name</label>
+        <input name="full_name" required autocomplete="name" placeholder="Your full name">
+        <label>Email (so we match this to your account)</label>
+        <input name="email" type="email" required autocomplete="email" placeholder="you@email.com">
+        <label>Phone</label>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="(714) 555-1234">
+        <label>Street address</label>
+        <input name="address1" required autocomplete="address-line1" placeholder="123 Main St, Apt 4">
+        <div class="row2">
+          <div><label>City</label><input name="city" required autocomplete="address-level2" placeholder="Costa Mesa"></div>
+          <div><label>State</label><input name="state" required autocomplete="address-level1" placeholder="CA"></div>
+        </div>
+        <label>ZIP</label>
+        <input name="postal_code" required autocomplete="postal-code" inputmode="numeric" placeholder="92626">
+        <button class="btn" type="submit">Save my shipping address</button>
+        <div class="formnote">Cold-Pack shipping is a flat <b>$35</b>, or pick up <b>free</b> at our Costa Mesa clinic.</div>
+      </form>
+      <div class="done" id="done">&#10003; Got it &mdash; your shipping address is saved. You're all set!</div>
+    </div>
+  </div></div>
+
+  <div class="foot"><div class="w">
+    <p>Questions? Text us anytime at <b>657-837-3342</b>.</p>
+    <p>The $99 doctor review is a <b>one-time fee, never recurring</b>. If you're not medically approved, your <b>$99 is fully refunded</b>. Watch for that <b>719</b> call &mdash; that's your doctor.</p>
+    <p>New Hope Weight Loss &middot; Costa Mesa, CA</p>
+  </div></div>
+
+<script>
+// Shipping form → GHL. WIRING: set GHL_WEBHOOK to the funnel/workflow Inbound Webhook URL
+// (created in GHL). The form POSTs name/email/phone/address so GHL upserts the contact by email
+// and tags fmf-shipping-provided. Until the webhook is set, it still confirms visually.
+var GHL_WEBHOOK = ""; // <-- paste GHL Inbound Webhook URL here
+document.getElementById('ship').addEventListener('submit',function(e){
+  e.preventDefault();
+  var data={};new FormData(e.target).forEach(function(v,k){data[k]=v;});
+  data.source='fmf-thank-you'; data.tag='fmf-shipping-provided';
+  function ok(){document.getElementById('ship').style.display='none';document.getElementById('done').style.display='block';window.scrollTo({top:document.getElementById('done').getBoundingClientRect().top+window.scrollY-120,behavior:'smooth'});}
+  if(GHL_WEBHOOK){
+    fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(ok).catch(ok);
+  } else { ok(); }
+});
+</script>
+</body>
+</html>
