@@ -1,0 +1,136 @@
+<!doctype html><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>Damon .net Funnel — Forensic Report</title>
+<style>body{max-width:820px;margin:0 auto;padding:24px 18px;font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;color:#1a1a1a}
+h1{color:#0b6b3a;border-bottom:3px solid #0b6b3a;padding-bottom:8px}h2{color:#0b6b3a;margin-top:1.6em}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}th,td{border:1px solid #ccc;padding:7px 10px;text-align:left}
+th{background:#0b6b3a;color:#fff}tr:nth-child(even){background:#f4f8f5}code{background:#eef2ee;padding:1px 5px;border-radius:4px;font-size:13px}
+a{color:#0b6b3a}hr{border:none;border-top:1px solid #ddd;margin:1.6em 0}</style>
+<h1>Damon .NET Funnel — Forensic Report</h1>
+<p><strong>Prepared:</strong> 2026-08-20 (Lloyd, sub-agent) · <strong>Mode:</strong> READ-ONLY (action freeze respected)</p>
+<p><strong>Scope:</strong> Damon&#x27;s <code>link.newhopeweightloss.NET</code> payment operation running <strong>inside OUR NHWL GHL</strong> (location <code>hC9EybntPH9CUQODfL6F</code>).</p>
+<p><strong>Every number below is source-proven — endpoint/query cited inline. Empty/blocked reads are labeled UNVERIFIED, never 0.</strong></p>
+
+<hr>
+
+<h2>0. Executive Summary (receipts)</h2>
+<ol>
+<li><strong>The workflow is real and PUBLISHED.</strong> <code>&quot;2026 Netlify Quiz Inbound Webhook&quot;</code> id <code>0fdf21a6-6634-4f12-80df-a992e0f2d3dd</code>, status <strong>published</strong>, in our NHWL GHL. Confirmed via <code>GET /workflows/?locationId=hC9EybntPH9CUQODfL6F</code>. (There&#x27;s also a <code>draft</code> sibling: <code>TEST DO NOT PUBLISH - Core Seg Patch...</code> id <code>3da18fe5…</code>.)</li>
+<li><strong>His checkout runs on OUR GHL payment gateway.</strong> Every <code>/dr-payment</code> charge appears in <strong>our</strong> transactions ledger with <code>entitySourceMeta.domain = link.newhopeweightloss.net</code>, <code>pageUrl = /dr-payment</code>. The money is processed through our Authorize.Net/GHL rails, not a separate hidden gateway.</li>
+<li><strong>The specific workflow checkout (<code>/dr-payment</code>, $119): 121 successful payments from 120 distinct people, $13,819 gross,</strong> Mar 9–Aug 19 2026. Split: <strong>$119 ×96, $99 ×24</strong> (+1 stray $19). 33 failed attempts, 4 refunds.</li>
+<li><strong>The bigger picture — Damon&#x27;s ENTIRE <code>.net</code> order-page operation on our gateway is ~$1.24M gross:</strong> 3,298 successful payments, <strong>2,236 distinct people</strong>, across <code>newhopeweightloss.net</code> + <code>link.newhopeweightloss.net</code>, <strong>running since 2024-04-24</strong>. <code>/dr-payment</code> is just one of ~20 pages he operates through us.</li>
+<li><strong>What we CANNOT see:</strong> the workflow&#x27;s actual <strong>email body/HTML</strong> (GHL doesn&#x27;t expose workflow action content via API — 404), whether a &quot;DOCTOR20&quot; coupon *code* was keyed (ledger stores the $99 as a lower line-item price, discount field = 0, so coupon is <strong>inferred from the $119→$99 price delta, not code-proven</strong>), and anything hosted on his own Netlify front-end.</li>
+</ol>
+
+<hr>
+
+<h2>1. The Workflow (what&#x27;s visible vs hidden)</h2>
+
+<table><thead><tr><th>Item</th><th>Finding</th><th>Source</th></tr></thead><tbody>
+<tr><td>Workflow exists / published</td><td>✅ <code>2026 Netlify Quiz Inbound Webhook</code>, id <code>0fdf21a6-6634-4f12-80df-a992e0f2d3dd</code>, <strong>published</strong></td><td><code>GET /workflows/?locationId=hC9EybntPH9CUQODfL6F</code></td></tr>
+<tr><td>Workflow internal actions / trigger config</td><td>❌ <strong>UNVERIFIED via API</strong> — <code>GET /workflows/{id}</code> and <code>/{id}/actions</code> both return <code>404 Not Found</code>. Workflow internals are GHL-UI-only.</td><td><code>GET /workflows/0fdf21a6…</code> → 404</td></tr>
+<tr><td><strong>Email body / exact copy</strong></td><td>❌ <strong>UNVERIFIED via API.</strong> <code>GET /emails/builder/{loc}/{id}</code> returns <code>{statusCode, message}</code> error; workflow→template linkage isn&#x27;t exposed. Body is visible <strong>only in the GHL workflow builder UI</strong>.</td><td><code>GET /emails/builder/…</code></td></tr>
+<tr><td><strong>Link target the email drives to</strong></td><td>✅ <strong>PROVEN</strong> = <code>link.newhopeweightloss.net/dr-payment</code> ($119 one-step order form). Proven from the payment records themselves (below), not the email.</td><td>ledger <code>entitySourceMeta</code></td></tr>
+</tbody></table>
+
+<p>&gt; <strong>VISIBLE in our GHL:</strong> workflow existence/status, every payment it produced (contact, amount, timestamp, page, domain, pass/fail/refund).</p>
+<p>&gt; <strong>HIDDEN on his side:</strong> the email&#x27;s rendered HTML/copy, his Netlify quiz front-end, any of his own analytics, and any processing he runs off our gateway (none detected — all <code>.net</code> charges found flow through us).</p>
+
+<hr>
+
+<h2>2. Link targets — .NET vs .COM (proven)</h2>
+<p>Damon&#x27;s charges resolve to <strong>his <code>.net</code> domains</strong>, processed on our gateway. Distinct domains seen in the succeeded ledger for his operation:</p>
+
+<table><thead><tr><th>Domain</th><th>Succeeded charges</th><th>Source</th></tr></thead><tbody>
+<tr><td><code>newhopeweightloss.net</code></td><td>2,354</td><td>ledger <code>entitySourceMeta.domain</code></td></tr>
+<tr><td><code>link.newhopeweightloss.net</code></td><td>944</td><td>same</td></tr>
+</tbody></table>
+
+<p>No <code>.com</code> checkout domain is used by this operation. The <code>/dr-payment</code> page specifically lives on <strong><code>link.newhopeweightloss.net</code></strong> (proven on Karen King&#x27;s record and all 158 <code>/dr-payment</code> rows).</p>
+
+<p><strong>Discriminator (as Chip specified — funnel entitySourceId, NOT tags):</strong></p>
+<p><code>entitySourceId = 1bO1BB56fk8JSQOyS71l</code> (&quot;New Hope Weight Loss - Live Order Pages&quot; / &quot;Newhopeweightloss.net&quot;) is the container for his whole <code>.net</code> order-page ecosystem; <code>entitySourceMeta.pageUrl</code> distinguishes the individual page (<code>/dr-payment</code>, <code>/make-your-purchase</code>, <code>/medication-purchase</code>, etc.).</p>
+
+<p><strong>Verification payer — Karen King</strong> (<code>BfPKeE2CSHyNku2lKRDp</code>), <code>GET /payments/transactions?contactId=BfPKeE2CSHyNku2lKRDp</code>:</p>
+<ul>
+<li>$119 <strong>succeeded</strong> — <code>entitySourceType: website</code>, <code>domain: link.newhopeweightloss.net</code>, <code>pageUrl: /dr-payment</code>, 2026-08-19 (the funnel charge)</li>
+<li>$119 <strong>failed</strong> — same page, 6s earlier (retry pattern)</li>
+<li>$99 + $52 — <code>entitySourceType: manual</code> / <code>contact_view</code> (&quot;medical review doctor fee&quot;, &quot;balance due Tirzepatide&quot;) — <strong>front-desk manual charges, NOT the funnel.</strong> ⇒ proves you must attribute by page/entitySource, not by person or tag.</li>
+</ul>
+
+<hr>
+
+<h2>3. The workflow checkout — <code>/dr-payment</code> ($119) — PERSONS vs PAYMENTS</h2>
+<p>Filter: <code>entitySourceMeta.pageUrl == /dr-payment</code>, full ledger <code>GET /payments/transactions?altId=hC9EybntPH9CUQODfL6F&amp;altType=location</code> (paginated, 10,656 rows pulled of <code>totalCount</code> 10,756).</p>
+
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td>Total attempts on page</td><td>158</td></tr>
+<tr><td><strong>Succeeded payments (distinct transactions)</strong></td><td><strong>121</strong></td></tr>
+<tr><td><strong>Distinct persons (paid)</strong></td><td><strong>120</strong></td></tr>
+<tr><td>Failed attempts</td><td>33</td></tr>
+<tr><td>Refunded / partial</td><td>4 / 0 (~$476)</td></tr>
+<tr><td><strong>Gross collected (succeeded)</strong></td><td><strong>$13,819</strong></td></tr>
+</tbody></table>
+
+<p><strong>$119 vs $99 split (succeeded, <code>/dr-payment</code>):</strong> <code>$119 ×96</code> · <code>$99 ×24</code> · <code>$19 ×1</code>.</p>
+<p>$99 = $119 − $20 ⇒ consistent with a <strong>DOCTOR20</strong> discount. <strong>Coupon inferred from price, not code-proven</strong> — ledger line item is <code>&quot;Medical Review and Prescription&quot;</code> at <code>unitPrice: 99</code>, <code>discountAmount: 0</code> (no coupon-code field surfaced).</p>
+
+<p><strong>Timeline (<code>/dr-payment</code> succeeded, by month):</strong></p>
+<p><code>2026-03: 26 · 2026-04: 26 · 2026-05: 18 · 2026-06: 24 · 2026-07: 19 · 2026-08: 8</code> (through 8/19). First 2026-03-09, last 2026-08-19. Declining trend.</p>
+
+<p>&gt; <strong>Cross-check vs tags:</strong> <code>nhwl-net + payment-complete</code> was expected ~124 → ledger shows <strong>121 paid</strong> on <code>/dr-payment</code>. Close alignment confirms the tag roughly tracks funnel payment, but the <strong>ledger (121) is authoritative</strong>.</p>
+
+<hr>
+
+<h2>4. The FULL <code>.net</code> operation on our gateway (context Chip needs)</h2>
+<p><code>/dr-payment</code> is a small slice. Damon&#x27;s entire <code>.net</code> order-page footprint processed through <strong>our</strong> GHL:</p>
+
+<table><thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead><tbody>
+<tr><td>Total <code>.net</code> transaction rows</td><td>3,917</td><td>ledger, <code>domain ∈ {newhopeweightloss.net, link.newhopeweightloss.net}</code></td></tr>
+<tr><td><strong>Succeeded payments</strong></td><td><strong>3,298</strong></td><td>same</td></tr>
+<tr><td><strong>Distinct persons (paid)</strong></td><td><strong>2,236</strong></td><td>same</td></tr>
+<tr><td>Failed</td><td>560</td><td>same</td></tr>
+<tr><td>Refunded / partially refunded</td><td>36 / 23 (<strong>59 total, ~$26,815</strong>)</td><td>same</td></tr>
+<tr><td><strong>Gross collected (succeeded)</strong></td><td><strong>$1,241,732</strong></td><td>same</td></tr>
+<tr><td><strong>Active since</strong></td><td><strong>2024-04-24 → 2026-08-19</strong></td><td>min/max <code>createdAt</code></td></tr>
+<tr><td>$119 (full) vs $99 (DOCTOR20) across all <code>.net</code></td><td><strong>$119 ×1,205 · $99 ×325</strong></td><td>same</td></tr>
+</tbody></table>
+
+<p><strong>Top pages by succeeded volume:</strong> <code>/manual-purchase-processing</code> 1,529 · <code>/make-your-purchase</code> 711 · <code>/medication-purchase</code> 463 · <code>/dr-consult-payment</code> 225 · <code>/medication-purchase-reorder</code> 133 · <strong><code>/dr-payment</code> 121</strong> · plus per-provider consult pages (<code>/dr-consultation-athena</code>, <code>-dana</code>, <code>-kaycie</code>, …).</p>
+
+<p>&gt; This is a <strong>two-year, seven-figure operation</strong> running on our GHL sub-account and payment gateway. The Netlify quiz workflow is one recent inbound feeder into it.</p>
+
+<hr>
+
+<h2>5. Refunds</h2>
+<table><thead><tr><th>Segment</th><th>Refunded/partial txns</th><th>~$ refunded</th><th>Source</th></tr></thead><tbody>
+<tr><td><code>/dr-payment</code> (workflow)</td><td>4</td><td>~$476</td><td>ledger status ∈ {refunded, partially_refunded}</td></tr>
+<tr><td>All <code>.net</code> operation</td><td>59</td><td>~$26,815</td><td>same</td></tr>
+</tbody></table>
+
+<hr>
+
+<h2>6. Tag counts (corroborating only — NOT the attribution basis)</h2>
+<p><code>POST /contacts/search</code>, single-tag filters:</p>
+<ul>
+<li><code>nhwl-net</code>: <strong>1,068</strong> contacts</li>
+<li><code>website-quiz</code>: <strong>636</strong> contacts</li>
+</ul>
+
+<p>⚠️ Multi-tag AND queries (<code>nhwl-net + payment-complete</code>, <code>website-quiz + payment-complete</code>) returned <code>0</code> via <code>contacts/search</code> — the AND filter syntax didn&#x27;t resolve; <strong>treat those combo counts as UNVERIFIED via this endpoint.</strong> Payment attribution in §3–§5 is taken from the transactions ledger per Chip&#x27;s instruction (&quot;funnel entitySourceId is the reliable discriminator, not tags&quot;).</p>
+
+<hr>
+
+<h2>7. Method / provenance</h2>
+<ul>
+<li>Base: <code>https://services.leadconnectorhq.com</code>, header <code>Version: 2021-07-28</code>, token <code>GHL_NHWL_MAIN</code> (env), location <code>hC9EybntPH9CUQODfL6F</code>.</li>
+<li>Ledger: <code>GET /payments/transactions?altId={loc}&amp;altType=location&amp;limit=100&amp;offset=N</code>, paged 0→10,600. Pulled <strong>10,656 / 10,756</strong> rows (<code>totalCount</code>); ~100-row drift = live inserts during pagination — figures are floors, label ≥.</li>
+<li>Attribution discriminator: <code>entitySourceMeta.{domain,pageUrl}</code> + <code>entitySourceId</code>. Manual/<code>contact_view</code> charges explicitly excluded from funnel totals.</li>
+<li>Workflows: <code>GET /workflows/?locationId={loc}</code>. Workflow internals + email body: <strong>not exposed by GHL API (404/error) → UI-only.</strong></li>
+</ul>
+
+<h2>8. Open items requiring the GHL UI (not API-accessible)</h2>
+<ol>
+<li><strong>Exact email copy</strong> the workflow sends (builder UI: Automation → workflow <code>0fdf21a6…</code>).</li>
+<li><strong>Coupon code proof</strong> — whether DOCTOR20 (or another) drives the $99 price (order-form/coupon settings UI).</li>
+<li>Whether the <code>draft</code> sibling workflow (<code>3da18fe5…</code>) is staged to change segmentation.</li>
+</ol>
