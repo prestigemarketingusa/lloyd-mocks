@@ -1,0 +1,22 @@
+{
+ "inserts": [],
+ "mode": "en",
+ "loudnorm": {
+  "pass1_measured": {
+   "input_i": "-19.03",
+   "input_tp": "-0.62",
+   "input_lra": "2.70"
+  },
+  "pass2_output": {
+   "output_i": "-14.69",
+   "output_tp": "-1.50",
+   "output_lra": "2.60",
+   "normalization_type": "dynamic"
+  }
+ },
+ "duration": {
+  "src": 106.966667,
+  "out": 106.966667,
+  "delta": 0.0
+ }
+}
