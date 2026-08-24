@@ -157,12 +157,22 @@
   </footer>
 
 <script>
-  // Draft handler — posts interest to GHL relay (endpoint to be wired before live).
-  // Tags on submit: patient, re-journey-interested, needs-call, a2p
+  // Posts interest to the GHL relay worker (stage=re-journey -> NHWL 4, tags patient+re-journey-interested+needs-call+a2p).
+  var RELAY="https://nhwl-start-relay.flat-sunset-9104.workers.dev";
   function submitRJ(e){
     e.preventDefault();
-    var f=e.target, data=Object.fromEntries(new FormData(f));
-    // TODO wire: fetch('RELAY_ENDPOINT',{method:'POST',body:JSON.stringify({...data,tags:['patient','re-journey-interested','needs-call','a2p']})})
+    var f=e.target, d=Object.fromEntries(new FormData(f));
+    var parts=(d.name||"").trim().split(/\s+/);
+    var payload={
+      stage:"re-journey",
+      firstName:parts.shift()||"",
+      lastName:parts.join(" "),
+      phone:d.phone||"", email:d.email||"",
+      reason:d.reason||"", med:d.med||"", comments:d.comments||""
+    };
+    // Optimistic success UI; fire-and-log the relay.
+    fetch(RELAY,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+      .then(function(r){return r.json()}).then(function(j){console.log("relay",j)}).catch(function(err){console.warn("relay err",err)});
     document.getElementById('rjForm').style.display='none';
     document.querySelector('.or').style.display='none';
     document.querySelector('.call').style.display='none';
