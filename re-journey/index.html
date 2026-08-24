@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welcome Back — New Hope Weight Loss</title>
+<meta name="description" content="Ready to restart your weight-loss journey? Raise your hand and the Health Advisor Team at Doctor's Clinic — New Hope Weight Loss will reach out." />
+<!-- ============ META PIXEL (placeholder — swap in NHWL pixel id before live) ============ -->
+<!-- <script>!function(f,b,e,v,n,t,s){...fbq('init','PIXEL_ID');fbq('track','PageView');}</script> -->
+<style>
+  :root{
+    --green:#1f7a4d; --green-d:#155c39; --green-l:#e9f6ef;
+    --ink:#14261d; --muted:#5b6b62; --gold:#c9a227; --bg:#f6fbf8; --white:#fff;
+    --shadow:0 12px 34px rgba(21,92,57,.16); --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px}
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-d) 100%);color:#fff;padding:46px 0 54px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:40px;background:var(--bg);clip-path:ellipse(70% 100% at 50% 100%)}
+  .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:13px;font-weight:600;letter-spacing:.4px;padding:7px 16px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.12;font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
+  .hero h1 .gold{color:#ffe08a}
+  .hero p{font-size:17px;opacity:.95;max-width:460px;margin:0 auto}
+  .proof{margin-top:22px;font-size:14px;opacity:.9;font-weight:600}
+  /* CARD */
+  .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 22px;margin-top:-26px;position:relative;z-index:2}
+  .card h2{font-size:22px;font-weight:800;margin-bottom:6px;text-align:center}
+  .card .sub{text-align:center;color:var(--muted);font-size:15px;margin-bottom:22px}
+  /* MED SELECTOR */
+  .label{font-weight:700;font-size:14px;margin:16px 0 9px;display:block}
+  .meds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .med{position:relative}
+  .med input{position:absolute;opacity:0;inset:0;cursor:pointer}
+  .med span{display:block;text-align:center;padding:14px 8px;border:2px solid #e2ece6;border-radius:14px;font-weight:700;font-size:15px;transition:.15s;cursor:pointer;background:#fbfdfc}
+  .med small{display:block;font-weight:500;font-size:12px;color:var(--muted);margin-top:3px}
+  .med input:checked + span{border-color:var(--green);background:var(--green-l);box-shadow:0 0 0 3px rgba(31,122,77,.12)}
+  .med.full{grid-column:1 / -1}
+  /* FIELDS */
+  .field{margin-top:14px}
+  .field input{width:100%;padding:15px 16px;border:1.5px solid #dbe7e0;border-radius:12px;font-size:16px;background:#fbfdfc;transition:.15s}
+  .field input:focus{outline:none;border-color:var(--green);background:#fff;box-shadow:0 0 0 3px rgba(31,122,77,.12)}
+  /* CTA */
+  .cta{width:100%;margin-top:22px;background:var(--green);color:#fff;border:none;border-radius:14px;padding:18px;font-size:18px;font-weight:800;cursor:pointer;letter-spacing:.2px;box-shadow:0 8px 20px rgba(31,122,77,.3);transition:.15s}
+  .cta:hover{background:var(--green-d);transform:translateY(-1px)}
+  .reassure{text-align:center;font-size:14px;color:var(--muted);margin-top:14px;line-height:1.5}
+  /* CALL */
+  .or{display:flex;align-items:center;gap:12px;color:#a9b8b0;font-size:13px;font-weight:600;margin:22px 0 4px}
+  .or::before,.or::after{content:"";flex:1;height:1px;background:#e2ece6}
+  .call{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;background:#fff;color:var(--green-d);border:2px solid var(--green);border-radius:14px;padding:15px;font-size:16px;font-weight:800;text-decoration:none;transition:.15s}
+  .call:hover{background:var(--green-l)}
+  /* PAY (optional) */
+  .paybar{background:var(--green-l);border-radius:14px;padding:16px 18px;margin-top:22px;text-align:center}
+  .paybar p{font-size:14px;color:var(--green-d);font-weight:600;margin-bottom:10px}
+  .paybtn{display:inline-block;background:var(--gold);color:#3a2e00;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none;font-size:15px}
+  /* WHY */
+  .why{margin-top:30px}
+  .why-item{display:flex;gap:13px;align-items:flex-start;background:#fff;border-radius:14px;padding:15px 16px;margin-top:10px;box-shadow:0 4px 14px rgba(21,92,57,.06)}
+  .why-item .ic{font-size:22px;line-height:1}
+  .why-item b{display:block;font-size:15px;margin-bottom:2px}
+  .why-item p{font-size:13.5px;color:var(--muted)}
+  /* FOOTER */
+  footer{text-align:center;padding:34px 20px 46px;color:#93a49b;font-size:11.5px;line-height:1.6}
+  footer .brand{font-weight:700;color:var(--green-d);font-size:13px;margin-bottom:8px}
+  .success{display:none;text-align:center;padding:30px 10px}
+  .success .check{width:64px;height:64px;border-radius:50%;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 16px}
+  .success h2{font-size:23px;margin-bottom:8px}
+  .success p{color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge">◆ WELCOME BACK — NEW HOPE WEIGHT LOSS</span>
+      <h1>Your spot is still here.<br /><span class="gold">Ready to pick up where you left off?</span></h1>
+      <p>You started something worth finishing. Restarting is simple — no re-doing everything from scratch.</p>
+      <div class="proof">Trusted by 7,000+ patients on their weight-loss journey</div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="card" id="card">
+      <h2>Yes — I'm interested</h2>
+      <p class="sub">Tell us which you're leaning toward. That's it.</p>
+
+      <form id="rjForm" onsubmit="return submitRJ(event)">
+        <span class="label">Which medication are you interested in?</span>
+        <div class="meds">
+          <label class="med"><input type="radio" name="med" value="Semaglutide" required /><span>Semaglutide<small>(Wegovy-class)</small></span></label>
+          <label class="med"><input type="radio" name="med" value="Tirzepatide" /><span>Tirzepatide<small>(Zepbound-class)</small></span></label>
+          <label class="med full"><input type="radio" name="med" value="Not sure — help me decide" /><span>Not sure — help me decide<small>Our team will guide you</small></span></label>
+        </div>
+
+        <div class="field"><input type="text" name="name" placeholder="First & last name" required autocomplete="name" /></div>
+        <div class="field"><input type="tel" name="phone" placeholder="Mobile number" required autocomplete="tel" /></div>
+        <div class="field"><input type="email" name="email" placeholder="Email (optional)" autocomplete="email" /></div>
+
+        <button type="submit" class="cta">Count me in →</button>
+        <p class="reassure">Respond here with interest and we'll have the <b>Health Advisor Team at Doctor's Clinic&nbsp;— New Hope Weight Loss</b> reach out to you as soon as time allows.</p>
+      </form>
+
+      <div class="or">or</div>
+      <a href="tel:+16578373342" class="call">📞 Prefer to talk now? Call the Health Advisors</a>
+
+      <div class="paybar">
+        <p>Already know you're ready to restart?</p>
+        <a href="#" class="paybtn" id="payLink">Restart my plan →</a>
+      </div>
+
+      <div class="success" id="success">
+        <div class="check">✓</div>
+        <h2>You're on the list.</h2>
+        <p>The Health Advisor Team at Doctor's Clinic — New Hope Weight Loss will reach out soon. Talk to you shortly!</p>
+      </div>
+    </div>
+
+    <div class="why">
+      <div class="why-item"><span class="ic">⚡</span><div><b>Fast to restart</b><p>You're already in our system — no starting over.</p></div></div>
+      <div class="why-item"><span class="ic">🩺</span><div><b>Real medical oversight</b><p>Licensed providers at Doctor's Clinic guide your plan.</p></div></div>
+      <div class="why-item"><span class="ic">💳</span><div><b>Flexible options</b><p>Ask about current pricing and financing when the team calls.</p></div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="brand">Doctor's Clinic — New Hope Weight Loss</div>
+    <p>By submitting, you agree that New Hope Weight Loss &amp; partners may contact you by live &amp; automated call, text, and email at the number/email provided, including for marketing. Consent is not a condition of purchase. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Results vary; not medical advice.</p>
+  </footer>
+
+<script>
+  // Draft handler — posts interest to GHL relay (endpoint to be wired before live).
+  // Tags on submit: patient, re-journey-interested, needs-call, a2p
+  function submitRJ(e){
+    e.preventDefault();
+    var f=e.target, data=Object.fromEntries(new FormData(f));
+    // TODO wire: fetch('RELAY_ENDPOINT',{method:'POST',body:JSON.stringify({...data,tags:['patient','re-journey-interested','needs-call','a2p']})})
+    document.getElementById('rjForm').style.display='none';
+    document.querySelector('.or').style.display='none';
+    document.querySelector('.call').style.display='none';
+    document.querySelector('.paybar').style.display='none';
+    document.getElementById('success').style.display='block';
+    document.getElementById('success').scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+</script>
+</body>
+</html>
