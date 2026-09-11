@@ -41,6 +41,7 @@ window.NHWL_ES = {
   "None of these conditions apply to me": "Ninguna de estas condiciones aplica en mi caso"
 },
   quiz: {
+  "See If You Qualify for Physician-Supervised Weight Loss": "Completa una Orientación para Pérdida de Peso Supervisada por Médica",
   "What's your primary weight loss goal?": "¿Cuál es tu meta principal de pérdida de peso?",
   "How often do thoughts about food interrupt your day?": "¿Con qué frecuencia los pensamientos sobre comida interrumpen tu día?",
   "Have you tried GLP-1 medications before?": "¿Has tomado medicamentos GLP-1 antes?",
@@ -58,7 +59,19 @@ window.NHWL_ES = {
   "No, this would be my first time": "No, sería mi primera vez",
   "Yes, and I had good results": "Sí, y tuve buenos resultados",
   "Yes, but I had side effects": "Sí, pero tuve efectos secundarios",
-  "Yes, but I couldn't afford to continue": "Sí, pero no pude pagar para continuar"
+  "Yes, but I couldn't afford to continue": "Sí, pero no pude pagar para continuar",
+  "Achieve a healthy, sustainable weight long-term": "Lograr un peso saludable y sostenible a largo plazo",
+  "Quiet the mental chatter about food that never stops": "Silenciar la conversación mental constante sobre la comida",
+  "Address blood sugar, blood pressure, or diabetes": "Manejar azúcar en sangre, presión arterial o diabetes",
+  "I want the complete transformation": "Quiero la transformación completa",
+  "Thinking about food even right after eating": "Pienso en comida incluso justo después de comer",
+  "Hard to focus because food is on my mind": "Es difícil concentrarme porque la comida está en mi mente",
+  "Normal hunger signals, but cravings are an issue": "Señales normales de hambre, pero los antojos son un problema",
+  "My appetite feels reasonably controlled": "Mi apetito se siente razonablemente controlado",
+  "I haven't used semaglutide or tirzepatide before": "No he usado semaglutida o tirzepatida antes",
+  "I've used them before and want to continue": "Las he usado antes y quiero continuar",
+  "Nausea or other issues made it difficult": "Náuseas u otros problemas lo hicieron difícil",
+  "Looking for a more affordable option": "Busco una opción más accesible"
 },
   ui: {
     // Interface copy. Transcreated for Mexican-American patients in Orange County, usted register.
