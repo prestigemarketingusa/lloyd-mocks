@@ -156,6 +156,24 @@ render(CONTRA,"ci","contra"); render(HEALTH,"hh","health");
 if (IS_ES) {
   try {
     document.documentElement.lang = "es";
+    // Translate the form chrome. Field labels are mapped BY MEANING, never positionally: the
+    // authoritative Spanish page orders its fields differently, and a positional pairing
+    // silently mislabels inputs — worse for a patient than leaving them in English.
+    var P = window.NHWL_ES || {};
+    var TR = function (t) { return (P.ui && P.ui[t]) || (P.clinical && P.clinical[t]) || null; };
+    var INLINE = {BR:1, EM:1, STRONG:1, SPAN:1, B:1, I:1, SMALL:1};
+    [].forEach.call(document.querySelectorAll('h1,h2,h3,label,button,p,div,span,strong,em,.foot'), function (el) {
+      var kids = [].slice.call(el.children);
+      if (kids.length && kids.some(function (k) { return !INLINE[k.tagName]; })) return;
+      var t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (!t) return;
+      var v = TR(t);
+      if (v) el.textContent = v;
+    });
+    [].forEach.call(document.querySelectorAll('[placeholder]'), function (el) {
+      var v = TR(el.getAttribute('placeholder'));
+      if (v) el.setAttribute('placeholder', v);
+    });
     var b = document.querySelector("#bounce p");
     if (b) b.textContent = ui("bounce", b.textContent);
     var bh = document.querySelector("#bounce h2");
