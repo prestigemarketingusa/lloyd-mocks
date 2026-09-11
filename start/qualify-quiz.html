@@ -908,6 +908,19 @@ if (IS_ES_QUIZ) {
         var v = P.quiz[t] || P.ui[t];
         if (v) el.textContent = v;
       });
+      // "Step 3 of 5" is built from a template at runtime, so it needs a pattern rule rather
+      // than a dictionary entry.
+      [].forEach.call(document.querySelectorAll('span,div,p'), function (el) {
+        if (el.children.length) return;
+        var t = (el.textContent || '').trim();
+        var m = t.match(/^Step\s+(\d+)\s+of\s+(\d+)$/i);
+        if (m) el.textContent = 'Paso ' + m[1] + ' de ' + m[2];
+      });
+      // Trademark notice carries its own Spanish text, with our brand name.
+      [].forEach.call(document.querySelectorAll('p,small,em'), function (el) {
+        if (el.children.length) return;
+        if (/Wegovy/.test(el.textContent) && P.ui.__trademark_es) el.textContent = P.ui.__trademark_es;
+      });
       // placeholders are invisible to a textContent walk but very visible to the patient
       [].forEach.call(document.querySelectorAll('[placeholder]'), function (el) {
         var ph = el.getAttribute('placeholder');

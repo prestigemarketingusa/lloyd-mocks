@@ -123,6 +123,17 @@ window.NHWL_ES = {
     "Physician Supervised": "Supervisado por Médica",
     "Secure Follow-up": "Seguimiento seguro",
     "HSA / FSA Accepted": "Aceptamos HSA / FSA",
-    "Results may vary. Eligibility determined during medical consultation. Compounded medications are subject to patient-specific and location-specific dispensing-pharmacy verification and are not FDA-approved.": "Los resultados pueden variar. La elegibilidad se determina durante la consulta médica. La semaglutida y la tirzepatida compuestas no están aprobadas por la FDA ni son idénticas a la marca, y los resultados varían."
+    "Results may vary. Eligibility determined during medical consultation. Compounded medications are subject to patient-specific and location-specific dispensing-pharmacy verification and are not FDA-approved.": "Los resultados pueden variar. La elegibilidad se determina durante la consulta médica. La semaglutida y la tirzepatida compuestas no están aprobadas por la FDA ni son idénticas a la marca, y los resultados varían.",
+    "Select the option that best describes what you're hoping to achieve.": "Seleccione la opción que mejor describa lo que espera lograr.",
+    "Constant food thoughts are a biological signal, not a willpower problem.": "Los pensamientos constantes sobre la comida son una señal biológica, no un problema de fuerza de voluntad.",
+    "This helps our physician team personalize your starting protocol.": "Esto ayuda a nuestro equipo médico a personalizar su protocolo inicial.",
+    "Used only to check general program eligibility, this is not a medical assessment.": "Se usa únicamente para verificar la elegibilidad general del programa; no es una evaluación médica.",
+    "Privacy details": "Detalles de privacidad",
+    "Physician Review": "Supervisado por Médica",
+    "Secure tracking": "Seguimiento seguro",
+    "HSA / FSA accepted": "Aceptamos HSA / FSA",
+    "We accept HSA / FSA": "Aceptamos HSA / FSA",
+    "Secure & Confidential": "Seguimiento seguro",
+    "__trademark_es": "Wegovy® y Ozempic® son marcas registradas de Novo Nordisk A/S. Mounjaro® y Zepbound® son marcas registradas de Eli Lilly and Company. New Hope Weight Loss no está afiliada, respaldada ni patrocinada por Novo Nordisk ni por Eli Lilly."
   }
 };
