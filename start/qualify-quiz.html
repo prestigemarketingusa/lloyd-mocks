@@ -1241,6 +1241,19 @@ async function submitQuiz() {
 
     // Meta: quiz completed = Lead. eventID is shared with the CAPI copy sent by the relay,
     // so Meta collapses the two into one event instead of double-counting.
+    // A2P consent must be ASSERTED BY THE FORM, not assumed by the relay. The relay only applies
+    // the `a2p` tag when this is true, because that tag means TCPA consent to be texted.
+    (function(){
+        var box = document.getElementById('consent') || document.querySelector('input[type=checkbox][name*=consent]')
+               || document.querySelector('.consent-text input[type=checkbox]');
+        payload.consent = !!(box && box.checked);
+        if (payload.consent) {
+            payload.consentText = (document.querySelector('.consent-text') || {}).textContent
+                ? document.querySelector('.consent-text').textContent.trim().slice(0, 400) : '';
+            payload.consentAt = new Date().toISOString();
+        }
+    })();
+    payload.language = 'en';
     payload.stage = 'quiz';
     payload.attribution = (window.NHWLAttr && window.NHWLAttr.payload()) || {};
     payload.event_id = (window.NHWLAttr && window.NHWLAttr.track('Lead', {

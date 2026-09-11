@@ -160,7 +160,9 @@ function contactPayload(){const f=document.getElementById("intake");return{
   firstName:f.firstName.value.trim(),lastName:f.lastName.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),
   dob:f.dob.value,heightFt:f.heightFt.value,heightIn:f.heightIn.value,currentWeight:f.currentWeight.value,bmi:calcBMI(),
   street:f.street.value.trim(),city:f.city.value.trim(),state:f.state.value,zip:f.zip.value.trim(),
-  consent:true,stage:"intake_started",source:"medical_intake_pmusa"};}
+  consent:!!(document.getElementById("consent")||{}).checked,
+  consentAt:new Date().toISOString(),language:"en",
+  stage:"intake_started",source:"medical_intake_pmusa"};}
 
 async function post(payload){try{
   payload.attribution=(window.NHWLAttr&&window.NHWLAttr.payload())||{};
