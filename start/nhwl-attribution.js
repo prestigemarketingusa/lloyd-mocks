@@ -108,6 +108,14 @@
         ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (k) {
           if (a[k] && !u.searchParams.get(k)) u.searchParams.set(k, a[k]);
         });
+        // Carry the language choice forward too. Without this a Spanish speaker reaches the
+        // payment step with no signal that they were ever reading Spanish, and the page has no
+        // way to keep serving them in their language.
+        try {
+          var isEs = /(^|[?&])lang=es\b/i.test(w.location.search) || /\/es(\/|$)/i.test(w.location.pathname)
+                     || (d.documentElement && d.documentElement.lang === 'es');
+          if (isEs && !u.searchParams.get('lang')) u.searchParams.set('lang', 'es');
+        } catch (e) {}
         return u.toString();
       } catch (e) { return url; }
     }
