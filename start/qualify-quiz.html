@@ -553,6 +553,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
     <!-- removed: /assets/nhwl-local-fonts.css did not exist on any host and 404d on every load -->
 
     <!-- Meta attribution + pixel (single source of truth) -->
+    <script src="nhwl-es.js"></script>
     <script src="nhwl-attribution.js"></script>
 </head>
 <body>
@@ -878,6 +879,19 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
 
 <script>
 const SITE_TAGS = ['NHWL-COM'];
+// Spanish is a display layer on the SAME PMUSA-owned funnel — same relay, same tags, same
+// lifecycle. It is emphatically not a route into Damon's Spanish funnel, so no ORG attribution
+// can be introduced by a patient choosing Spanish.
+const IS_ES_QUIZ = /(^|[?&])lang=es\b/i.test(location.search) || /\/es(\/|$)/i.test(location.pathname);
+if (IS_ES_QUIZ) {
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      document.documentElement.lang = 'es';
+      var f = document.querySelector('.qfine');
+      if (f && window.NHWL_ES && window.NHWL_ES.ui.consent) f.textContent = window.NHWL_ES.ui.consent;
+    } catch(e){}
+  }, {once:true});
+}
 const data = {};
 let currentStep = 1;
 let quizStartTracked = false;
@@ -1028,6 +1042,7 @@ function intakeUrl() {
                 currentWeight: data.currentWeight || ''
             }));
         } catch (e) {}
+        if (IS_ES_QUIZ) q.set('lang','es');
         var qs = q.toString();
         var dest = qs ? MEDICAL_INTAKE_URL + '?' + qs : MEDICAL_INTAKE_URL;
         return (window.NHWLAttr && window.NHWLAttr.decorate(dest)) || dest;
@@ -1260,7 +1275,7 @@ async function submitQuiz() {
             payload.consentMethod = 'submit-implied-disclosure';
         }
     })();
-    payload.language = 'en';
+    payload.language = (typeof IS_ES_QUIZ !== 'undefined' && IS_ES_QUIZ) ? 'es' : 'en';
     payload.stage = 'quiz';
     payload.attribution = (window.NHWLAttr && window.NHWLAttr.payload()) || {};
     payload.event_id = (window.NHWLAttr && window.NHWLAttr.track('Lead', {

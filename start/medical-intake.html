@@ -36,6 +36,7 @@
 </style>
 
     <!-- Meta attribution + pixel (single source of truth) -->
+    <script src="nhwl-es.js"></script>
     <script src="nhwl-attribution.js"></script>
 </head>
 <body>
@@ -111,29 +112,58 @@ const CONFIG = {
 const CONTRA = [
  "End-stage kidney disease (on or about to be on dialysis)",
  "End-stage liver disease (cirrhosis)",
- "Current suicidal thoughts and/or prior suicidal attempt",
- "Cancer, active diagnosis, active treatment, or in remission/cancer-free less than 5 years (excludes non-melanoma skin cancer)",
+ "Current suicidal thoughts",
+ "Cancer, active diagnosis, active treatment, or in remission less than 5 years (excludes non-melanoma skin cancer cured via simple excision)",
  "History of organ transplant on anti-rejection medication",
  "Severe gastrointestinal condition (e.g., gastroparesis, inflammatory bowel disease)",
- "Current diagnosis of or treatment for an eating disorder (anorexia nervosa or bulimia)",
- "Personal or family history of Medullary Thyroid Carcinoma (MTC) or Multiple Endocrine Neoplasia (MEN 2)",
+ "Current diagnosis of or treatment for an eating disorder (anorexia nervosa or bulimia nervosa)",
+ "Personal or family history of Medullary Thyroid Carcinoma (MTC) or Multiple Endocrine Neoplasia Syndrome Type 2 (MEN-2)",
  "Currently pregnant, breastfeeding, or planning to become pregnant within 2 months",
  "None of these conditions apply to me"
 ];
 const HEALTH = [
- "Active Gall Bladder Disease","Hypertension (high blood pressure)","Sleep apnea",
- "Type 2 diabetes (not on insulin)","Type 2 diabetes (on insulin)","Type 1 diabetes",
- "Diabetic retinopathy (diabetic eye disease)","Use of blood thinner warfarin (Coumadin/Jantoven)",
- "History of or current pancreatitis","High cholesterol or triglycerides","Severe Depression",
- "Liver disease, including fatty liver","Congestive heart failure","Urinary stress incontinence",
- "Polycystic ovarian syndrome (PCOS)","Clinically proven low testosterone","Osteoarthritis"
+ "Active Gall Bladder Disease",
+ "Hypertension (high blood pressure)",
+ "Sleep apnea",
+ "Type 2 diabetes (not on insulin)",
+ "Type 2 diabetes (on insulin)",
+ "Type 1 diabetes",
+ "Diabetic retinopathy (diabetic eye disease)",
+ "Use of blood thinner warfarin (Coumadin/Jantoven)",
+ "History of or current pancreatitis",
+ "High cholesterol or triglycerides",
+ "Severe Depression",
+ "Prior suicide attempt",
+ "Liver disease, including fatty liver",
+ "Congestive heart failure",
+ "Urinary stress incontinence",
+ "Polycystic ovarian syndrome (PCOS)",
+ "Clinically proven low testosterone",
+ "Osteoarthritis"
 ];
 const NONE = "None of these conditions apply to me";
 let contactLocked = false;
 
+// ES is a DISPLAY layer only. The checkbox `value` stays the canonical English string, so an
+// ES submission produces a GHL record structurally identical to an EN one and no downstream
+// clinical logic, tag, or report has to know which language the patient used.
+const IS_ES = /(^|[?&])lang=es\b/i.test(location.search) || /\/es(\/|$)/i.test(location.pathname);
+function tr(t){ try { return (IS_ES && window.NHWL_ES && window.NHWL_ES.clinical[t]) || t; } catch(e){ return t; } }
+function ui(k,f){ try { return (IS_ES && window.NHWL_ES && window.NHWL_ES.ui[k]) || f; } catch(e){ return f; } }
 function render(list,host,group){document.getElementById(host).innerHTML=list.map(t=>
-  `<label class="chk"><input type="checkbox" data-group="${group}" value="${t.replace(/"/g,'&quot;')}"><span>${t}</span></label>`).join("");}
+  `<label class="chk"><input type="checkbox" data-group="${group}" value="${t.replace(/"/g,'&quot;')}"><span>${tr(t)}</span></label>`).join("");}
 render(CONTRA,"ci","contra"); render(HEALTH,"hh","health");
+if (IS_ES) {
+  try {
+    document.documentElement.lang = "es";
+    var b = document.querySelector("#bounce p");
+    if (b) b.textContent = ui("bounce", b.textContent);
+    var bh = document.querySelector("#bounce h2");
+    if (bh) bh.textContent = ui("Thank you for your honesty.", bh.textContent);
+    var cl = document.querySelector("label[for=consent], .consent-text");
+    if (cl) cl.textContent = ui("consent", cl.textContent);
+  } catch (e) {}
+}
 
 // live BMI
 function calcBMI(){const f=document.getElementById("intake");
@@ -161,7 +191,7 @@ function contactPayload(){const f=document.getElementById("intake");return{
   dob:f.dob.value,heightFt:f.heightFt.value,heightIn:f.heightIn.value,currentWeight:f.currentWeight.value,bmi:calcBMI(),
   street:f.street.value.trim(),city:f.city.value.trim(),state:f.state.value,zip:f.zip.value.trim(),
   consent:!!(document.getElementById("consent")||{}).checked,
-  consentAt:new Date().toISOString(),language:"en",
+  consentAt:new Date().toISOString(),language:IS_ES?"es":"en",
   stage:"intake_started",source:"medical_intake_pmusa"};}
 
 async function post(payload){try{
