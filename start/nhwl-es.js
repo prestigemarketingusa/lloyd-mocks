@@ -40,6 +40,26 @@ window.NHWL_ES = {
   "Osteoarthritis": "Osteoartritis",
   "None of these conditions apply to me": "Ninguna de estas condiciones aplica en mi caso"
 },
+  quiz: {
+  "What's your primary weight loss goal?": "¿Cuál es tu meta principal de pérdida de peso?",
+  "How often do thoughts about food interrupt your day?": "¿Con qué frecuencia los pensamientos sobre comida interrumpen tu día?",
+  "Have you tried GLP-1 medications before?": "¿Has tomado medicamentos GLP-1 antes?",
+  "Tell us a bit about your current weight": "Cuéntanos un poco sobre tu peso actual",
+  "Last step: how can our team reach you?": "Último paso: ¿cómo te contactamos?",
+  "Your response was received": "Tu respuesta fue recibida",
+  "Lose weight and keep it off": "Bajar de peso y mantenerlo",
+  "Stop constant food cravings & noise": "Parar los antojos y el ruido alimentario",
+  "Improve my metabolic health": "Mejorar mi salud metabólica",
+  "All of the above": "Todo lo anterior",
+  "Constantly, it never stops": "Constantemente, nunca para",
+  "Often, several times per hour": "Frecuentemente, varias veces por hora",
+  "Sometimes, mainly around mealtimes": "A veces, sobre todo a la hora de comer",
+  "Rarely, only when I'm actually hungry": "Raramente, solo cuando tengo hambre real",
+  "No, this would be my first time": "No, sería mi primera vez",
+  "Yes, and I had good results": "Sí, y tuve buenos resultados",
+  "Yes, but I had side effects": "Sí, pero tuve efectos secundarios",
+  "Yes, but I couldn't afford to continue": "Sí, pero no pude pagar para continuar"
+},
   ui: {
     // Interface copy. Transcreated for Mexican-American patients in Orange County, usted register.
     // Flagged for final natural-language QA by Rosalia and Socorro — they review, they do not translate.

@@ -884,12 +884,30 @@ const SITE_TAGS = ['NHWL-COM'];
 // can be introduced by a patient choosing Spanish.
 const IS_ES_QUIZ = /(^|[?&])lang=es\b/i.test(location.search) || /\/es(\/|$)/i.test(location.pathname);
 if (IS_ES_QUIZ) {
-  document.addEventListener('DOMContentLoaded', function(){
+  // Translate the visible quiz. Questions and answer wording are taken from the live Spanish
+  // quiz, not invented here, so a Spanish speaker reads what Spanish speakers have always read.
+  // Only DISPLAY text changes: data-val attributes and everything posted to the relay stay
+  // canonical English, so an ES lead is structurally identical to an EN lead in GHL.
+  window.nhwlTranslateQuiz = function () {
     try {
+      var P = window.NHWL_ES; if (!P) return;
       document.documentElement.lang = 'es';
+      var sel = 'h1,h2,.qopt-title,.qopt-sub,.qlabel,label,.qsuccess-sub,.qsuccess h2,.redirect-label,button,.qbtn';
+      [].forEach.call(document.querySelectorAll(sel), function (el) {
+        if (el.children.length) return;                 // leaf nodes only — never clobber markup
+        var t = (el.textContent || '').trim();
+        if (!t) return;
+        var v = P.quiz[t] || P.ui[t];
+        if (v) el.textContent = v;
+      });
       var f = document.querySelector('.qfine');
-      if (f && window.NHWL_ES && window.NHWL_ES.ui.consent) f.textContent = window.NHWL_ES.ui.consent;
-    } catch(e){}
+      if (f && P.ui.consent) f.textContent = P.ui.consent;
+    } catch (e) {}
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    window.nhwlTranslateQuiz();
+    // steps render progressively, so re-apply as the patient advances
+    document.addEventListener('click', function(){ setTimeout(window.nhwlTranslateQuiz, 60); }, true);
   }, {once:true});
 }
 const data = {};
