@@ -550,7 +550,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
 }
 </style>
 <meta name="twitter:image:alt" content="New Hope Weight Loss and Wellness, physician-led metabolic care">
-    <link rel="stylesheet" href="/assets/nhwl-local-fonts.css">
+    <!-- removed: /assets/nhwl-local-fonts.css did not exist on any host and 404d on every load -->
 
     <!-- Meta attribution + pixel (single source of truth) -->
     <script src="nhwl-attribution.js"></script>
@@ -1244,13 +1244,20 @@ async function submitQuiz() {
     // A2P consent must be ASSERTED BY THE FORM, not assumed by the relay. The relay only applies
     // the `a2p` tag when this is true, because that tag means TCPA consent to be texted.
     (function(){
-        var box = document.getElementById('consent') || document.querySelector('input[type=checkbox][name*=consent]')
-               || document.querySelector('.consent-text input[type=checkbox]');
-        payload.consent = !!(box && box.checked);
+        // This quiz uses SUBMIT-IMPLIED consent, not a checkbox: the full TCPA disclosure sits
+        // directly above the submit button (.qfine) — automated/AI voice, texts, emails, "consent
+        // isn't required to purchase", STOP/HELP, privacy link. Pressing submit with that notice
+        // displayed IS the consent. So consent is asserted only when the disclosure was actually
+        // in the DOM and visible, and we archive the exact wording shown as the audit record —
+        // which is stronger evidence than a bare checkbox state.
+        var el = document.querySelector('.qfine');
+        var shown = !!el && !!el.textContent && /by submitting/i.test(el.textContent);
+        var visible = shown && !!(el.offsetParent !== null || el.getClientRects().length);
+        payload.consent = !!(shown && visible);
         if (payload.consent) {
-            payload.consentText = (document.querySelector('.consent-text') || {}).textContent
-                ? document.querySelector('.consent-text').textContent.trim().slice(0, 400) : '';
+            payload.consentText = el.textContent.replace(/\s+/g, ' ').trim().slice(0, 600);
             payload.consentAt = new Date().toISOString();
+            payload.consentMethod = 'submit-implied-disclosure';
         }
     })();
     payload.language = 'en';
