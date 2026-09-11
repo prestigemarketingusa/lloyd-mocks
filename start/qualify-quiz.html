@@ -551,6 +551,9 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
 </style>
 <meta name="twitter:image:alt" content="New Hope Weight Loss and Wellness, physician-led metabolic care">
     <link rel="stylesheet" href="/assets/nhwl-local-fonts.css">
+
+    <!-- Meta attribution + pixel (single source of truth) -->
+    <script src="nhwl-attribution.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -884,7 +887,7 @@ function trackQuizStart() {
     try { if (sessionStorage.getItem('nhwl_quiz_start_v1')) { quizStartTracked = true; return; } } catch (e) {}
     quizStartTracked = true;
     try { sessionStorage.setItem('nhwl_quiz_start_v1', '1'); } catch (e) {}
-    if (typeof fbq !== 'undefined') { fbq('trackCustom', 'QuizStart', { content_name: 'Qualify Quiz' }); }
+    if (window.NHWLAttr) { window.NHWLAttr.trackCustom('QuizStart', { content_name: 'Qualify Quiz' }); }
     if (typeof gtag !== 'undefined') { gtag('event', 'quiz_start', { event_category: 'engagement' }); }
 }
 const TOTAL_STEPS = 5;
@@ -1026,7 +1029,8 @@ function intakeUrl() {
             }));
         } catch (e) {}
         var qs = q.toString();
-        return qs ? MEDICAL_INTAKE_URL + '?' + qs : MEDICAL_INTAKE_URL;
+        var dest = qs ? MEDICAL_INTAKE_URL + '?' + qs : MEDICAL_INTAKE_URL;
+        return (window.NHWLAttr && window.NHWLAttr.decorate(dest)) || dest;
     } catch (e) { return MEDICAL_INTAKE_URL; }
 }
 
@@ -1235,7 +1239,13 @@ async function submitQuiz() {
         }
     };
 
+    // Meta: quiz completed = Lead. eventID is shared with the CAPI copy sent by the relay,
+    // so Meta collapses the two into one event instead of double-counting.
     payload.stage = 'quiz';
+    payload.attribution = (window.NHWLAttr && window.NHWLAttr.payload()) || {};
+    payload.event_id = (window.NHWLAttr && window.NHWLAttr.track('Lead', {
+        content_name: 'Qualify Quiz', content_category: 'quiz_complete'
+    })) || '';
     payload.answers = ['goal='+(data.step1||''), 'foodNoise='+(data.step2||''), 'glp1='+(data.step3||''), 'height='+(data.heightFeet||'')+'ft'+(data.heightInches||'')+'in', 'weight='+(data.currentWeight||''), 'goalWeight='+(data.goalWeight||''), 'bmi='+(data.bmi||'')].join('; ');
     let responseStatus = 0;
     try {
@@ -1252,9 +1262,6 @@ async function submitQuiz() {
         nhwlPushFormOutcome('qualify_quiz', 'success', responseStatus);
 
         nhwlRunAnalytics(function() {
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'SubmitApplication', { content_name: 'Qualify Quiz' });
-            }
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'generate_lead', { event_category: 'conversion' });
                 gtag('event', 'sign_up', { method: 'qualify-quiz' });

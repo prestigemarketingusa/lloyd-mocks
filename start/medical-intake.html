@@ -34,6 +34,9 @@
   .bounce h2{color:var(--green)} .hide{display:none}
   .foot{font-size:11px;color:#8a968e;text-align:center;margin-top:16px}
 </style>
+
+    <!-- Meta attribution + pixel (single source of truth) -->
+    <script src="nhwl-attribution.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -159,7 +162,9 @@ function contactPayload(){const f=document.getElementById("intake");return{
   street:f.street.value.trim(),city:f.city.value.trim(),state:f.state.value,zip:f.zip.value.trim(),
   consent:true,stage:"intake_started",source:"medical_intake_pmusa"};}
 
-async function post(payload){try{if(CONFIG.webhookUrl&&!CONFIG.webhookUrl.startsWith("REPLACE"))
+async function post(payload){try{
+  payload.attribution=(window.NHWLAttr&&window.NHWLAttr.payload())||{};
+  if(CONFIG.webhookUrl&&!CONFIG.webhookUrl.startsWith("REPLACE"))
   await fetch(CONFIG.webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});}catch(e){}}
 
 // STEP 1 -> lock the lead (capture contact+opt-in+BMI immediately), then to checkboxes
@@ -185,9 +190,11 @@ document.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>show(b.dataset
 document.getElementById("submitBtn").onclick=async ()=>{
   const btn=document.getElementById("submitBtn"); btn.disabled=true; btn.textContent="Submitting…";
   const fin={...contactPayload(),stage:"intake",contraindications:checked("contra"),healthHistory:checked("health")};
+  fin.event_id=(window.NHWLAttr&&window.NHWLAttr.track("SubmitApplication",{content_name:"Medical Intake",content_category:"intake_complete"}))||"";
   fin.answers="CONTRA: "+fin.contraindications.join(" | ")+"\nHISTORY: "+fin.healthHistory.join(" | ")+"\nDOB "+fin.dob+" · "+fin.heightFt+"ft"+fin.heightIn+"in · "+fin.currentWeight+"lbs · BMI "+fin.bmi+"\nADDR: "+fin.street+", "+fin.city+", "+fin.state+" "+fin.zip;
   await post(fin);   // <-- intake complete
-  const dest=(CONFIG.payUrl&&!CONFIG.payUrl.startsWith("REPLACE"))?CONFIG.payUrl:"#pay-not-configured";
+  let dest=(CONFIG.payUrl&&!CONFIG.payUrl.startsWith("REPLACE"))?CONFIG.payUrl:"#pay-not-configured";
+  if(window.NHWLAttr&&dest.indexOf("#")!==0) dest=window.NHWLAttr.decorate(dest);
   try{window.top.location.href=dest;}catch(e){window.location.href=dest;}
 };
 </script>
