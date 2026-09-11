@@ -1,81 +1,80 @@
 /* NHWL x PMUSA — Spanish (ES) language pack.
  *
- * PROVENANCE: every clinical string below was extracted VERBATIM from the live Spanish medical
- * form at nuevafiguraahora.com/medical-intake.html on 2026-09-11. Clinical and safety wording is
- * NOT machine-translated and must never be. The English text remains the canonical value sent to
- * GHL and the relay, so an ES submission produces a record structurally identical to an EN one.
+ * PROVENANCE: clinical, quiz and interface strings are taken VERBATIM from the live Spanish
+ * pages at nuevafiguraahora.com (medical-intake.html, qualify-quiz.html), extracted 2026-09-11.
+ * Clinical and safety wording is NOT machine-translated and must never be.
  *
- * 9 Step-1 auto-exclusions + 18 Step-2 clinical-review items, matching the English funnel exactly.
- * Note the two suicide items are DELIBERATELY SEPARATE: current ideation auto-excludes, a prior
- * attempt routes to individual clinical review. They must never be merged.
+ * English remains the canonical value sent to GHL and the relay, so an ES submission produces a
+ * record structurally identical to an EN one. Spanish is presentation only.
+ *
+ * 9 Step-1 auto-exclusions + 18 Step-2 clinical-review items. The two suicide items are
+ * DELIBERATELY SEPARATE and tests/clinical-integrity.js fails the build if they are ever merged.
  */
 window.NHWL_ES = {
-  clinical: {
-  "End-stage kidney disease (on or about to be on dialysis)": "Enfermedad renal en etapa terminal (en diálisis o por iniciar diálisis)",
-  "End-stage liver disease (cirrhosis)": "Enfermedad hepática en etapa terminal (cirrosis)",
-  "Current suicidal thoughts": "Pensamientos suicidas actuales",
-  "Cancer, active diagnosis, active treatment, or in remission less than 5 years (excludes non-melanoma skin cancer cured via simple excision)": "Cáncer, diagnóstico activo, tratamiento activo, o en remisión / libre de cáncer hace menos de 5 años (excluye cáncer de piel no melanoma curado por escisión simple)",
-  "History of organ transplant on anti-rejection medication": "Historia de trasplante de órgano con medicamento antirrechazo",
-  "Severe gastrointestinal condition (e.g., gastroparesis, inflammatory bowel disease)": "Condición gastrointestinal severa (ej. gastroparesia, enfermedad inflamatoria intestinal)",
-  "Current diagnosis of or treatment for an eating disorder (anorexia nervosa or bulimia nervosa)": "Diagnóstico actual o tratamiento por trastorno alimentario (anorexia nerviosa o bulimia nerviosa)",
-  "Personal or family history of Medullary Thyroid Carcinoma (MTC) or Multiple Endocrine Neoplasia Syndrome Type 2 (MEN-2)": "Historia personal o familiar de Carcinoma Medular de Tiroides (MTC) o Síndrome de Neoplasia Endocrina Múltiple Tipo 2 (MEN-2)",
-  "Currently pregnant, breastfeeding, or planning to become pregnant within 2 months": "Actualmente embarazada, amamantando, o planeando embarazarse en los próximos 2 meses",
-  "Active Gall Bladder Disease": "Enfermedad activa de la vesícula biliar",
-  "Hypertension (high blood pressure)": "Hipertensión (presión arterial alta)",
-  "Sleep apnea": "Apnea del sueño",
-  "Type 2 diabetes (not on insulin)": "Diabetes tipo 2 (sin insulina)",
-  "Type 2 diabetes (on insulin)": "Diabetes tipo 2 (con insulina)",
-  "Type 1 diabetes": "Diabetes tipo 1",
-  "Diabetic retinopathy (diabetic eye disease)": "Retinopatía diabética (enfermedad ocular diabética)",
-  "Use of blood thinner warfarin (Coumadin/Jantoven)": "Uso de anticoagulante warfarina (Coumadin/Jantoven)",
-  "History of or current pancreatitis": "Historia o pancreatitis actual",
-  "High cholesterol or triglycerides": "Colesterol o triglicéridos altos",
-  "Severe Depression": "Depresión severa",
-  "Prior suicide attempt": "Intento suicida previo, para revisión clínica individual",
-  "Liver disease, including fatty liver": "Enfermedad hepática, incluyendo hígado graso",
-  "Congestive heart failure": "Insuficiencia cardíaca congestiva",
-  "Urinary stress incontinence": "Incontinencia urinaria por estrés",
-  "Polycystic ovarian syndrome (PCOS)": "Síndrome de ovario poliquístico (SOP)",
-  "Clinically proven low testosterone": "Testosterona baja clínicamente comprobada",
-  "Osteoarthritis": "Osteoartritis",
-  "None of these conditions apply to me": "Ninguna de estas condiciones aplica en mi caso"
-},
-  quiz: {
-  "See If You Qualify for Physician-Supervised Weight Loss": "Completa una Orientación para Pérdida de Peso Supervisada por Médica",
-  "What's your primary weight loss goal?": "¿Cuál es tu meta principal de pérdida de peso?",
-  "How often do thoughts about food interrupt your day?": "¿Con qué frecuencia los pensamientos sobre comida interrumpen tu día?",
-  "Have you tried GLP-1 medications before?": "¿Has tomado medicamentos GLP-1 antes?",
-  "Tell us a bit about your current weight": "Cuéntanos un poco sobre tu peso actual",
-  "Last step: how can our team reach you?": "Último paso: ¿cómo te contactamos?",
-  "Your response was received": "Tu respuesta fue recibida",
-  "Lose weight and keep it off": "Bajar de peso y mantenerlo",
-  "Stop constant food cravings & noise": "Parar los antojos y el ruido alimentario",
-  "Improve my metabolic health": "Mejorar mi salud metabólica",
-  "All of the above": "Todo lo anterior",
-  "Constantly, it never stops": "Constantemente, nunca para",
-  "Often, several times per hour": "Frecuentemente, varias veces por hora",
-  "Sometimes, mainly around mealtimes": "A veces, sobre todo a la hora de comer",
-  "Rarely, only when I'm actually hungry": "Raramente, solo cuando tengo hambre real",
-  "No, this would be my first time": "No, sería mi primera vez",
-  "Yes, and I had good results": "Sí, y tuve buenos resultados",
-  "Yes, but I had side effects": "Sí, pero tuve efectos secundarios",
-  "Yes, but I couldn't afford to continue": "Sí, pero no pude pagar para continuar",
-  "Achieve a healthy, sustainable weight long-term": "Lograr un peso saludable y sostenible a largo plazo",
-  "Quiet the mental chatter about food that never stops": "Silenciar la conversación mental constante sobre la comida",
-  "Address blood sugar, blood pressure, or diabetes": "Manejar azúcar en sangre, presión arterial o diabetes",
-  "I want the complete transformation": "Quiero la transformación completa",
-  "Thinking about food even right after eating": "Pienso en comida incluso justo después de comer",
-  "Hard to focus because food is on my mind": "Es difícil concentrarme porque la comida está en mi mente",
-  "Normal hunger signals, but cravings are an issue": "Señales normales de hambre, pero los antojos son un problema",
-  "My appetite feels reasonably controlled": "Mi apetito se siente razonablemente controlado",
-  "I haven't used semaglutide or tirzepatide before": "No he usado semaglutida o tirzepatida antes",
-  "I've used them before and want to continue": "Las he usado antes y quiero continuar",
-  "Nausea or other issues made it difficult": "Náuseas u otros problemas lo hicieron difícil",
-  "Looking for a more affordable option": "Busco una opción más accesible"
-},
-  ui: {
-    // Interface copy. Transcreated for Mexican-American patients in Orange County, usted register.
-    // Flagged for final natural-language QA by Rosalia and Socorro — they review, they do not translate.
+  "clinical": {
+    "End-stage kidney disease (on or about to be on dialysis)": "Enfermedad renal en etapa terminal (en diálisis o por iniciar diálisis)",
+    "End-stage liver disease (cirrhosis)": "Enfermedad hepática en etapa terminal (cirrosis)",
+    "Current suicidal thoughts": "Pensamientos suicidas actuales",
+    "Cancer, active diagnosis, active treatment, or in remission less than 5 years (excludes non-melanoma skin cancer cured via simple excision)": "Cáncer, diagnóstico activo, tratamiento activo, o en remisión / libre de cáncer hace menos de 5 años (excluye cáncer de piel no melanoma curado por escisión simple)",
+    "History of organ transplant on anti-rejection medication": "Historia de trasplante de órgano con medicamento antirrechazo",
+    "Severe gastrointestinal condition (e.g., gastroparesis, inflammatory bowel disease)": "Condición gastrointestinal severa (ej. gastroparesia, enfermedad inflamatoria intestinal)",
+    "Current diagnosis of or treatment for an eating disorder (anorexia nervosa or bulimia nervosa)": "Diagnóstico actual o tratamiento por trastorno alimentario (anorexia nerviosa o bulimia nerviosa)",
+    "Personal or family history of Medullary Thyroid Carcinoma (MTC) or Multiple Endocrine Neoplasia Syndrome Type 2 (MEN-2)": "Historia personal o familiar de Carcinoma Medular de Tiroides (MTC) o Síndrome de Neoplasia Endocrina Múltiple Tipo 2 (MEN-2)",
+    "Currently pregnant, breastfeeding, or planning to become pregnant within 2 months": "Actualmente embarazada, amamantando, o planeando embarazarse en los próximos 2 meses",
+    "Active Gall Bladder Disease": "Enfermedad activa de la vesícula biliar",
+    "Hypertension (high blood pressure)": "Hipertensión (presión arterial alta)",
+    "Sleep apnea": "Apnea del sueño",
+    "Type 2 diabetes (not on insulin)": "Diabetes tipo 2 (sin insulina)",
+    "Type 2 diabetes (on insulin)": "Diabetes tipo 2 (con insulina)",
+    "Type 1 diabetes": "Diabetes tipo 1",
+    "Diabetic retinopathy (diabetic eye disease)": "Retinopatía diabética (enfermedad ocular diabética)",
+    "Use of blood thinner warfarin (Coumadin/Jantoven)": "Uso de anticoagulante warfarina (Coumadin/Jantoven)",
+    "History of or current pancreatitis": "Historia o pancreatitis actual",
+    "High cholesterol or triglycerides": "Colesterol o triglicéridos altos",
+    "Severe Depression": "Depresión severa",
+    "Prior suicide attempt": "Intento suicida previo, para revisión clínica individual",
+    "Liver disease, including fatty liver": "Enfermedad hepática, incluyendo hígado graso",
+    "Congestive heart failure": "Insuficiencia cardíaca congestiva",
+    "Urinary stress incontinence": "Incontinencia urinaria por estrés",
+    "Polycystic ovarian syndrome (PCOS)": "Síndrome de ovario poliquístico (SOP)",
+    "Clinically proven low testosterone": "Testosterona baja clínicamente comprobada",
+    "Osteoarthritis": "Osteoartritis",
+    "None of these conditions apply to me": "Ninguna de estas condiciones aplica en mi caso"
+  },
+  "quiz": {
+    "See If You Qualify for Physician-Supervised Weight Loss": "Completa una Orientación para Pérdida de Peso Supervisada por Médica",
+    "What's your primary weight loss goal?": "¿Cuál es tu meta principal de pérdida de peso?",
+    "How often do thoughts about food interrupt your day?": "¿Con qué frecuencia los pensamientos sobre comida interrumpen tu día?",
+    "Have you tried GLP-1 medications before?": "¿Has tomado medicamentos GLP-1 antes?",
+    "Tell us a bit about your current weight": "Cuéntanos un poco sobre tu peso actual",
+    "Last step: how can our team reach you?": "Último paso: ¿cómo te contactamos?",
+    "Your response was received": "Tu respuesta fue recibida",
+    "Lose weight and keep it off": "Bajar de peso y mantenerlo",
+    "Stop constant food cravings & noise": "Parar los antojos y el ruido alimentario",
+    "Improve my metabolic health": "Mejorar mi salud metabólica",
+    "All of the above": "Todo lo anterior",
+    "Constantly, it never stops": "Constantemente, nunca para",
+    "Often, several times per hour": "Frecuentemente, varias veces por hora",
+    "Sometimes, mainly around mealtimes": "A veces, sobre todo a la hora de comer",
+    "Rarely, only when I'm actually hungry": "Raramente, solo cuando tengo hambre real",
+    "No, this would be my first time": "No, sería mi primera vez",
+    "Yes, and I had good results": "Sí, y tuve buenos resultados",
+    "Yes, but I had side effects": "Sí, pero tuve efectos secundarios",
+    "Yes, but I couldn't afford to continue": "Sí, pero no pude pagar para continuar",
+    "Achieve a healthy, sustainable weight long-term": "Lograr un peso saludable y sostenible a largo plazo",
+    "Quiet the mental chatter about food that never stops": "Silenciar la conversación mental constante sobre la comida",
+    "Address blood sugar, blood pressure, or diabetes": "Manejar azúcar en sangre, presión arterial o diabetes",
+    "I want the complete transformation": "Quiero la transformación completa",
+    "Thinking about food even right after eating": "Pienso en comida incluso justo después de comer",
+    "Hard to focus because food is on my mind": "Es difícil concentrarme porque la comida está en mi mente",
+    "Normal hunger signals, but cravings are an issue": "Señales normales de hambre, pero los antojos son un problema",
+    "My appetite feels reasonably controlled": "Mi apetito se siente razonablemente controlado",
+    "I haven't used semaglutide or tirzepatide before": "No he usado semaglutida o tirzepatida antes",
+    "I've used them before and want to continue": "Las he usado antes y quiero continuar",
+    "Nausea or other issues made it difficult": "Náuseas u otros problemas lo hicieron difícil",
+    "Looking for a more affordable option": "Busco una opción más accesible"
+  },
+  "ui": {
     "See If You Qualify": "Vea si califica",
     "Continue": "Continuar",
     "Back": "Atrás",
@@ -104,6 +103,26 @@ window.NHWL_ES = {
     "Thank you for your honesty.": "Gracias por su sinceridad.",
     "bounce": "Según sus respuestas, no podemos ofrecerle este tratamiento en este momento. Por favor consulte a su propio médico sobre su cuidado.",
     "redirect": "Le estamos llevando al cuestionario médico...",
-    "consent": "Al enviar, acepto que New Hope Weight Loss y sus socios puedan comunicarse conmigo al número y correo que proporciono, con fines de mercadeo y para programar citas de paciente/clínica, mediante llamadas de voz en vivo o automatizadas (IA), mensajes de texto y correos electrónicos. El consentimiento no es requisito para comprar. La frecuencia de mensajes varía; pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar, HELP para ayuda."
+    "consent": "Al enviar, acepto que New Hope Weight Loss y sus socios puedan comunicarse conmigo al número y correo que proporciono, con fines de mercadeo y para programar citas de paciente/clínica, mediante llamadas de voz en vivo o automatizadas (IA), mensajes de texto y correos electrónicos. El consentimiento no es requisito para comprar. La frecuencia de mensajes varía; pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar, HELP para ayuda.",
+    "Continue →": "Continuar →",
+    "← Back": "← Atrás",
+    "See If I Qualify →": "Enviar y Ver los Siguientes Pasos →",
+    "e.g. 215": "ej. 215",
+    "e.g. 165": "ej. 165",
+    "First name": "Nombre",
+    "Last name": "Apellido",
+    "your@email.com": "tu@correo.com",
+    "Your Progress": "Tu Progreso",
+    "Step 1, Your Goal": "Paso 1, Tu Meta",
+    "Step 2, Food Noise": "Paso 2, Ruido Alimentario",
+    "Step 3, Treatment History": "Paso 3, Historia de Tratamiento",
+    "Step 4, Your Numbers": "Paso 4, Tus Datos",
+    "Step 5, Almost Done": "Paso 5, Casi Listo",
+    "Answer 5 quick questions to find out if our GLP-1 program is right for you. No obligation, no pressure.": "Responde 5 preguntas para organizar información antes de una posible revisión médica. La orientación no decide si un tratamiento es adecuado para ti.",
+    "HIPAA Protected": "Detalles de privacidad",
+    "Physician Supervised": "Supervisado por Médica",
+    "Secure Follow-up": "Seguimiento seguro",
+    "HSA / FSA Accepted": "Aceptamos HSA / FSA",
+    "Results may vary. Eligibility determined during medical consultation. Compounded medications are subject to patient-specific and location-specific dispensing-pharmacy verification and are not FDA-approved.": "Los resultados pueden variar. La elegibilidad se determina durante la consulta médica. La semaglutida y la tirzepatida compuestas no están aprobadas por la FDA ni son idénticas a la marca, y los resultados varían."
   }
 };

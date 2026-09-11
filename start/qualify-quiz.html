@@ -892,7 +892,7 @@ if (IS_ES_QUIZ) {
     try {
       var P = window.NHWL_ES; if (!P) return;
       document.documentElement.lang = 'es';
-      var sel = 'h1,h2,.qopt-title,.qopt-desc,.qlabel,label,.qsuccess-sub,.qsuccess h2,.redirect-label,button,.qbtn';
+      var sel = 'h1,h2,h3,p,span,em,div,label,button,.qbtn,.qopt-title,.qopt-desc,.qlabel,.qsuccess-sub,.redirect-label,.qprogress-label,.qstep-label,.qhero-sub,.qsub,.qtrust-item,.qfine';
       [].forEach.call(document.querySelectorAll(sel), function (el) {
         // Leaf nodes only, so we never clobber markup — but a <br> inside a headline is still a
         // leaf for our purposes.
@@ -907,6 +907,11 @@ if (IS_ES_QUIZ) {
         if (!t) return;
         var v = P.quiz[t] || P.ui[t];
         if (v) el.textContent = v;
+      });
+      // placeholders are invisible to a textContent walk but very visible to the patient
+      [].forEach.call(document.querySelectorAll('[placeholder]'), function (el) {
+        var ph = el.getAttribute('placeholder');
+        if (ph && (P.ui[ph] || P.quiz[ph])) el.setAttribute('placeholder', P.ui[ph] || P.quiz[ph]);
       });
       var f = document.querySelector('.qfine');
       if (f && P.ui.consent) f.textContent = P.ui.consent;
