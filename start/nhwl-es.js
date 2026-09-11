@@ -155,6 +155,10 @@ window.NHWL_ES = {
     "Step 3: Additional health history": "Paso 3: Historia de Salud Adicional",
     "New Hope Weight Loss · HIPAA Secure": "New Hope Weight Loss · Seguro conforme a HIPAA",
     "Your information is kept private and secure.": "Su información se mantiene privada y segura.",
-    "123 Main St, Apt 4B": "123 Calle Principal, Apt 4B"
+    "123 Main St, Apt 4B": "123 Calle Principal, Apt 4B",
+    "Submit & Continue to Payment →": "Enviar y Continuar al Pago",
+    "Please complete all required fields and the consent box.": "Por favor complete todos los campos requeridos y la casilla de consentimiento.",
+    "State…": "Estado…",
+    "__consent_intake_es": "Al enviar, acepto que New Hope Weight Loss y sus socios puedan comunicarse conmigo al número y correo que proporciono, con fines de mercadeo y para programar citas de paciente/clínica, mediante llamadas de voz en vivo o automatizadas (IA), mensajes de texto y correos electrónicos. El consentimiento no es requisito para comprar. La frecuencia de mensajes varía; pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar, HELP para ayuda. Consulte nuestra Política de Privacidad."
   }
 };
