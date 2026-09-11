@@ -892,7 +892,7 @@ if (IS_ES_QUIZ) {
     try {
       var P = window.NHWL_ES; if (!P) return;
       document.documentElement.lang = 'es';
-      var sel = 'h1,h2,.qopt-title,.qopt-sub,.qlabel,label,.qsuccess-sub,.qsuccess h2,.redirect-label,button,.qbtn';
+      var sel = 'h1,h2,.qopt-title,.qopt-desc,.qlabel,label,.qsuccess-sub,.qsuccess h2,.redirect-label,button,.qbtn';
       [].forEach.call(document.querySelectorAll(sel), function (el) {
         if (el.children.length) return;                 // leaf nodes only — never clobber markup
         var t = (el.textContent || '').trim();
