@@ -1006,6 +1006,30 @@ if (document.readyState === 'loading') {
 // Redirect destination, update if your medical intake path differs
 const MEDICAL_INTAKE_URL = 'https://my.newhopeweightloss.com/medical-intake-form';
 
+// Sticky hand-off (2026-09-11). The intake prefills from ?fn/ln/em/ph but the quiz used to
+// redirect with a bare URL, so every patient retyped their contact details. Contact fields ride
+// the query string (guaranteed to survive the top-level navigation); height/weight go through
+// sessionStorage instead -- same iframe origin on both pages, and health figures do not belong
+// in a URL that ends up in referrer headers and server logs.
+function intakeUrl() {
+    try {
+        var q = new URLSearchParams();
+        if (data.firstName) q.set('fn', data.firstName);
+        if (data.lastName)  q.set('ln', data.lastName);
+        if (data.email)     q.set('em', data.email);
+        if (data.phone)     q.set('ph', data.phone);
+        try {
+            sessionStorage.setItem('nhwl_lead_v1', JSON.stringify({
+                heightFeet:    data.heightFeet    || '',
+                heightInches:  data.heightInches  || '',
+                currentWeight: data.currentWeight || ''
+            }));
+        } catch (e) {}
+        var qs = q.toString();
+        return qs ? MEDICAL_INTAKE_URL + '?' + qs : MEDICAL_INTAKE_URL;
+    } catch (e) { return MEDICAL_INTAKE_URL; }
+}
+
 function goTo(step) {
     document.getElementById(currentStep === 'success' ? 'sSuccess' : 's' + currentStep).classList.remove('active');
     const target = step === 'success' ? document.getElementById('sSuccess') : document.getElementById('s' + step);
@@ -1060,7 +1084,7 @@ function startRedirect() {
     let remaining = Math.ceil(delay / 1000);
 
     // Update manual link href
-    manual.href = MEDICAL_INTAKE_URL;
+    manual.href = intakeUrl();
 
     // Countdown label
     const ticker = setInterval(() => {
@@ -1080,7 +1104,8 @@ function startRedirect() {
 
     // Redirect
     setTimeout(() => {
-        try { window.top.location.href = MEDICAL_INTAKE_URL; } catch(e) { window.location.href = MEDICAL_INTAKE_URL; }
+        var dest = intakeUrl();
+        try { window.top.location.href = dest; } catch(e) { window.location.href = dest; }
     }, delay);
 }
 
@@ -1189,7 +1214,7 @@ async function submitQuiz() {
         source:      'Website Quiz',
         landingPage: window.location.href,
         language:    'en',
-        tags:        ['website-quiz', 'qualified-lead', 'ORG', ...SITE_TAGS],
+        tags:        ['website-quiz', 'qualified-lead', ...SITE_TAGS],
         customField: {
             quiz_goal:         data.step1 || '',
             quiz_food_noise:   data.step2 || '',

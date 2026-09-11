@@ -199,6 +199,16 @@ document.getElementById("submitBtn").onclick=async ()=>{
     var f = document.getElementById('intake');
     var map = {fn:'firstName', ln:'lastName', em:'email', ph:'phone'};
     Object.keys(map).forEach(function(k){ var v=q.get(k); if(v && f[map[k]]) f[map[k]].value=v; });
+    // Height/weight ride sessionStorage rather than the URL (same origin as the quiz page).
+    try {
+      var lead = JSON.parse(sessionStorage.getItem('nhwl_lead_v1') || '{}');
+      var hmap = {heightFeet:'heightFt', heightInches:'heightIn', currentWeight:'currentWeight'};
+      var filled = false;
+      Object.keys(hmap).forEach(function(k){
+        if (lead[k] && f[hmap[k]] && !f[hmap[k]].value) { f[hmap[k]].value = lead[k]; filled = true; }
+      });
+      if (filled && typeof calcBMI === 'function') calcBMI();
+    } catch (e) {}
   } catch(e) {}
 })();
 </script>
