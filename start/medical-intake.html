@@ -196,11 +196,24 @@ if (IS_ES) {
 }
 
 // live BMI
+// P0 2026-09-12: this previously guarded only on `tot>0`, so a blank feet box with 0.1 in the
+// inches box produced a BMI of 12,850,840 on screen for a real patient. Height now has to be
+// physically plausible before anything is calculated or stored, and the value is rounded — the
+// raw figure was being written to the record at full float precision.
+const BMI_LIMITS = {ftMin:3, ftMax:8, inMin:0, inMax:11.99, lbMin:50, lbMax:1000, bmiMin:8, bmiMax:100};
 function calcBMI(){const f=document.getElementById("intake");
-  const ft=+f.heightFt.value,inch=+f.heightIn.value,w=+f.currentWeight.value;
-  const tot=ft*12+inch; const out=document.getElementById("bmiOut");
-  if(tot>0&&w>0){const bmi=(703*w/(tot*tot)); out.style.display="block"; out.textContent="Your BMI: "+bmi.toFixed(1); return bmi;}
-  out.style.display="none"; return null;}
+  const ft=parseFloat(f.heightFt.value), inch=parseFloat(f.heightIn.value)||0, w=parseFloat(f.currentWeight.value);
+  const out=document.getElementById("bmiOut");
+  const L=BMI_LIMITS;
+  const ok = Number.isFinite(ft) && ft>=L.ftMin && ft<=L.ftMax
+          && Number.isFinite(inch) && inch>=L.inMin && inch<=L.inMax
+          && Number.isFinite(w) && w>=L.lbMin && w<=L.lbMax;
+  if(!ok){ out.style.display="none"; return null; }
+  const tot=ft*12+inch;
+  const bmi=Math.round((703*w/(tot*tot))*10)/10;
+  if(bmi<L.bmiMin||bmi>L.bmiMax){ out.style.display="none"; return null; }
+  out.style.display="block"; out.textContent="Your BMI: "+bmi.toFixed(1);
+  return bmi;}
 ["heightFt","heightIn","currentWeight"].forEach(n=>document.getElementById("intake")[n].addEventListener("input",calcBMI));
 
 // "None apply" clears others
