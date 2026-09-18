@@ -9,8 +9,11 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚕️</text></svg>">
 
 
+
+
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 
         :root {
             --bg:          #F8FAF7;
@@ -36,7 +39,9 @@
             --shadow-md:   0 8px 40px rgba(0,0,0,0.10);
         }
 
+
         html { scroll-behavior: smooth; }
+
 
         body {
             font-family: var(--font-body);
@@ -46,6 +51,7 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
+
 
         /* ── HEADER ── */
         .qhdr {
@@ -92,12 +98,14 @@
         }
         .qhdr-phone:hover { color: var(--accent-h); }
 
+
         /* ── LAYOUT ── */
         .qwrap {
             max-width: 680px;
             margin: 0 auto;
             padding: 2.5rem 1.25rem 5rem;
         }
+
 
         /* ── HERO TEXT ── */
         .qhero {
@@ -141,6 +149,7 @@
             line-height: 1.65;
         }
 
+
         /* ── PROGRESS ── */
         .qprogress-wrap { margin-bottom: 2rem; }
         .qprogress-meta {
@@ -170,6 +179,7 @@
         .qprogress-seg.active { background: var(--accent); }
         .qprogress-seg.done   { background: var(--accent); opacity: 0.45; }
 
+
         /* ── CARD ── */
         .qcard {
             background: var(--bg-card);
@@ -179,6 +189,7 @@
             box-shadow: var(--shadow);
         }
         @media (max-width: 480px) { .qcard { padding: 1.5rem 1.25rem; } }
+
 
         /* ── STEP ── */
         .qstep { display: none; }
@@ -190,6 +201,7 @@
             from { opacity: 0; transform: translateY(14px); }
             to   { opacity: 1; transform: translateY(0); }
         }
+
 
         .qstep-label {
             font-size: 0.72rem;
@@ -212,6 +224,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.55;
         }
+
 
         /* ── OPTIONS ── */
         .qoptions {
@@ -255,10 +268,12 @@
         .qopt-title { font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.35; }
         .qopt-desc  { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
 
+
         /* ── INPUTS ── */
         .qfields { margin-bottom: 1.5rem; }
         .qrow2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
         @media (max-width: 480px) { .qrow2 { grid-template-columns: 1fr; } }
+
 
         .qfield { margin-bottom: 0.85rem; }
         .qfield:last-child { margin-bottom: 0; }
@@ -292,8 +307,10 @@
         }
         .qfield input.err { border-color: #dc2626; background: rgba(220,38,38,0.04); }
 
+
         .weight-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
         @media (max-width: 420px) { .weight-pair { grid-template-columns: 1fr; } }
+
 
         .height-wrap { display: flex; gap: 0.5rem; align-items: center; }
         .height-wrap input { flex: 1; }
@@ -302,6 +319,8 @@
         .height-slider { width:100%; margin:0.35rem 0 0.7rem; }
         .height-field .height-wrap { max-width:280px; margin:0 auto; justify-content:center; }
         .height-field .height-wrap input { max-width:84px; text-align:center; }
+
+
 
 
         .bmi-hint {
@@ -316,6 +335,7 @@
         }
         .bmi-hint.show { display: block; }
         .bmi-hint.warn { background: rgba(234,179,8,0.12); color: #92400e; }
+
 
         /* ── NAV BUTTONS ── */
         .qnav { display: flex; gap: 0.75rem; }
@@ -347,6 +367,7 @@
         }
         .qbtn-back:hover { background: var(--bg); color: var(--text); }
 
+
         .qfine {
             font-size: 0.72rem;
             color: var(--text-muted);
@@ -356,6 +377,7 @@
         }
         .qfine a { color: var(--accent); text-decoration: none; }
         .qfine a:hover { text-decoration: underline; }
+
 
         /* ── SUCCESS ── */
         .qsuccess { text-align: center; padding: 1rem 0 0.5rem; }
@@ -384,6 +406,7 @@
             max-width: 420px;
             margin: 0 auto 1.5rem;
         }
+
 
         /* ── REDIRECT COUNTDOWN ── */
         .redirect-bar-wrap {
@@ -415,6 +438,7 @@
             transform: scaleX(0);
         }
 
+
         .qsuccess-manual {
             font-size: 0.82rem;
             color: var(--text-muted);
@@ -422,6 +446,7 @@
         }
         .qsuccess-manual a { color: var(--accent); font-weight: 600; text-decoration: none; }
         .qsuccess-manual a:hover { text-decoration: underline; }
+
 
         /* trust row */
         .qtrust {
@@ -441,6 +466,7 @@
             color: var(--text-muted);
         }
         .qtrust-item svg { width: 14px; height: 14px; stroke: var(--success); fill: none; }
+
 
         /* ── STATS ── */
         .qstats {
@@ -466,6 +492,7 @@
         }
         .qstat-lbl { font-size: 0.7rem; color: var(--text-muted); line-height: 1.3; }
 
+
         /* ── ERROR ── */
         .qerror {
             display: none;
@@ -480,6 +507,7 @@
         }
         .qerror.show { display: block; animation: stepIn 0.25s ease; }
 
+
         /* ── FOOTER ── */
         .qfoot {
             text-align: center;
@@ -490,6 +518,7 @@
             margin-top: 2rem;
         }
         .qfoot a { color: var(--accent); text-decoration: none; }
+
 
         @media (max-width: 540px) {
             .qwrap { padding: 1.5rem 1rem 4rem; }
@@ -552,12 +581,14 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
 <meta name="twitter:image:alt" content="New Hope Weight Loss and Wellness, physician-led metabolic care">
     <!-- removed: /assets/nhwl-local-fonts.css did not exist on any host and 404d on every load -->
 
+
     <!-- Meta attribution + pixel (single source of truth) -->
     <script src="nhwl-es.js"></script>
     <script src="nhwl-attribution.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <header class="qhdr">
     <a href="/" class="qhdr-logo">NEW HOPE <span>WEIGHT LOSS</span></a>
@@ -571,10 +602,13 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
     </div>
 </header>
 
+
 <main data-persist="quiz" id="main-content">
 <div class="qwrap">
 
+
     
+
 
     <!-- HERO -->
     <div class="qhero" id="heroSection">
@@ -588,6 +622,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
         </h1>
         <p class="qhero-sub">Answer 5 quick questions to find out if our GLP-1 program is right for you. No obligation, no pressure.</p>
     </div>
+
 
     <!-- PROGRESS -->
     <div class="qprogress-wrap" id="progressWrap">
@@ -604,10 +639,12 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
         </div>
     </div>
 
+
     <!-- QUIZ CARD -->
     <div class="qcard">
         <noscript><div class="qerror" style="display:block" role="alert">This quiz needs JavaScript to run. Please call us at  or use <a href="/medical-intake">the medical intake form</a> to get started.</div></noscript>
         <div class="qerror" id="qerror" role="alert" aria-live="assertive"></div>
+
 
         <!-- ── STEP 1 ── -->
         <div class="qstep active" id="s1">
@@ -648,6 +685,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
                 <button class="qbtn qbtn-primary" id="btn1" onclick="goTo(2)" disabled>Continue →</button>
             </div>
         </div>
+
 
         <!-- ── STEP 2 ── -->
         <div class="qstep" id="s2">
@@ -690,6 +728,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
             </div>
         </div>
 
+
         <!-- ── STEP 3 ── -->
         <div class="qstep" id="s3">
             <p class="qstep-label">Step 3, Treatment History</p>
@@ -731,6 +770,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
             </div>
         </div>
 
+
         <!-- ── STEP 4 ── -->
         <div class="qstep" id="s4">
             <p class="qstep-label">Step 4, Your Numbers</p>
@@ -766,6 +806,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
             </div>
         </div>
 
+
         <!-- ── STEP 5 ── -->
         <div class="qstep" id="s5">
             <p class="qstep-label">Step 5, Almost Done</p>
@@ -795,10 +836,12 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
                 <button class="qbtn qbtn-back" onclick="goTo(4)">← Back</button>
                 <button class="qbtn qbtn-primary" id="btn5" onclick="submitQuiz()">See If I Qualify →</button>
             </div>
-            <p class="qfine">
-                By submitting, I agree that <strong>New Hope Weight Loss &amp; its partners</strong> may contact me at the number &amp; email I provide, for marketing and patient/clinic booking, by live or automated (AI) voice calls, texts, and emails. Consent isn't required to purchase. Msg frequency varies; msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="https://newhopeweightloss.com/privacy-policy">Privacy Policy</a>.
-            </p>
+            <label class="qfine" for="qConsent" style="display:flex;gap:.65rem;align-items:flex-start;cursor:pointer;">
+                <input type="checkbox" id="qConsent" required aria-required="true" style="margin-top:.2rem;min-width:18px;min-height:18px;">
+                <span>I agree that <strong>New Hope Weight Loss &amp; its partners</strong> may contact me at the number &amp; email I provide, for marketing and patient/clinic booking, by live or automated (AI) voice calls, texts, and emails. Consent isn't required to purchase. Msg frequency varies; msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="https://newhopeweightloss.com/privacy-policy">Privacy Policy</a>.</span>
+            </label>
         </div>
+
 
         <!-- ── SUCCESS ── -->
         <div class="qstep" id="sSuccess">
@@ -811,6 +854,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
                     Your quiz was submitted. We are taking you to the medical questionnaire. A clinician will determine eligibility after reviewing your complete history.
                 </p>
 
+
                 <p class="qsuccess-perday" style="margin:.4rem 0 0;font-weight:700;color:var(--accent,#857026);">Programs start at about $5.50 a day, less than a daily latte.</p>
                 <p class="qsuccess-manual">Next: a 3-minute medical questionnaire, then your one-time $119 physician review.</p><!-- Countdown bar -->
                 <div class="redirect-bar-wrap">
@@ -820,9 +864,11 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
                     </div>
                 </div>
 
+
                 <p class="qsuccess-manual">
                     Not redirecting? <a href="/medical-intake" id="manualLink">Click here to continue →</a>
                 </p>
+
 
                 <div class="qtrust">
                     <div class="qtrust-item">
@@ -845,7 +891,9 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
             </div>
         </div>
 
+
     </div><!-- /qcard -->
+
 
     <!-- STATS -->
     <div class="qstats" id="statsStrip">
@@ -863,8 +911,10 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
         </div>
     </div>
 
+
 </div><!-- /qwrap -->
 </main>
+
 
 <!-- nhwl-compliance-block --><div style="max-width:980px;margin:1.5rem auto 0;padding:0 1.25rem;"><p style="font-size:0.72rem;line-height:1.5;color:var(--text-muted,#6b7280);margin:0;text-align:center;">Wegovy® and Ozempic® are registered trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® are registered trademarks of Eli Lilly and Company. New Hope Weight Loss is not affiliated with or endorsed by these companies. Compounded semaglutide and tirzepatide are not FDA-approved or brand-identical and have not undergone FDA premarket review for safety, effectiveness, or quality. Results vary. Any prescription depends on individualized medical review and lawful pharmacy fulfillment for the patient's location.</p></div>
     <footer class="qfoot">
@@ -876,6 +926,7 @@ input.nhwl-valid{border-color:#10B981 !important;background-image:url("data:imag
     <br><br>
     <em style="font-size:0.68rem;">Results may vary. Eligibility determined during medical consultation. Compounded medications are subject to patient-specific and location-specific dispensing-pharmacy verification and are not FDA-approved.</em>
 </footer>
+
 
 <script>
 const SITE_TAGS = ['NHWL-COM'];
@@ -926,7 +977,7 @@ if (IS_ES_QUIZ) {
         var ph = el.getAttribute('placeholder');
         if (ph && (P.ui[ph] || P.quiz[ph])) el.setAttribute('placeholder', P.ui[ph] || P.quiz[ph]);
       });
-      var f = document.querySelector('.qfine');
+      var f = document.querySelector('.qfine span');
       if (f && P.ui.consent) f.textContent = P.ui.consent;
     } catch (e) {}
   };
@@ -940,6 +991,7 @@ const data = {};
 let currentStep = 1;
 let quizStartTracked = false;
 
+
 function trackQuizStart() {
     if (quizStartTracked) return;
     try { if (sessionStorage.getItem('nhwl_quiz_start_v1')) { quizStartTracked = true; return; } } catch (e) {}
@@ -949,6 +1001,7 @@ function trackQuizStart() {
     if (typeof gtag !== 'undefined') { gtag('event', 'quiz_start', { event_category: 'engagement' }); }
 }
 const TOTAL_STEPS = 5;
+
 
 /* pass198-form-reliability */
 function nhwlPushFormOutcome(formName, outcome, status) {
@@ -988,10 +1041,12 @@ function nhwlRunAnalytics(callback) {
     try { callback(); } catch (error) { console.error('Optional analytics failed:', error.message); }
 }
 
+
 /* pass198-quiz-session-start */
 const QUIZ_SESSION_KEY = 'nhwl.qualify-quiz.answers.v1.' + ((document.documentElement.lang || 'en').slice(0, 2));
 const QUIZ_SESSION_FIELDS = ['step1', 'step2', 'step3', 'currentWeight', 'goalWeight', 'heightFeet', 'heightInches', 'bmi'];
 let restoringQuizSession = false;
+
 
 function saveQuizSession(step) {
     if (restoringQuizSession) return;
@@ -1011,12 +1066,14 @@ function saveQuizSession(step) {
     }
 }
 
+
 function clearQuizSession() {
     try { sessionStorage.removeItem(QUIZ_SESSION_KEY); } catch (error) {}
     if (window.NHWLFormPersist && typeof window.NHWLFormPersist.clear === 'function') {
         window.NHWLFormPersist.clear('quiz');
     }
 }
+
 
 function restoreQuizSession() {
     let saved = null;
@@ -1056,6 +1113,7 @@ function restoreQuizSession() {
     else { updateProgress(1); saveQuizSession(1); }
 }
 
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', restoreQuizSession, { once: true });
 } else {
@@ -1064,8 +1122,11 @@ if (document.readyState === 'loading') {
 /* pass198-quiz-session-end */
 
 
+
+
 // Redirect destination, update if your medical intake path differs
 const MEDICAL_INTAKE_URL = 'https://my.newhopeweightloss.com/medical-intake-form';
+
 
 // Sticky hand-off (2026-09-11). The intake prefills from ?fn/ln/em/ph but the quiz used to
 // redirect with a bare URL, so every patient retyped their contact details. Contact fields ride
@@ -1093,10 +1154,12 @@ function intakeUrl() {
     } catch (e) { return MEDICAL_INTAKE_URL; }
 }
 
+
 function goTo(step) {
     document.getElementById(currentStep === 'success' ? 'sSuccess' : 's' + currentStep).classList.remove('active');
     const target = step === 'success' ? document.getElementById('sSuccess') : document.getElementById('s' + step);
     target.classList.add('active');
+
 
     // a11y: move focus to the new step heading so screen-reader/keyboard users land here
     if (target) {
@@ -1107,10 +1170,12 @@ function goTo(step) {
         }
     }
 
+
     // Keep the question in view: after each answer the new step rendered below the fold
     // (hero + header sit above the card), forcing a manual scroll on every single step.
     const qc = document.querySelector('.qcard');
     if (qc) { try { qc.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { qc.scrollIntoView(); } }
+
 
     if (step === 'success') {
         currentStep = 'success';
@@ -1125,9 +1190,11 @@ function goTo(step) {
         saveQuizSession(step);
     }
 
+
     clearError();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 
 function updateProgress(step) {
     document.getElementById('progressCount').textContent = `Step ${step} of ${TOTAL_STEPS}`;
@@ -1138,6 +1205,7 @@ function updateProgress(step) {
     });
 }
 
+
 // ── 3-SECOND REDIRECT WITH ANIMATED BAR ──
 function startRedirect() {
     const bar     = document.getElementById('redirectBarFill');
@@ -1146,8 +1214,10 @@ function startRedirect() {
     const delay   = 3000; // ms
     let remaining = Math.ceil(delay / 1000);
 
+
     // Update manual link href
     manual.href = intakeUrl();
+
 
     // Countdown label
     const ticker = setInterval(() => {
@@ -1160,10 +1230,12 @@ function startRedirect() {
         }
     }, 1000);
 
+
     // Animate bar shrinking to 0 over 3s
     requestAnimationFrame(() => {
         bar.classList.add('animating');
     });
+
 
     // Redirect
     setTimeout(() => {
@@ -1171,6 +1243,7 @@ function startRedirect() {
         try { window.top.location.href = dest; } catch(e) { window.location.href = dest; }
     }, delay);
 }
+
 
 function selectOpt(el, step) {
     el.closest('.qoptions').querySelectorAll('.qopt').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-pressed', 'false'); });
@@ -1185,6 +1258,7 @@ function selectOpt(el, step) {
     if (step >= 1 && step <= 3) { setTimeout(function(){ if (currentStep === step) goTo(step + 1); }, 350); }
 }
 
+
 function hPct(){var s=document.getElementById('hSlider');if(!s)return;s.style.setProperty('--pct',((+s.value-54)/30*100)+'%');}
 function hReadout(ft,inch){var r=document.getElementById('hReadout');if(r)r.textContent=ft+' ft '+inch+' in';}
 function onHeightSlider(){var s=document.getElementById('hSlider');var v=+s.value;var ft=Math.floor(v/12),inch=v%12;document.getElementById('hFt').value=ft;document.getElementById('hIn').value=inch;hReadout(ft,inch);hPct();onWeightChange();}
@@ -1196,7 +1270,9 @@ function onWeightChange() {
     const ft  = parseFloat(document.getElementById('hFt').value);
     const ins = parseFloat(document.getElementById('hIn').value);
 
+
     document.getElementById('btn4').disabled = !(cw >= 100 && gw >= 80);
+
 
     const hint = document.getElementById('bmiHint');
     if (ft && ins >= 0 && cw) {
@@ -1221,6 +1297,7 @@ function onWeightChange() {
     saveQuizSession(currentStep);
 }
 
+
 function fmtPhone(el) {
     let v = el.value.replace(/\D/g, '');
     if (v.length <= 3) v = v.length > 0 ? '(' + v : '';
@@ -1228,6 +1305,7 @@ function fmtPhone(el) {
     else v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6,10);
     el.value = v;
 }
+
 
 function clearErr(el) { el.classList.remove('err'); el.removeAttribute('aria-invalid'); clearError(); }
 function clearError() {
@@ -1241,11 +1319,13 @@ function showError(msg) {
     e.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
+
 async function submitQuiz() {
     const fn = document.getElementById('qFname').value.trim();
     const ln = document.getElementById('qLname').value.trim();
     const em = document.getElementById('qEmail').value.trim();
     const ph = document.getElementById('qPhone').value.trim();
+
 
     let hasErr = false;
     [['qFname',fn],['qLname',ln],['qEmail',em],['qPhone',ph]].forEach(([id,val]) => {
@@ -1254,18 +1334,29 @@ async function submitQuiz() {
         else { el.classList.remove('err'); el.removeAttribute('aria-invalid'); }
     });
     if (hasErr) { showError('Please fill in all required fields.'); return; }
+    const consentEl = document.getElementById('qConsent');
+    if (!consentEl || !consentEl.checked) {
+        if (consentEl) consentEl.setAttribute('aria-invalid', 'true');
+        showError((typeof IS_ES_QUIZ !== 'undefined' && IS_ES_QUIZ) ? 'Marque la casilla de consentimiento para continuar.' : 'Please check the consent box to continue.');
+        if (consentEl) consentEl.focus();
+        return;
+    }
+    consentEl.removeAttribute('aria-invalid');
     if (!em.includes('@')) {
         document.getElementById('qEmail').classList.add('err');
         document.getElementById('qEmail').setAttribute('aria-invalid', 'true');
         showError('Please enter a valid email address.'); return;
     }
 
+
     const btn = document.getElementById('btn5');
     const originalText = btn.textContent;
     btn.textContent = 'Submitting...'; btn.disabled = true; btn.style.opacity = '0.6';
 
+
     data.firstName = fn; data.lastName = ln; data.email = em; data.phone = ph;
     document.getElementById('successMsg').textContent = 'Your quiz was submitted. We are taking you to the medical questionnaire. A clinician will determine eligibility after reviewing your complete history.';
+
 
     // Build payload matching existing GHL webhook format exactly
     const params = new URLSearchParams(window.location.search);
@@ -1275,7 +1366,7 @@ async function submitQuiz() {
         email:       em,
         phone:       ph,
         source:      'Website Quiz',
-        landingPage: window.location.href,
+        landingPage: 'https://my.newhopeweightloss.com/qualify-quiz' + ((typeof IS_ES_QUIZ !== 'undefined' && IS_ES_QUIZ) ? '?lang=es' : ''),
         language:    'en',
         tags:        ['website-quiz', 'qualified-lead', ...SITE_TAGS],
         customField: {
@@ -1298,25 +1389,19 @@ async function submitQuiz() {
         }
     };
 
+
     // Meta: quiz completed = Lead. eventID is shared with the CAPI copy sent by the relay,
     // so Meta collapses the two into one event instead of double-counting.
     // A2P consent must be ASSERTED BY THE FORM, not assumed by the relay. The relay only applies
     // the `a2p` tag when this is true, because that tag means TCPA consent to be texted.
     (function(){
-        // This quiz uses SUBMIT-IMPLIED consent, not a checkbox: the full TCPA disclosure sits
-        // directly above the submit button (.qfine) — automated/AI voice, texts, emails, "consent
-        // isn't required to purchase", STOP/HELP, privacy link. Pressing submit with that notice
-        // displayed IS the consent. So consent is asserted only when the disclosure was actually
-        // in the DOM and visible, and we archive the exact wording shown as the audit record —
-        // which is stronger evidence than a bare checkbox state.
-        var el = document.querySelector('.qfine');
-        var shown = !!el && !!el.textContent && /by submitting/i.test(el.textContent);
-        var visible = shown && !!(el.offsetParent !== null || el.getClientRects().length);
-        payload.consent = !!(shown && visible);
+        var el = document.getElementById('qConsent');
+        var textEl = document.querySelector('.qfine span');
+        payload.consent = !!(el && el.checked);
         if (payload.consent) {
-            payload.consentText = el.textContent.replace(/\s+/g, ' ').trim().slice(0, 600);
+            payload.consentText = textEl ? textEl.textContent.replace(/\s+/g, ' ').trim().slice(0, 600) : '';
             payload.consentAt = new Date().toISOString();
-            payload.consentMethod = 'submit-implied-disclosure';
+            payload.consentMethod = 'required-checkbox';
         }
     })();
     payload.language = (typeof IS_ES_QUIZ !== 'undefined' && IS_ES_QUIZ) ? 'es' : 'en';
@@ -1340,12 +1425,14 @@ async function submitQuiz() {
         if (!response.ok) throw new Error('HTTP ' + response.status);
         nhwlPushFormOutcome('qualify_quiz', 'success', responseStatus);
 
+
         nhwlRunAnalytics(function() {
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'generate_lead', { event_category: 'conversion' });
                 gtag('event', 'sign_up', { method: 'qualify-quiz' });
             }
         });
+
 
         clearQuizSession();
         goTo('success');
@@ -1362,6 +1449,7 @@ async function submitQuiz() {
     }
 }
 
+
 // Enter key advances
 document.addEventListener('keydown', e => {
     if (e.key !== 'Enter') return;
@@ -1370,6 +1458,7 @@ document.addEventListener('keydown', e => {
     const btn = active.querySelector('.qbtn-primary:not([disabled])');
     if (btn) btn.click();
 });
+
 
 // Keyboard: Enter or Space selects a focused option (a11y, WCAG 2.1.1)
 document.addEventListener('keydown', function(e) {
@@ -1382,6 +1471,8 @@ document.addEventListener('keydown', function(e) {
     }
 });
 </script>
+
+
 
 
     
@@ -1405,6 +1496,7 @@ document.addEventListener('keydown', function(e) {
 </script>
 <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" value=""></label></div>
 <!-- pass198-claim-integrity -->
+
 
 <script>
 (function(){
