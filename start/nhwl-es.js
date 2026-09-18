@@ -159,6 +159,11 @@ window.NHWL_ES = {
     "Submit & Continue to Payment →": "Enviar y Continuar al Pago",
     "Please complete all required fields and the consent box.": "Por favor complete todos los campos requeridos y la casilla de consentimiento.",
     "State…": "Estado…",
-    "__consent_intake_es": "Al enviar, acepto que New Hope Weight Loss y sus socios puedan comunicarse conmigo al número y correo que proporciono, con fines de mercadeo y para programar citas de paciente/clínica, mediante llamadas de voz en vivo o automatizadas (IA), mensajes de texto y correos electrónicos. El consentimiento no es requisito para comprar. La frecuencia de mensajes varía; pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar, HELP para ayuda. Consulte nuestra Política de Privacidad."
+    "__consent_intake_es": "Al enviar, acepto que New Hope Weight Loss y sus socios puedan comunicarse conmigo al número y correo que proporciono, con fines de mercadeo y para programar citas de paciente/clínica, mediante llamadas de voz en vivo o automatizadas (IA), mensajes de texto y correos electrónicos. El consentimiento no es requisito para comprar. La frecuencia de mensajes varía; pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar, HELP para ayuda. Consulte nuestra Política de Privacidad.",
+    "Step 2: Contra-Indicated Conditions": "Paso 2: Condiciones Contraindicadas",
+    "Step 3: Additional Health History": "Paso 3: Historia de Salud Adicional",
+    "Please check all that apply. These conditions prevent treatment with GLP-1 medications.": "Marque todas las que correspondan. Estas condiciones impiden el tratamiento con medicamentos GLP-1.",
+    "Please make one or more selections. Choose None if no conditions apply.": "Haga una o más selecciones. Elija Ninguna si no corresponde ninguna condición.",
+    "Please make a selection to continue.": "Haga una selección para continuar."
   }
 };
