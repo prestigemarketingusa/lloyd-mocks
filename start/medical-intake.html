@@ -5,34 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Get Started — New Hope Weight Loss</title>
 <style>
-  :root{--green:#1d3b30;--accent:#2f8f6b;--bg:#f5f7f6;--line:#e3e8e5;--err:#b3261e;}
+  :root{--green:#243a2f;--sage:#8fa68d;--sage-dark:#527059;--accent:#4f7b59;--bg:#eef3ea;--cream:#fffdf8;--soft:#f6f8f1;--line:#dfe8dc;--ink:#253026;--muted:#667365;--err:#b3261e;}
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#20261f;line-height:1.45}
-  .wrap{max-width:640px;margin:0 auto;padding:20px 16px 60px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-  h1{font-size:20px;margin:0 0 4px} .sub{color:#5c6b62;font-size:14px;margin:0 0 16px}
-  .brand{font-weight:700;color:var(--green);letter-spacing:.5px;font-size:13px;text-transform:uppercase}
-  .prog{display:flex;gap:6px;margin:14px 0 20px}
-  .prog span{flex:1;height:6px;border-radius:4px;background:var(--line)}
-  .prog span.on{background:var(--accent)}
-  .stephead{font-size:16px;font-weight:700;margin:0 0 4px}
-  .stepnote{font-size:13px;color:#5c6b62;margin:0 0 14px}
-  label.chk{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;cursor:pointer;font-size:14px}
-  label.chk:hover{border-color:var(--accent)}
-  label.chk input{margin-top:2px;width:18px;height:18px;flex:0 0 auto}
-  .field{margin:12px 0} .field label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
-  .field input,.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font-size:15px}
-  .row{display:flex;gap:10px}.row .field{flex:1}
-  .bmi{background:#f0f5f2;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;color:var(--green);margin:6px 0 2px;display:none}
-  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#3a453e;margin:14px 0 4px;padding:12px;background:#f0f5f2;border-radius:10px}
-  .consent input{margin-top:2px;width:18px;height:18px;flex:0 0 auto}
-  .btn{display:block;width:100%;padding:14px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:18px}
-  .btn.sec{background:#fff;color:var(--green);border:1px solid var(--line)}
-  .btn:disabled{opacity:.5;cursor:not-allowed}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#e7efe4 0%,#f7f5ed 100%);color:var(--ink);line-height:1.5}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 16px 70px}
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:28px 24px;box-shadow:0 18px 50px rgba(44,68,48,.10)}
+  h1{font-size:clamp(24px,6vw,34px);line-height:1.12;margin:7px 0 8px;color:var(--green);letter-spacing:-.02em}.sub{color:var(--muted);font-size:15.5px;margin:0 0 18px;max-width:590px}
+  .brand{display:inline-flex;align-items:center;gap:7px;font-weight:800;color:var(--sage-dark);letter-spacing:.08em;font-size:12px;text-transform:uppercase;background:#eef5eb;border:1px solid #dbe8d7;border-radius:999px;padding:7px 12px}
+  .prog{display:flex;gap:8px;margin:18px 0 24px}
+  .prog span{flex:1;height:7px;border-radius:999px;background:#e3e8dd}
+  .prog span.on{background:linear-gradient(90deg,var(--sage),var(--accent))}
+  .stephead{font-size:18px;font-weight:800;margin:0 0 5px;color:var(--green)}
+  .stepnote{font-size:14px;color:var(--muted);margin:0 0 16px}
+  .reassure-note{background:#f0f6ed;border:1px solid #dce9d8;border-radius:14px;padding:12px 14px;color:#435544;font-size:14px;margin:0 0 16px}
+  label.chk{display:flex;gap:11px;align-items:flex-start;padding:13px 14px;border:1px solid var(--line);border-radius:14px;margin:9px 0;cursor:pointer;font-size:14.5px;background:#fff;box-shadow:0 1px 0 rgba(37,48,38,.02)}
+  label.chk:hover{border-color:var(--sage);background:#fbfcf8}
+  label.chk input{margin-top:2px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--accent)}
+  .field{margin:13px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#405043}
+  .field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:#fff;color:var(--ink);font-family:inherit}
+  .field textarea{min-height:88px;resize:vertical;line-height:1.45}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 4px rgba(143,166,141,.18)}
+  .row{display:flex;gap:12px}.row .field{flex:1}
+  .bmi{background:#eef6ed;border-radius:12px;padding:11px 13px;font-size:14px;font-weight:800;color:var(--green);margin:6px 0 2px;display:none}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#3a453e;margin:16px 0 4px;padding:13px;background:#f0f6ed;border:1px solid #dce9d8;border-radius:14px}
+  .consent input{margin-top:2px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--accent)}
+  .btn{display:block;width:100%;padding:15px;border:0;border-radius:14px;background:var(--accent);color:#fff;font-size:16px;font-weight:800;cursor:pointer;margin-top:18px;box-shadow:0 8px 18px rgba(79,123,89,.22)}
+  .btn:hover{background:#446f4d}.btn.sec{background:#fff;color:var(--green);border:1px solid var(--line);box-shadow:none}
+  .btn:disabled{opacity:.55;cursor:not-allowed}
   .err{color:var(--err);font-size:13px;margin-top:8px;display:none}
-  .bounce{display:none;text-align:center;padding:10px 0}
-  .bounce h2{color:var(--green)} .hide{display:none}
-  .foot{font-size:11px;color:#8a968e;text-align:center;margin-top:16px}
+  .bounce,.complete{display:none;text-align:center;padding:12px 0}
+  .bounce h2,.complete h2{color:var(--green);font-size:24px;margin:0 0 10px}.complete p,.bounce p{color:var(--muted);margin:0 auto 14px;max-width:560px}
+  .complete-card{background:#f4f8f0;border:1px solid #dce9d8;border-radius:18px;padding:18px;margin:18px 0;text-align:left}.complete-card b{color:var(--green)}
+  .hide{display:none}
+  .foot{font-size:11.5px;color:#849081;text-align:center;margin-top:18px}
+  @media(max-width:560px){.wrap{padding:18px 10px 54px}.card{padding:22px 16px;border-radius:20px}.row{display:block}.btn{font-size:15.5px}}
 </style>
 
 
@@ -44,16 +50,17 @@
 <div class="wrap">
   <div class="card">
     <div class="brand">New Hope Weight Loss · HIPAA Secure</div>
-    <h1>Get Started — Doctor-Led Weight Loss</h1>
-    <p class="sub">Quick start, then two easy checkbox pages. Takes about 3 minutes.</p>
+    <h1>Doctor-Led Medical Intake</h1>
+    <p class="sub">A calm, secure intake for your New Hope physician review. Please answer as accurately as you can so the clinical team has the right information before any payment step.</p>
     <div class="prog"><span id="p1" class="on"></span><span id="p2"></span><span id="p3"></span></div>
 
 
     <form id="intake" novalidate>
       <!-- STEP 1 — QUICK QUIZ: contact + BMI + opt-in (locks the lead) -->
       <section id="step1">
-        <div class="stephead">Step 1: Let's get you started</div>
-        <div class="stepnote">A few quick details so the doctor can review your fit.</div>
+        <div class="stephead">Step 1: Your basic information</div>
+        <div class="stepnote">These details help the doctor review your history safely and route your next step correctly.</div>
+        <div class="reassure-note">Your information is saved securely before you are offered the doctor-review payment page.</div>
         <div class="row"><div class="field"><label>First Name *</label><input name="firstName" required></div>
         <div class="field"><label>Last Name *</label><input name="lastName" required></div></div>
         <div class="field"><label>Email *</label><input name="email" type="email" placeholder="your@email.com" required></div>
@@ -77,8 +84,9 @@
 
       <!-- STEP 2 — CONTRAINDICATIONS -->
       <section id="step2" class="hide">
-        <div class="stephead">Step 2: Contra-Indicated Conditions</div>
-        <div class="stepnote">Please check all that apply. These conditions prevent treatment with GLP-1 medications.</div>
+        <div class="stephead">Step 2: Safety screening</div>
+        <div class="stepnote">Please check all that apply. These answers help the physician determine whether GLP-1 treatment can be considered safely.</div>
+        <div class="reassure-note">If any item applies, we will not send you to payment from this intake. Your safety comes first.</div>
         <div id="ci"></div>
         <div class="err" id="e2">Please make a selection to continue.</div>
         <button type="button" class="btn" id="contraNext">Continue</button>
@@ -88,11 +96,14 @@
 
       <!-- STEP 3 — HEALTH HISTORY -->
       <section id="step3" class="hide">
-        <div class="stephead">Step 3: Additional Health History</div>
-        <div class="stepnote">Please make one or more selections. Choose None if no conditions apply.</div>
+        <div class="stephead">Step 3: Additional health history</div>
+        <div class="stepnote">Please make one or more selections. Choose None if no conditions apply, then add any details the doctor should know before reviewing your intake.</div>
         <div id="hh"></div>
+        <div class="field"><label>Current medications and supplements</label><textarea name="medications" placeholder="Please list medication/supplement names, doses if known, or write None."></textarea></div>
+        <div class="field"><label>Medication allergies</label><textarea name="allergies" placeholder="Please list known medication allergies or write None."></textarea></div>
+        <div class="field"><label>Anything else the doctor should know?</label><textarea name="additionalMedicalInfo" placeholder="Surgeries, medical concerns, pharmacy notes, or questions for the doctor."></textarea></div>
         <div class="err" id="e3">Please make a selection to continue.</div>
-        <button type="button" class="btn" id="submitBtn">Submit &amp; Continue to Payment →</button>
+        <button type="button" class="btn" id="submitBtn">Submit Medical Intake</button>
         <button type="button" class="btn sec" data-back="2">Back</button>
       </section>
 
@@ -101,6 +112,14 @@
       <section id="bounce" class="bounce">
         <h2>Thank you for your honesty.</h2>
         <p>Based on your answers, we're unable to offer GLP-1 treatment at this time. Please consult your own physician regarding your care.</p>
+      </section>
+
+      <!-- INTAKE COMPLETE — payment is offered only after the intake save finishes -->
+      <section id="complete" class="complete hide">
+        <h2>Your medical intake is complete.</h2>
+        <p>Thank you — your health history has been submitted for review. The next step, if you choose to continue, is the separate doctor review, consultation, and prescription-review fee.</p>
+        <div class="complete-card">Use code <b>DOCTOR20</b> on the next page: the <b>$119</b> doctor-review fee becomes <b>$99</b>. This does not guarantee prescription approval; the doctor determines whether treatment is appropriate.</div>
+        <button type="button" class="btn" id="payNext">Continue to Doctor Review — $99 with DOCTOR20</button>
       </section>
     </form>
     <div class="foot">Your information is kept private and secure.</div>
@@ -238,10 +257,13 @@ function enforceNone(host,group){
 enforceNone("ci","contra");
 enforceNone("hh","health");
 function checked(g){return [...document.querySelectorAll(`[data-group=${g}]:checked`)].map(b=>b.value);}
-function show(id){["step1","step2","step3","bounce"].forEach(s=>document.getElementById(s).classList.add("hide"));
+function show(id){["step1","step2","step3","bounce","complete"].forEach(s=>document.getElementById(s).classList.add("hide"));
   document.getElementById("bounce").style.display="none";
-  if(id==="bounce")document.getElementById("bounce").style.display="block"; else document.getElementById(id).classList.remove("hide");
-  ["p1","p2","p3"].forEach((p,i)=>document.getElementById(p).classList.toggle("on", i<({step1:1,step2:2,step3:3}[id]||0)));
+  document.getElementById("complete").style.display="none";
+  if(id==="bounce")document.getElementById("bounce").style.display="block";
+  else if(id==="complete")document.getElementById("complete").style.display="block";
+  else document.getElementById(id).classList.remove("hide");
+  ["p1","p2","p3"].forEach((p,i)=>document.getElementById(p).classList.toggle("on", i<({step1:1,step2:2,step3:3,complete:3}[id]||0)));
   window.scrollTo(0,0);}
 
 
@@ -251,6 +273,7 @@ function contactPayload(){const f=document.getElementById("intake");return{
   street:f.street.value.trim(),city:f.city.value.trim(),state:f.state.value,zip:f.zip.value.trim(),
   dateOfBirth:f.dob.value,address1:f.street.value.trim(),postalCode:f.zip.value.trim(),
   landingPage:"https://my.newhopeweightloss.com/medical-intake-form"+(IS_ES?"?lang=es":""),
+  medications:(f.medications&&f.medications.value.trim())||"",allergies:(f.allergies&&f.allergies.value.trim())||"",additionalMedicalInfo:(f.additionalMedicalInfo&&f.additionalMedicalInfo.value.trim())||"",
   consent:!!(document.getElementById("consent")||{}).checked,
   consentAt:new Date().toISOString(),language:IS_ES?"es":"en",
   stage:"intake_started",source:"medical_intake_pmusa"};}
@@ -290,8 +313,12 @@ document.getElementById("submitBtn").onclick=async ()=>{
   const btn=document.getElementById("submitBtn"); btn.disabled=true; btn.textContent="Submitting…";
   const fin={...contactPayload(),stage:"intake",contraindications:checked("contra"),healthHistory:checked("health")};
   fin.event_id=(window.NHWLAttr&&window.NHWLAttr.track("SubmitApplication",{content_name:"Medical Intake",content_category:"intake_complete"}))||"";
-  fin.answers="CONTRA: "+fin.contraindications.join(" | ")+"\nHISTORY: "+fin.healthHistory.join(" | ")+"\nDOB "+fin.dob+" · "+fin.heightFt+"ft"+fin.heightIn+"in · "+fin.currentWeight+"lbs · BMI "+fin.bmi+"\nADDR: "+fin.street+", "+fin.city+", "+fin.state+" "+fin.zip;
-  await post(fin);   // <-- intake complete
+  fin.answers="CONTRA: "+fin.contraindications.join(" | ")+"\nHISTORY: "+fin.healthHistory.join(" | ")+"\nMEDICATIONS/SUPPLEMENTS: "+(fin.medications||"Not provided")+"\nALLERGIES: "+(fin.allergies||"Not provided")+"\nADDITIONAL MEDICAL INFO: "+(fin.additionalMedicalInfo||"Not provided")+"\nDOB "+fin.dob+" · "+fin.heightFt+"ft"+fin.heightIn+"in · "+fin.currentWeight+"lbs · BMI "+fin.bmi+"\nADDR: "+fin.street+", "+fin.city+", "+fin.state+" "+fin.zip;
+  await post(fin);   // <-- intake complete saved before any payment is offered
+  btn.disabled=false; btn.textContent="Submit Medical Intake";
+  show("complete");
+};
+document.getElementById("payNext").onclick=()=>{
   let dest=(CONFIG.payUrl&&!CONFIG.payUrl.startsWith("REPLACE"))?CONFIG.payUrl:"#pay-not-configured";
   if(IS_ES&&dest.indexOf("#")!==0) dest += (dest.indexOf("?")>=0?"&":"?")+"lang=es";
   if(window.NHWLAttr&&dest.indexOf("#")!==0) dest=window.NHWLAttr.decorate(dest);

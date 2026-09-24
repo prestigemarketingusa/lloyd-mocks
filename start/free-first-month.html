@@ -102,12 +102,12 @@
 
 <div class="hero">
   <div class="wrap">
-    <div class="eyebrow">You're already approved to start</div>
-    <div class="promo-badge">☀️ Summer2Remember · New patients</div>
-    <h1>You did the hard part.<br><em>Your first month is free.</em></h1>
-    <p class="sub">You already completed your medical history questionnaire. All that's left to begin your journey is a quick doctor review — and with code <b>DOCTOR20</b>, that's just <b>$99</b>.</p>
-    <a href="#start" class="btn">Get started — $99 with DOCTOR20</a>
-    <span class="btn-sub">First month of medication FREE · one-time fee · fully refunded if not medically approved</span>
+    <div class="eyebrow">Medical intake received</div>
+    <div class="promo-badge">Doctor-led review · New Hope Weight Loss</div>
+    <h1>Continue to your<br><em>doctor review.</em></h1>
+    <p class="sub">Your medical history questionnaire is complete. The next step is a separate physician review and consultation — use code <b>DOCTOR20</b> so the <b>$119</b> review becomes <b>$99</b>.</p>
+    <a href="#start" class="btn">Continue to Doctor Review — $99 with DOCTOR20</a>
+    <span class="btn-sub">One-time fee · fully refunded if not medically approved · prescription approval is never automatic</span>
   </div>
 </div>
 
@@ -137,8 +137,8 @@
 
 <section>
   <div class="wrap">
-    <h2>"What does it cost me each month?"</h2>
-    <p class="lead">Fair question. Here's the whole picture — no surprises.</p>
+    <h2>What are you paying for today?</h2>
+    <p class="lead">Today is only the doctor review, consultation, and prescription-review fee — no medication shipping charge on this checkout.</p>
     <ul class="cost-list">
       <li>
         <span class="chk">✓</span>
@@ -147,13 +147,8 @@
       </li>
       <li class="free">
         <span class="chk">✓</span>
-        <div><div class="lbl">Your first month — semaglutide or tirzepatide</div><div class="desc">Included free with your doctor review — your physician prescribes the right one for you.</div></div>
-        <span class="amt free">$0</span>
-      </li>
-      <li>
-        <span class="chk">✓</span>
-        <div><div class="lbl">Cold-Pack Shipping</div><div class="desc">Flat $35 Cold-Pack Shipping anywhere — or pick up free at our Costa Mesa clinic (uncheck shipping on the form and call to schedule).</div></div>
-        <span class="amt">$35</span>
+        <div><div class="lbl">Prescription decision</div><div class="desc">Made only after physician review. If the doctor determines treatment is not appropriate, the doctor-review fee is refunded.</div></div>
+        <span class="amt free">Doctor decides</span>
       </li>
       <li>
         <span class="chk">✓</span>
@@ -195,8 +190,8 @@
 <section id="start">
   <div class="wrap">
     <div class="form-card">
-      <h3>Start your first free month</h3>
-      <p class="fc-sub">Quick doctor review — $99 with DOCTOR20. First month free. Flat $35 Cold-Pack Shipping, or pick up free locally.</p>
+      <h3>Continue to your doctor review</h3>
+      <p class="fc-sub">Doctor review — $99 with DOCTOR20. No shipping/address step should appear on this doctor-fee checkout.</p>
       <div class="field"><label>Full name</label><input type="text" placeholder="Your name"></div>
       <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
       <div class="field"><label>Mobile phone</label><input type="tel" placeholder="(___) ___-____"></div>
@@ -209,19 +204,11 @@
       <div class="order">
         <div class="order-line"><span>Doctor review, consult &amp; prescription fee</span><span>$119.00</span></div>
         <div class="order-line" id="discountLine"><span>DOCTOR20 discount</span><span>−$20.00</span></div>
-        <div class="order-line free-line"><span><input type="radio" checked disabled style="accent-color:#10B981;vertical-align:-1px"> First month — semaglutide or tirzepatide</span><span>$0.00</span></div>
-        <div class="order-line" id="shipLine"><span><input type="checkbox" id="shipChk" checked style="accent-color:var(--accent);vertical-align:-1px"> Cold-Pack Shipping <span style="color:var(--text-muted);font-weight:400">(flat rate, anywhere)</span></span><span id="shipAmt">$35.00</span></div>
-        <div class="order-total"><span>Due today</span><span id="orderTotal">$134.00</span></div>
+        <div class="order-total"><span>Due today</span><span id="orderTotal">$99.00</span></div>
       </div>
-      <div class="ship-note">Local to Costa Mesa? <b>Uncheck shipping</b> to pick up your free first month — call <b>657-837-3342</b> to schedule. Too far to drive? Cold-Pack Shipping is a flat <b>$35</b> anywhere. We've checked it for you, since most patients are outside driving distance.</div>
-      <div id="shipAddr" class="ship-addr">
-        <div class="ship-addr-h">Where should we ship your cold pack?</div>
-        <div class="field"><input type="text" placeholder="Street address"></div>
-        <div class="field"><input type="text" placeholder="Apt / suite (optional)"></div>
-        <div class="addr-row"><input type="text" placeholder="City"><input type="text" placeholder="State"><input type="text" placeholder="ZIP"></div>
-      </div>
+      <div class="ship-note">Medication and delivery details are handled only after physician review and medical approval. This checkout is for the doctor-review fee only.</div>
       <label class="optin"><input type="checkbox" checked> Yes — I'd like to continue with New Hope Weight Loss. I authorize you to contact me about my treatment and reorders by call, text and email (live or automated); consent isn't required to purchase; msg &amp; data rates may apply; reply STOP to opt out, HELP for help.</label>
-      <button class="btn" id="payBtn" style="width:100%" type="button">Get started — $99 doctor visit</button>
+      <button class="btn" id="payBtn" style="width:100%" type="button">Continue to Doctor Review — $99 with DOCTOR20</button>
       <span class="btn-sub">Secure checkout. Fully refunded if you're not medically approved.</span>
       <div class="reassure">
         <b>Not sure whether semaglutide or tirzepatide is right for you?</b><br>
@@ -253,34 +240,21 @@
 
 <script>
 (function(){
-  // Live promo-code behavior — proves DOCTOR20 is a real code:
-  // apply it -> $134 ($99 visit + $35 shipping); remove/clear it -> $154 ($119 + $35).
+  // Doctor-review-only promo behavior: DOCTOR20 reduces $119 to $99.
   var input   = document.getElementById('promo');
   var btn     = document.getElementById('applyBtn');
   var banner  = document.getElementById('appliedBanner');
   var disc    = document.getElementById('discountLine');
   var total   = document.getElementById('orderTotal');
-  var shipChk = document.getElementById('shipChk');
-  var shipAmt = document.getElementById('shipAmt');
-  var payBtn  = document.getElementById('payBtn');
-  var shipAddr= document.getElementById('shipAddr');
-
   var promoOn = true;
 
   function money(n){ return '$'+n.toFixed(2); }
-
   function render(){
     banner.style.display = promoOn ? 'flex' : 'none';
     disc.style.display   = promoOn ? 'flex' : 'none';
     btn.textContent      = promoOn ? 'Remove' : 'Apply';
-    var doctor = promoOn ? 99 : 119;
-    var ship   = shipChk.checked ? 35 : 0;
-    shipAmt.textContent  = money(ship);
-    var due = doctor + ship;
-    total.textContent    = money(due);   // "Due today" carries the true figure ($134 / $99 pickup)
-    shipAddr.style.display = shipChk.checked ? 'block' : 'none';  // address only when shipping
+    total.textContent    = money(promoOn ? 99 : 119);
   }
-
   btn.addEventListener('click', function(){
     var code = input.value.trim().toUpperCase();
     if (promoOn){ input.value = ''; promoOn = false; render(); return; }
@@ -288,17 +262,11 @@
     else { promoOn = false; }
     render();
   });
-
-  // If the field is emptied/changed by hand, drop the discount immediately.
   input.addEventListener('input', function(){
     promoOn = (input.value.trim().toUpperCase() === 'DOCTOR20');
     render();
   });
-
-  // Local pickup: unchecking shipping waives the $35 and drops the total.
-  shipChk.addEventListener('change', render);
-
-  render(); // page loads: code pre-applied, shipping pre-checked
+  render();
 })();
 </script>
 </body>
