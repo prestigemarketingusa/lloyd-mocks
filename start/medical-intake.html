@@ -321,6 +321,15 @@ document.getElementById("submitBtn").onclick=async ()=>{
 document.getElementById("payNext").onclick=()=>{
   let dest=(CONFIG.payUrl&&!CONFIG.payUrl.startsWith("REPLACE"))?CONFIG.payUrl:"#pay-not-configured";
   if(IS_ES&&dest.indexOf("#")!==0) dest += (dest.indexOf("?")>=0?"&":"?")+"lang=es";
+  // Prefill the pay page (GHL order form reads full_name/email/phone from the URL) so the payment
+  // lands on the SAME contact as the intake -- a retyped email would split intake and payment
+  // across two records and the doctor gate would never see both tags. (Lloyd, NONOISE check 2026-11-06)
+  if(dest.indexOf("#")!==0){ try{ var fi=document.getElementById("intake"), pv=function(n){var e=fi&&fi.elements[n];return e&&e.value?String(e.value).trim():"";};
+    var u=new URL(dest, window.location.href), fn=[pv("firstName"),pv("lastName")].filter(Boolean).join(" ");
+    if(fn&&!u.searchParams.get("full_name")) u.searchParams.set("full_name",fn);
+    if(pv("email")&&!u.searchParams.get("email")) u.searchParams.set("email",pv("email"));
+    if(pv("phone")&&!u.searchParams.get("phone")) u.searchParams.set("phone",pv("phone").replace(/\D/g,""));
+    dest=u.toString(); }catch(e){} }
   if(window.NHWLAttr&&dest.indexOf("#")!==0) dest=window.NHWLAttr.decorate(dest);
   try{window.top.location.href=dest;}catch(e){window.location.href=dest;}
 };
