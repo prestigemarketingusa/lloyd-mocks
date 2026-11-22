@@ -279,10 +279,18 @@ function contactPayload(){const f=document.getElementById("intake");return{
   stage:"intake_started",source:"medical_intake_pmusa"};}
 
 
+// Returns true only when the relay confirms GHL saved the contact (2026-11-21). Before this it
+// swallowed every failure, so the intake could advance to payment with nothing saved in GHL.
 async function post(payload){try{
   payload.attribution=(window.NHWLAttr&&window.NHWLAttr.payload())||{};
-  if(CONFIG.webhookUrl&&!CONFIG.webhookUrl.startsWith("REPLACE"))
-  await fetch(CONFIG.webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});}catch(e){}}
+  if(!CONFIG.webhookUrl||CONFIG.webhookUrl.startsWith("REPLACE")) return false;
+  const r=await fetch(CONFIG.webhookUrl,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const j=await r.json().catch(()=>({}));
+  return !!(r.ok&&j&&j.ok&&j.contactId);}catch(e){return false;}}
+function saveFailed(id,btn,label){const anchor=document.getElementById(id);
+  let e=document.getElementById(id+"save"); if(!e){e=document.createElement("div");e.className="err";e.id=id+"save";anchor.parentNode.insertBefore(e,anchor.nextSibling);}
+  e.textContent=IS_ES?"No pudimos guardar sus respuestas. Sus datos siguen aquí; intente de nuevo.":"We could not save your answers just now. Everything you entered is still here; please try again.";
+  e.style.display="block"; if(btn){btn.disabled=false;btn.textContent=label;}}
 
 
 // STEP 1 -> lock the lead (capture contact+opt-in+BMI immediately), then to checkboxes
@@ -312,9 +320,11 @@ document.getElementById("submitBtn").onclick=async ()=>{
   document.getElementById("e3").style.display="none";
   const btn=document.getElementById("submitBtn"); btn.disabled=true; btn.textContent="Submitting…";
   const fin={...contactPayload(),stage:"intake",contraindications:checked("contra"),healthHistory:checked("health")};
-  fin.event_id=(window.NHWLAttr&&window.NHWLAttr.track("SubmitApplication",{content_name:"Medical Intake",content_category:"intake_complete"}))||"";
+  fin.event_id=(window.NHWLAttr&&window.NHWLAttr.newId)?window.NHWLAttr.newId():"intake-"+Date.now()+"-"+Math.random().toString(36).slice(2,10);
   fin.answers="CONTRA: "+fin.contraindications.join(" | ")+"\nHISTORY: "+fin.healthHistory.join(" | ")+"\nMEDICATIONS/SUPPLEMENTS: "+(fin.medications||"Not provided")+"\nALLERGIES: "+(fin.allergies||"Not provided")+"\nADDITIONAL MEDICAL INFO: "+(fin.additionalMedicalInfo||"Not provided")+"\nDOB "+fin.dob+" · "+fin.heightFt+"ft"+fin.heightIn+"in · "+fin.currentWeight+"lbs · BMI "+fin.bmi+"\nADDR: "+fin.street+", "+fin.city+", "+fin.state+" "+fin.zip;
-  await post(fin);   // <-- intake complete saved before any payment is offered
+  const es=document.getElementById("e3save"); if(es) es.style.display="none";
+  if(!(await post(fin))){saveFailed("e3",btn,"Submit Medical Intake");return;}   // <-- intake must be saved before any payment is offered
+  if(window.NHWLAttr) window.NHWLAttr.track("SubmitApplication",{content_name:"Medical Intake",content_category:"intake_complete"},fin.event_id);
   btn.disabled=false; btn.textContent="Submit Medical Intake";
   show("complete");
 };

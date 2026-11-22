@@ -1407,9 +1407,10 @@ async function submitQuiz() {
     payload.language = (typeof IS_ES_QUIZ !== 'undefined' && IS_ES_QUIZ) ? 'es' : 'en';
     payload.stage = 'quiz';
     payload.attribution = (window.NHWLAttr && window.NHWLAttr.payload()) || {};
-    payload.event_id = (window.NHWLAttr && window.NHWLAttr.track('Lead', {
-        content_name: 'Qualify Quiz', content_category: 'quiz_complete'
-    })) || '';
+    // Lead fires only AFTER the relay confirms GHL saved the contact (2026-11-21): the id rides the
+    // POST now so the browser and CAPI copies still dedupe, but a failed submit is never a Lead.
+    payload.event_id = (window.NHWLAttr && window.NHWLAttr.newId) ? window.NHWLAttr.newId()
+        : 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
     payload.answers = ['goal='+(data.step1||''), 'foodNoise='+(data.step2||''), 'glp1='+(data.step3||''), 'height='+(data.heightFeet||'')+'ft'+(data.heightInches||'')+'in', 'weight='+(data.currentWeight||''), 'goalWeight='+(data.goalWeight||''), 'bmi='+(data.bmi||'')].join('; ');
     let responseStatus = 0;
     try {
@@ -1423,7 +1424,12 @@ async function submitQuiz() {
         });
         responseStatus = response.status;
         if (!response.ok) throw new Error('HTTP ' + response.status);
+        const saved = await response.json().catch(function() { return {}; });
+        if (!saved || !saved.ok || !saved.contactId) throw new Error((saved && saved.err) || 'not saved');
         nhwlPushFormOutcome('qualify_quiz', 'success', responseStatus);
+        if (window.NHWLAttr) window.NHWLAttr.track('Lead', {
+            content_name: 'Qualify Quiz', content_category: 'quiz_complete'
+        }, payload.event_id);
 
 
         nhwlRunAnalytics(function() {

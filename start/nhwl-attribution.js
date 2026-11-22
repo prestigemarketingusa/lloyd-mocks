@@ -89,11 +89,15 @@
     },
     /* Fire a browser event and return the event_id so the same id can ride the relay POST.
        Meta then collapses the browser and CAPI copies into one event. */
-    track: function (name, params) {
-      var id = uuid();
+    track: function (name, params, eventId) {
+      var id = eventId || uuid();
       try { w.fbq('track', name, params || {}, { eventID: id }); } catch (e) {}
       return id;
     },
+    /* An event_id without firing anything. Pages put it on the relay POST and fire the browser
+       event with the same id only after the relay confirms GHL saved the contact (2026-11-21),
+       so a failed submission can never count as a Lead. */
+    newId: function () { return uuid(); },
     trackCustom: function (name, params) {
       var id = uuid();
       try { w.fbq('trackCustom', name, params || {}, { eventID: id }); } catch (e) {}
