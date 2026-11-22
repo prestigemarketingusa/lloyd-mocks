@@ -10,7 +10,10 @@
  *    the first-touch timestamp and landing page.
  */
 (function (w, d) {
-  var PIXEL_ID = '1441640894483000';
+  // PIXEL REMOVED 2026-11-22 (Chip): 1441640894483000 only fed the PMUSA ad account act_1375705578004628,
+  // which Meta disabled. Empty = no pixel loads and no browser events fire. Attribution capture
+  // (fbclid/UTMs -> relay -> GHL) is unchanged. To use another pixel, set its id here.
+  var PIXEL_ID = '';
   var STORE = 'nhwl_attr_v1';
   var PARAMS = ['fbclid', 'gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content',
                 'utm_term', 'campaign_id', 'adset_id', 'ad_id', 'placement', 'site_source_name'];
@@ -52,6 +55,7 @@
   saveStore(attr);
 
   // ---- 2. Meta pixel --------------------------------------------------------------------
+  if (PIXEL_ID) {
   /* eslint-disable */
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -68,6 +72,7 @@
     var fbp = cookie('_fbp');
     if (fbp && attr.fbp !== fbp) { attr.fbp = fbp; saveStore(attr); }
   }, 1200);
+  }
 
   // ---- 3. public surface ----------------------------------------------------------------
   w.NHWLAttr = {
@@ -91,7 +96,7 @@
        Meta then collapses the browser and CAPI copies into one event. */
     track: function (name, params, eventId) {
       var id = eventId || uuid();
-      try { w.fbq('track', name, params || {}, { eventID: id }); } catch (e) {}
+      try { if (PIXEL_ID && w.fbq) w.fbq('track', name, params || {}, { eventID: id }); } catch (e) {}
       return id;
     },
     /* An event_id without firing anything. Pages put it on the relay POST and fire the browser
@@ -100,7 +105,7 @@
     newId: function () { return uuid(); },
     trackCustom: function (name, params) {
       var id = uuid();
-      try { w.fbq('trackCustom', name, params || {}, { eventID: id }); } catch (e) {}
+      try { if (PIXEL_ID && w.fbq) w.fbq('trackCustom', name, params || {}, { eventID: id }); } catch (e) {}
       return id;
     },
     /* Append the click identifiers to an outbound funnel hop so attribution survives the
