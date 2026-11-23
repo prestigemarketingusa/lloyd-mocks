@@ -324,7 +324,7 @@ document.getElementById("submitBtn").onclick=async ()=>{
   fin.answers="CONTRA: "+fin.contraindications.join(" | ")+"\nHISTORY: "+fin.healthHistory.join(" | ")+"\nMEDICATIONS/SUPPLEMENTS: "+(fin.medications||"Not provided")+"\nALLERGIES: "+(fin.allergies||"Not provided")+"\nADDITIONAL MEDICAL INFO: "+(fin.additionalMedicalInfo||"Not provided")+"\nDOB "+fin.dob+" · "+fin.heightFt+"ft"+fin.heightIn+"in · "+fin.currentWeight+"lbs · BMI "+fin.bmi+"\nADDR: "+fin.street+", "+fin.city+", "+fin.state+" "+fin.zip;
   const es=document.getElementById("e3save"); if(es) es.style.display="none";
   if(!(await post(fin))){saveFailed("e3",btn,"Submit Medical Intake");return;}   // <-- intake must be saved before any payment is offered
-  if(window.NHWLAttr) window.NHWLAttr.track("SubmitApplication",{content_name:"Medical Intake",content_category:"intake_complete"},fin.event_id);
+  if(window.NHWLAttr) window.NHWLAttr.track("SubmitApplication",{content_category:"intake_complete"},fin.event_id);
   btn.disabled=false; btn.textContent="Submit Medical Intake";
   show("complete");
 };

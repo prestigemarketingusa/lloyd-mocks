@@ -10,10 +10,9 @@
  *    the first-touch timestamp and landing page.
  */
 (function (w, d) {
-  // PIXEL REMOVED 2026-11-22 (Chip): 1441640894483000 only fed the PMUSA ad account act_1375705578004628,
-  // which Meta disabled. Empty = no pixel loads and no browser events fire. Attribution capture
-  // (fbclid/UTMs -> relay -> GHL) is unchanged. To use another pixel, set its id here.
-  var PIXEL_ID = '';
+  // PIXEL = SEMG's NHWL pixel 1196959505208615 (Chip GO 2026-11-23: his pixel on every NHWL ad funnel).
+  // The old PMUSA pixel 1441640894483000 fed only the disabled act_1375705578004628 (removed 11/22).
+  var PIXEL_ID = '1196959505208615';
   var STORE = 'nhwl_attr_v1';
   var PARAMS = ['fbclid', 'gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content',
                 'utm_term', 'campaign_id', 'adset_id', 'ad_id', 'placement', 'site_source_name'];
@@ -64,6 +63,8 @@
   (w,d,'script','https://connect.facebook.net/en_US/fbevents.js');
   /* eslint-enable */
 
+  // Medical pages: no automatic button/metadata collection, only the events we fire on purpose.
+  w.fbq('set', 'autoConfig', false, PIXEL_ID);
   w.fbq('init', PIXEL_ID);
   w.fbq('track', 'PageView', {}, { eventID: 'pv-' + uuid() });
 
